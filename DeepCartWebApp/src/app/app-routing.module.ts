@@ -4,6 +4,11 @@ import { LoginComponent } from './components/accounts/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/accounts/signup/signup.component';
 
+//Guards
+import { AuthGuard } from './shared/guards/auth.guard';
+import { AnonymousGuard } from './shared/guards/anonymous.guard';
+import { ProfileComponent } from './components/profile/profile.component';
+
 
 const routes: Routes = [
   {
@@ -11,16 +16,23 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    'path': 'home', 
+    component: HomeComponent
+  },
+  {
     'path': 'accounts/login', 
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [AnonymousGuard]
   },
   {
     'path': 'accounts/signup', 
-    component: SignupComponent
+    component: SignupComponent,
+    canActivate: [AnonymousGuard]
   },
   {
-    'path': 'home', 
-    component: HomeComponent
+    path: 'profile', 
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
   },
 ];
 

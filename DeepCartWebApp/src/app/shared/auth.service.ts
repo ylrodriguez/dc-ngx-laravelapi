@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpInterceptor } from '@angular/common/http';
 import { TokenService } from './token.service';
 import { environment } from '../../environments/environment';
-import { map, catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
 import { User } from './models/user.model';
 
 @Injectable({
@@ -11,25 +9,46 @@ import { User } from './models/user.model';
 })
 export class AuthService {
 
-  private baseURL = environment.apiUrl+'auth';
-  private headers = new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer '+ this.tokenService.getToken()
-  })
+  private _redirectUrl: string = "/home";
+  private _loginUrl: string = '/accounts/login';
+  private baseURL = environment.apiUrl + 'auth';
 
 
   constructor(
     private http: HttpClient,
     private tokenService: TokenService) { }
 
-  login(credentials){
-    return this.http.post(`${this.baseURL}/login`, credentials).pipe(
-        catchError( err => {
-        return throwError(err.error.error);
-      }))
+  login(credentials) {
+    return this.http.post(`${this.baseURL}/login`, credentials)
   }
 
-  signup(user: User){
+  signup(user: User) {
     return this.http.post(`${this.baseURL}/signup`, user)
   }
+
+  logout() {
+    let headers = this.setHeaders();
+    return this.http.post(`${this.baseURL}/logout`, null, { headers: headers })
+  }
+
+  private setHeaders(): HttpHeaders {
+    const headersConfig = {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': 'Bearer ' + this.tokenService.getToken()
+    };
+    return new HttpHeaders(headersConfig);
+  }
+
+  get loginUrl(): string {
+    return this._loginUrl;
+  }
+
+  get redirectUrl(): string {
+    return this._redirectUrl;
+  }
+  set redirectUrl(url: string) {
+    this._redirectUrl = url;
+  }
+
 }

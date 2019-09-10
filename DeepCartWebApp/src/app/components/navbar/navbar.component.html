@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">DeepCart</a>
+    <a class="navbar-brand" routerLink="/">DeepCart</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
         aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -8,15 +8,24 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
         <div class="navbar-nav mr-auto search-bar">
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2 search-bar" type="text" placeholder="Search for product, brand and more">
+                <input class="form-control mr-sm-2 search-bar" type="text"
+                    placeholder="Search for product, brand and more">
             </form>
         </div>
+
+        <code>isLoggedIn: {{_isLoggedIn}}</code>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            <li *ngIf="!_isLoggedIn" class="nav-item">
                 <a class="nav-link" routerLink="/accounts/login">Login & Signup</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" routerLink="#">Cart <i class="fas fa-shopping-cart"></i></a>
+                <a class="nav-link" routerLink="/">Cart <i class="fas fa-shopping-cart"></i></a>
+            </li>
+            <li *ngIf="_isLoggedIn" class="nav-item">
+                    <a class="nav-link" routerLink="/profile" >Profile</a>
+            </li>
+            <li *ngIf="_isLoggedIn" class="nav-item">
+                <a class="nav-link" href="#" (click)="onLogOut($event)">Logout</a>
             </li>
         </ul>
 

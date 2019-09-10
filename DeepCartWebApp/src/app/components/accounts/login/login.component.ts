@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
     this.isSubmitted = true;
     this.authService.login(this.form).subscribe(
       res => this.handleResponse(res),
-      err => this.handleError(err)
+      err => this.handleError(err.error)
     )
   }
 
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
   handleError(err){
     this.isSubmitted = false;
-    this.errorMessage = err ? err : 'Something\'s wrong. Try later.';
+    this.errorMessage = err ? err.message : 'Something\'s wrong. Try later.';
     this.hasError = true;
   }
 

@@ -3,7 +3,6 @@ import { User } from '../../../shared/models/user.model';
 import { AuthService } from '../../../shared/auth.service';
 import { TokenService } from '../../../shared/token.service';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-signup',

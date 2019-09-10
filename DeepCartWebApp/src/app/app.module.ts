@@ -16,6 +16,7 @@ import { MomentDateModule, MomentDateAdapter } from '@angular/material-moment-ad
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { ProfileComponent } from './components/profile/profile.component';
 
 export const MY_FORMATS = {
   parse: {
@@ -35,7 +36,8 @@ export const MY_FORMATS = {
     NavbarComponent,
     LoginComponent,
     SignupComponent,
-    HomeComponent
+    HomeComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
