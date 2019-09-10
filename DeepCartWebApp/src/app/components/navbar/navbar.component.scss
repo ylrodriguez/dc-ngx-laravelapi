@@ -1,0 +1,18 @@
+.nav-item{
+    margin-right: 1rem;
+}
+
+.search-bar{
+    min-width: 50%;
+}
+
+.search-bar form,
+.search-bar form input{
+    width: 100%;
+}
+
+@media(max-width: 760px){
+    .search-bar{
+        width: fit-content;
+    }
+}
