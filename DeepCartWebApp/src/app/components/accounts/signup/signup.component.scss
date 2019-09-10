@@ -52,3 +52,9 @@
     font-size: 80%;
     color: #d9534f;
 }
+
+@media (min-width: 576px) { 
+    .signup{
+        max-width: 576px;
+    }
+}

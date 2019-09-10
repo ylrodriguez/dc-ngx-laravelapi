@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Database\QueryException;
 use App\Http\Controllers\Controller;
-use Validator, DB, Hash;
+use Validator, DB, Hash, DateTime;
 
 use App\User;
 
@@ -32,7 +32,9 @@ class AuthController extends Controller
         $credentials = request(['email', 'password']);
 
         if (! $token = auth()->attempt($credentials)) {
-            return response()->json(['error' => 'Incorrect username or password.'], 401);
+            return response()->json([
+                'success'=> false,
+                'message' => 'Incorrect username or password.'], 401);
         }
 
         return $this->respondWithToken($token);
@@ -49,12 +51,14 @@ class AuthController extends Controller
 
         //Backend Validation
         $rules = [
-            'name' => 'required|max:255',
-            'email' => 'required|max:255|email|unique:users',
-            'password' => 'required|min:6|',
-            'address' => 'required|max:255',
-            'number' => 'required|max:16',
-            'dob' => 'required|date', //YYYY-MM-DD
+            'name' => 'required|max:30',
+            'lastname' => 'required|max:30',
+            'email' => 'required|max:40|email|unique:dc-users,email',
+            'password' => 'required|min:6|max:20',
+            'confirmPassword' => 'required|min:6|max:20',
+            'address' => 'required|max:80',
+            'number' => 'required|max:10',
+            'dob' => 'required|date', 
         ];
         $validator = Validator::make($credentials, $rules);
 
@@ -62,8 +66,9 @@ class AuthController extends Controller
         if($validator->fails()) {
             return response()->json([
                 'success'=> false, 
+                'message' => 'Error validating data.',
                 'error'=> $validator->messages()
-                ]);
+            ], 400);
         }
 
         $password = $request->password;
@@ -71,20 +76,23 @@ class AuthController extends Controller
         //Checks whether passwords matches or not
         if($password != $confirmPassword){
             return response()->json([
-                'success'=> false, 
-                'error'=> 'Password do not match.'
-                ]);
+                'success'=> false,
+                'message' => 'Password do not match'
+            ], 400);
         }
 
-        $name = $request->name;
-        $email = $request->email;
+        $name = strtolower($request->name);
+        $lastname = strtolower($request->lastname);
+        $email = strtolower($request->email);
         $address = $request->address;
         $number = $request->number;
-        $dob = $request->dob;
-        
+        $dob = new DateTime($request->dob);
+        $dob= $dob->format('Y-m-d'); //Format to: YYY-MM-DD since WebApp handles ISO 8601
+
         try{
             $user = User::create([
                 'name' => $name,
+                'lastname' => $lastname,
                 'email' => $email,
                 'address' => $address,
                 'password' => Hash::make($password),
@@ -95,7 +103,8 @@ class AuthController extends Controller
         catch(QueryException  $e){
             return response()->json([
                 'success'=> false, 
-                'message'=> $e->errorInfo
+                'message'=> 'Error MySQL',
+                'error'=> $e
             ], 400);
         }
         

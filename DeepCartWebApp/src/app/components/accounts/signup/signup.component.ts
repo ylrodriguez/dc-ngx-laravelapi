@@ -13,6 +13,7 @@ export class SignupComponent implements OnInit {
 
   private user: User = {
     name: "",
+    lastname: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -40,9 +41,9 @@ export class SignupComponent implements OnInit {
 
   onSubmit(){
     this.isSubmitted = true;
-    this.authService.login(this.user).subscribe(
+    this.authService.signup(this.user).subscribe(
       res => this.handleResponse(res),
-      err => this.handleError(err)
+      err => this.handleError(err.error)
     )
   }
 
@@ -54,7 +55,8 @@ export class SignupComponent implements OnInit {
 
   handleError(err){
     this.isSubmitted = false;
-    this.errorMessage = err ? err : 'Something\'s wrong. Try later.';
+    console.log(err)
+    this.errorMessage = err.error ? err.message : 'Something\'s wrong. Try later.';
     this.hasError = true;
   }
 
