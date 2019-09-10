@@ -1,1 +1,43 @@
-<p>login works!</p>
+<div class="container-fluid">
+    <div class="login">
+        <div class="">
+            <h1>DeepCart</h1>
+            <div class="underline"></div>
+        </div>
+        <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()">
+            <!-- Email -->
+        <div class=" form-group">
+            <label for="">Email</label>
+            <input class="form-control" type="email" name="email"  required email 
+            [(ngModel)]="form.email" #email="ngModel"
+            [ngClass]="{'is-invalid': email.invalid && (email.dirty || email.touched)}">
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
+                <div *ngIf="email.errors.required">Enter your email</div>
+                <div *ngIf="email.errors.email">Enter a valid email</div>
+            </div>
+        </div>
+        <!-- Password -->
+        <div class=" form-group">
+            <label for="">Password</label>
+            <input class="form-control" type="password"  name="password" required minlength="6" 
+            [(ngModel)]="form.password" #password="ngModel"
+            [ngClass]="{'is-invalid': password.invalid && (password.dirty || password.touched)}">
+            <div *ngIf="password.invalid && (password.touched || password.dirty)" class="invalid-feedback">
+                <div *ngIf="password.errors.required">Enter your password</div>
+                <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+            </div>
+        </div>
+        <!--  Submit -->
+        <button class="btn btn-success" [disabled] = "!f.form.valid">Sign in</button>
+        </form>
+    </div>
+
+    <div class="login-footer">
+        <p>New to DeepCart? <a href="#">Create an account</a></p>
+    </div>
+
+    <code class="login-example">
+        email: test@gmail.com <br>
+        passsword: 123456
+    </code>
+</div>

@@ -1,0 +1,40 @@
+.login{
+    background: red;
+    margin: 50px auto 20px;
+    padding: 20px;
+    width: 300px;
+    background-color: #FFF;
+    border: 1px solid #d8dee2;
+    border-radius: 5px;
+    
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+.login input{
+    background-color: #FFF;
+    border: 1px solid #d8dee2;
+}
+
+.login button{
+    width: 100%;
+}
+
+.login-footer{
+    display: flex;
+    margin: 0 auto 20px;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    padding: 20px 0;
+}
+
+.login-footer p {
+    margin: 0;
+}
+
+.login-example{
+    margin: 0 auto;
+    width: fit-content;
+}
