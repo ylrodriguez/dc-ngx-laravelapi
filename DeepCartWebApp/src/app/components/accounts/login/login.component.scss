@@ -1,8 +1,7 @@
 .login{
-    background: red;
     margin: 50px auto 20px;
     padding: 20px;
-    width: 300px;
+    width: 310px;
     background-color: #FFF;
     border: 1px solid #d8dee2;
     border-radius: 5px;
@@ -12,9 +11,15 @@
     flex-flow: column;
 }
 
+.login form{
+    
+    width: 100%;
+}
+
 .login input{
     background-color: #FFF;
     border: 1px solid #d8dee2;
+    padding: 0.75rem 1rem;
 }
 
 .login button{
@@ -26,7 +31,7 @@
     margin: 0 auto 20px;
     align-items: center;
     justify-content: center;
-    width: 300px;
+    width: 310px;
     padding: 20px 0;
 }
 

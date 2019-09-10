@@ -15,9 +15,9 @@ export class LoginComponent implements OnInit {
     password: ''
   }
 
-  private isSubmitted: boolean = false;
-  private hasError: boolean = false;
-  private errorMessage: string = "Something's wrong";
+  isSubmitted: boolean = false;
+  hasError: boolean = false;
+  errorMessage: string = "Something's wrong";
 
   constructor(
     private tokenService: TokenService,
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
 
   handleError(err){
     this.isSubmitted = false;
-    this.errorMessage = err;
+    this.errorMessage = err ? err : 'Something\'s wrong. Try later.';
     this.hasError = true;
   }
 
