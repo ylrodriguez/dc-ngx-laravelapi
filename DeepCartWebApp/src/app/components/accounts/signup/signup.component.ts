@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { User } from '../../../shared/models/user.model';
 import { AuthService } from '../../../shared/auth.service';
 import { TokenService } from '../../../shared/token.service';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
@@ -22,10 +23,10 @@ export class SignupComponent implements OnInit {
     dob: "",
   }
 
+  verifypassword:string;
   startDate = new Date(1985, 0, 1);
   minDate = new Date(1900, 0, 1);
   maxDate = new Date(Date.now());
-  
   isSubmitted: boolean = false;
   hasError: boolean = false;
   errorMessage: string = "Something's wrong";
@@ -33,7 +34,8 @@ export class SignupComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private tokenService: TokenService,
-    private router: Router
+    private router: Router,
+    private changeDetector: ChangeDetectorRef
   ) { }
 
   ngOnInit() {
@@ -63,5 +65,11 @@ export class SignupComponent implements OnInit {
   closeAlert(){
     this.hasError = false;
   }
+
+  changeVerifyPassword(){
+    this.verifypassword =  this.user.password;
+    this.changeDetector.detectChanges();
+  }
+
 
 }

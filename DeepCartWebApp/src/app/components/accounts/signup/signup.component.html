@@ -43,7 +43,7 @@
             <div class=" form-group">
                 <label for="">Password</label>
                 <input class="form-control" type="password" name="password" required minlength="6" maxlength="20"
-                    [(ngModel)]="user.password" #password="ngModel"
+                    [(ngModel)]="user.password" #password="ngModel" (blur)="changeVerifyPassword()"
                     [ngClass]="{'is-invalid': password.invalid && (password.dirty || password.touched)}">
                 <div *ngIf="password.invalid && (password.touched || password.dirty)" class="invalid-feedback">
                     <div *ngIf="password.errors.required">Enter your password</div>
@@ -55,12 +55,12 @@
             <div class=" form-group">
                 <label for="">Confirm password</label>
                 <input class="form-control" type="password" name="confirmPassword" required minlength="6" maxlength="20"
-                    [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel"
+                    [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel"  [pattern]="verifypassword"
                     [ngClass]="{'is-invalid': confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)}">
                 <div *ngIf="confirmPassword.invalid && (confirmPassword.touched || confirmPassword.dirty)"
                     class="invalid-feedback">
                     <div *ngIf="confirmPassword.errors.required">Confirm your password</div>
-                    <div *ngIf="confirmPassword.errors.minlength">Password must be at least 6 characters</div>
+                    <div *ngIf="confirmPassword.errors.pattern">Passwords don't match</div>
                 </div>
             </div>
             <!-- Address -->
