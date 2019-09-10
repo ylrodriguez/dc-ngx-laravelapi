@@ -13,6 +13,10 @@ const routes: Routes = [
     'path': 'accounts/login', 
     component: LoginComponent
   },
+  {
+    'path': 'home', 
+    component: HomeComponent
+  },
 ];
 
 @NgModule({

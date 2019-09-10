@@ -4,6 +4,12 @@
             <h1>DeepCart</h1>
             <div class="underline"></div>
         </div>
+
+        <div *ngIf="hasError" class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{errorMessage}}
+            <span aria-hidden="true" class="close" (click)="closeAlert()">&times;</span>
+          </div>
+
         <form #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()">
             <!-- Email -->
         <div class=" form-group">
@@ -28,7 +34,7 @@
             </div>
         </div>
         <!--  Submit -->
-        <button class="btn btn-success" [disabled] = "!f.form.valid">Sign in</button>
+        <button class="btn btn-success" [disabled]="!f.form.valid || isSubmitted ">Sign in</button>
         </form>
     </div>
 
