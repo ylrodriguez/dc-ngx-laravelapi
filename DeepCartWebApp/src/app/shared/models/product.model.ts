@@ -6,6 +6,7 @@ export interface Product{
     price: number,
     quantity: number,
     category_id?: number,
-    offerDiscount?: number
+    offerDiscount?: number,
+    images?: string[]
 
 }

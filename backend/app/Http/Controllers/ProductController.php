@@ -37,6 +37,9 @@ class ProductController extends Controller
     {
         try{
             $offers = Product::where('offerDiscount','>',0)->get();
+            foreach ($offers as $offer){
+                $offer->images;
+            }
         }
         catch(Exception  $e){
             return response()->json([

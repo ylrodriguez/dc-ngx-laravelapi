@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { User } from '../../../shared/models/user.model';
-import { AuthService } from '../../../shared/auth.service';
-import { TokenService } from '../../../shared/token.service';
+import { AuthService } from '../../../shared/services/auth.service';
+import { TokenService } from '../../../shared/services/token.service';
 import { Router } from '@angular/router';
 
 @Component({

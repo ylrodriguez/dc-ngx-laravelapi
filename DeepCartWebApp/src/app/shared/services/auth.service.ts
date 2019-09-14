@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TokenService } from './token.service';
-import { environment } from '../../environments/environment';
-import { User } from './models/user.model';
+import { environment } from '../../../environments/environment';
+import { User } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +30,7 @@ export class AuthService {
     return this.http.post(`${this.baseURL}/logout`, null, { headers: headers })
   }
 
-  private setHeaders(): HttpHeaders {
+  public setHeaders(): HttpHeaders {
     const headersConfig = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',

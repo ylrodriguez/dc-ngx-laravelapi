@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TokenService } from 'src/app/shared/token.service';
-import { AuthService } from 'src/app/shared/auth.service';
+import { TokenService } from 'src/app/shared/services/token.service';
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
