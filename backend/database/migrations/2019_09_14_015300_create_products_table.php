@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('brand');
             $table->string('description' , 300);
             $table->integer('price');
+            $table->integer('quantity');
             $table->integer('offerDiscount');
             $table->timestamps();
         });
