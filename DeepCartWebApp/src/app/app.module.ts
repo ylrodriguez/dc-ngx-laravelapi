@@ -23,9 +23,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
-import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { OffersTempComponent } from './components/home/offers-temp/offers-temp.component';
-
 export const MY_FORMATS = {
   parse: {
     dateInput: 'DD/MM/YYYY',
@@ -50,8 +47,7 @@ export const MY_FORMATS = {
     CarouselComponent,
     OffersComponent,
     ProductComponent,
-    ProductCardComponent,
-    OffersTempComponent
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
@@ -62,8 +58,7 @@ export const MY_FORMATS = {
     // Externals
     BrowserAnimationsModule,
     MatNativeDateModule,
-    MatDatepickerModule,
-    SlickCarouselModule
+    MatDatepickerModule
   ],
   providers: [
     MatDatepickerModule,

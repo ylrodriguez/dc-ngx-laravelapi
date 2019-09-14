@@ -7,6 +7,7 @@ var xOffset;
 var containerHeight;
 var containerWidth;
 var limitWidth;
+var itemWidth;
 //Only available for mobile devices or touchable devices
 var originTime, endTime;
 var start, end;
@@ -14,6 +15,10 @@ var start, end;
 function loadSlideItems() {
     container = document.querySelector(".slide-track");
     dragItems = document.querySelectorAll(".slide-track .slide-item");
+    buttonPrev = document.querySelector(".slide-prev");
+    buttonNext = document.querySelector(".slide-next");
+    
+    
     active = false;
     currentX = 0;
     initialX = 0;
@@ -27,14 +32,21 @@ function loadSlideItems() {
     container.addEventListener("touchend", dragEnd, false);
     container.addEventListener("touchmove", drag, false);
 
+    buttonPrev.addEventListener("click", prevSlide, false);
+    buttonNext.addEventListener("click", nextSlide, false);
+
+}
+
+function getMeasures(){
+    containerHeight = container.offsetHeight;
+    containerWidth = container.offsetWidth;
+    itemWidth = dragItems[0].offsetWidth;
+    limitWidth = (itemWidth * dragItems.length) - containerWidth;
 }
 
 function dragStart(e) {
-    containerHeight = container.offsetHeight;
-    containerWidth = container.offsetWidth;
-    let itemWidth = dragItems[0].offsetWidth;
 
-    limitWidth = (itemWidth * dragItems.length) - containerWidth;
+    getMeasures();
 
     if (e.type === "touchstart") {
         initialX = e.touches[0].clientX - xOffset;
@@ -46,6 +58,8 @@ function dragStart(e) {
 }
 
 function dragEnd(e) {
+
+    active = false;
 
     // if (e.type === "touchend") {
     //     end = e.changedTouches[0].clientX;
@@ -76,8 +90,6 @@ function dragEnd(e) {
     // if(speed > 300){
     //     extraScroll()
     // }
-    initialX = currentX;
-    active = false;
 }
 
 function drag(e) {
@@ -91,7 +103,6 @@ function drag(e) {
 
         // No uso valor absoluto para no llamar errores usando mobile devices
         if (currentX <= 0 && (currentX * -1) < limitWidth) {
-            
             xOffset = currentX;
             setTranslate(currentX);
         }
@@ -105,6 +116,31 @@ function setTranslate(xPos) {
     dragItems.forEach(element => {
         element.style.transform = "translate3d(" + xPos + "px, 0, 0)";
     });
+}
+
+function prevSlide(){
+    getMeasures();
+    itemsPerSlide = Math.floor(containerWidth/itemWidth)
+    xOffset = xOffset + itemWidth*itemsPerSlide;
+
+    if (xOffset >= 0) {
+        xOffset = 0
+    }
+
+    setTranslate(xOffset);
+    
+}
+
+function nextSlide(){
+    getMeasures();
+    itemsPerSlide = Math.floor(containerWidth/itemWidth)
+    xOffset = xOffset - itemWidth*itemsPerSlide;
+
+    if (xOffset <= (-limitWidth)) {
+        xOffset = (-limitWidth)
+    }
+
+    setTranslate(xOffset);
 }
 
 

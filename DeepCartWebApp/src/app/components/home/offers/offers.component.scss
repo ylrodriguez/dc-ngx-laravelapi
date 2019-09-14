@@ -1,3 +1,25 @@
+.slider{
+    position: relative;
+}
+
+.slider .slide-prev{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    visibility: hidden;
+}
+
+.slider .slide-next{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    visibility: hidden; 
+}
+
+.slider:hover .slide-next,
+.slider:hover .slide-prev{
+    visibility: visible;
+}
 
 .slide-track{
     display: flex;
