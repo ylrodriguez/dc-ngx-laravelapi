@@ -87,7 +87,7 @@ class AuthController extends Controller
         $address = $request->address;
         $number = $request->number;
         $dob = new DateTime($request->dob);
-        $dob= $dob->format('Y-m-d'); //Format to: YYY-MM-DD since WebApp handles ISO 8601
+        $dob= $dob->format('Y-m-d'); //Format to: YYYY-MM-DD since WebApp handles ISO 8601
 
         try{
             $user = User::create([
