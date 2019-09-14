@@ -9,6 +9,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/accounts/login/login.component';
 import { SignupComponent } from './components/accounts/signup/signup.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProductComponent } from './components/product/product.component';
+import { ProductCardComponent } from './components/product/product-card/product-card.component';
+import { CarouselComponent } from './components/home/carousel/carousel.component';
+import { OffersComponent } from './components/home/offers/offers.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 // Externals
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material';
@@ -16,7 +22,9 @@ import { MomentDateModule, MomentDateAdapter } from '@angular/material-moment-ad
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { ProfileComponent } from './components/profile/profile.component';
+
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { OffersTempComponent } from './components/home/offers-temp/offers-temp.component';
 
 export const MY_FORMATS = {
   parse: {
@@ -37,7 +45,13 @@ export const MY_FORMATS = {
     LoginComponent,
     SignupComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    ShoppingCartComponent,
+    CarouselComponent,
+    OffersComponent,
+    ProductComponent,
+    ProductCardComponent,
+    OffersTempComponent
   ],
   imports: [
     BrowserModule,
@@ -45,10 +59,11 @@ export const MY_FORMATS = {
     FormsModule,
     AppRoutingModule,
     HttpClientModule, 
-    // Angular Material
+    // Externals
     BrowserAnimationsModule,
     MatNativeDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    SlickCarouselModule
   ],
   providers: [
     MatDatepickerModule,

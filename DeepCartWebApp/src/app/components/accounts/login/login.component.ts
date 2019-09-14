@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
   handleResponse(res){
     this.hasError = false;
     this.tokenService.setToken(res.access_token);
-    this.router.navigate(['/home'])
+    this.router.navigate([this.authService.redirectUrl])
   }
 
   handleError(err){

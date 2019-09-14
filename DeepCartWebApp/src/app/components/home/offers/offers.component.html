@@ -1,0 +1,13 @@
+<div class="container-fluid mt-2">
+        <h2 class="text-center">Offers</h2>
+        <div class="underline"></div>
+        <div class="slide-track">
+                <div *ngFor="let offer of offersList" class="slide-item">
+                        <app-product-card [imgUrl]="offer.imgUrl" [price]="offer.price" [name]="offer.name">
+                        </app-product-card>
+                </div>
+        </div>
+
+        <button type="button" id="slide-prev">Previous</button>
+        <button type="button" id="slide-next">Next</button>
+</div>

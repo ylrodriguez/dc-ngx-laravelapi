@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpInterceptor } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TokenService } from './token.service';
 import { environment } from '../../environments/environment';
 import { User } from './models/user.model';
@@ -9,10 +9,9 @@ import { User } from './models/user.model';
 })
 export class AuthService {
 
-  private _redirectUrl: string = "/home";
+  private _redirectUrl: string = "/";
   private _loginUrl: string = '/accounts/login';
   private baseURL = environment.apiUrl + 'auth';
-
 
   constructor(
     private http: HttpClient,
