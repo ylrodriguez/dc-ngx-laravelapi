@@ -1,11 +1,25 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Category;
 
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+
+    
+    /**
+     * Create a new CategoryController instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['index']]);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +27,14 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+
+        $categories = Category::all('name', 'icon');
+
+        return response()->json([
+            'success'=> true,
+            'message'=> 'Categories retrieved.', 
+            'categories'=> $categories
+        ], 200);
     }
 
     /**

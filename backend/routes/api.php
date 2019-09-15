@@ -32,3 +32,10 @@ Route::group([
     Route::get('offers', 'ProductController@getOffers'); //No auth needed
 });
 
+Route::group([
+    'middleware' => 'api',
+    'prefix' => 'categories'
+], function ($router) {
+    Route::get('/', 'CategoryController@index'); //No auth needed
+});
+
