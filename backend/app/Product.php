@@ -12,7 +12,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'brand', 'description', 'price', 'offerDiscount'
+        'name', 'brand', 'description', 'price', 'offerDiscount','category_id'
     ];
 
      /**
@@ -22,6 +22,15 @@ class Product extends Model
     {
         return $this->hasMany('App\Image');
     }
+
+    /**
+     * Get the category that owns the product.
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Category', 'category_id');
+    }
+
 
     protected $table = 'dc-products';
 }

@@ -24,7 +24,7 @@ export class ProductService {
       .pipe(map( data => {
 
         data['offers'].map( d => {
-          d.imgUrl = d.images[0].url;
+          d.imgUrl = d.images[0].url+"-500-auto?width=500&height=auto&aspect=true";
           delete d.images;
         })
 
