@@ -14,7 +14,6 @@ var start, end;
 
 function loadSlideItems() {
     container = document.querySelector(".slide-track");
-    console.log(container)
     dragItems = document.querySelectorAll(".slide-track .slide-item");
     buttonPrev = document.querySelector(".slide-prev");
     buttonNext = document.querySelector(".slide-next");

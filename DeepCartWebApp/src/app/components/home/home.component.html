@@ -2,3 +2,17 @@
 <section id="offers">
   <app-offers></app-offers>
 </section>
+
+<section id="categories">
+  <div *ngIf="categoriesList" class="container-fluid">
+    <h2 class="text-center">Categories</h2>
+    <div class="underline"></div>
+
+    <div class="category-wrapper">
+      <a  href="#" class="category-item" *ngFor="let category of categoriesList">
+        <div class="icon "><i class="{{category.icon}}"></i></div>
+        <p class="text-center"> {{category.name}}</p>
+      </a>
+    </div>
+  </div>
+</section>

@@ -9,12 +9,17 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { AuthGuard } from './shared/guards/auth.guard';
 import { AnonymousGuard } from './shared/guards/anonymous.guard';
 import { ProfileComponent } from './components/profile/profile.component';
+import { CategoryComponent } from './components/category/category.component';
 
 
 const routes: Routes = [
   {
     'path': '', 
     component: HomeComponent
+  },
+  {
+    'path': 'categories/:slug',
+    component: CategoryComponent
   },
   {
     'path': 'accounts',

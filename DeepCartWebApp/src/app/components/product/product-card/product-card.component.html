@@ -1,9 +1,11 @@
-<div class="product-card">
-    <div class="pc-img-container">
-        <img draggable="false" src="{{imgUrl}}" alt="">
-    </div>
-    <div class="pc-description">
-        <p>${{price}}</p>
-        <p>{{name}}</p>
-    </div>
+<div style="position: relative">
+        <a href="#" class="product-card">
+                <div class="pc-img-container">
+                    <img draggable="false" src="{{imgUrl}}" alt="">
+                </div>
+                <div class="pc-description">
+                    <p>${{price}}</p>
+                    <p> {{(name.length>30)? (name | slice:0:30)+'..':(name)}} </p>
+                </div>
+            </a>
 </div>

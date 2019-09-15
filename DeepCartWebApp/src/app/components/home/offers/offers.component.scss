@@ -16,10 +16,6 @@
     visibility: hidden; 
 }
 
-.slider:hover .slide-next,
-.slider:hover .slide-prev{
-    visibility: visible;
-}
 
 .slide-track{
     display: flex;
@@ -40,4 +36,12 @@
 -o-user-select: none;
 user-select: none;
     pointer-events: none;
+}
+
+@media (hover: hover) {
+    .slider:hover .slide-next,
+.slider:hover .slide-prev{
+    visibility: visible;
+    }
+
 }
