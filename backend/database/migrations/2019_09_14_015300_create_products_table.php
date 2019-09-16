@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class CreateProductsTable extends Migration
 {
@@ -23,6 +24,8 @@ class CreateProductsTable extends Migration
             $table->integer('offerDiscount');
             $table->timestamps();
         });
+
+        DB::statement("ALTER TABLE `dc-products` AUTO_INCREMENT = 1001;");
     }
 
     /**

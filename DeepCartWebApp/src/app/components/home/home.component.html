@@ -9,7 +9,7 @@
     <div class="underline"></div>
 
     <div class="category-wrapper">
-      <a  href="#" class="category-item" *ngFor="let category of categoriesList">
+      <a  routerLink="c/{{category.slug}}" class="category-item" *ngFor="let category of categoriesList">
         <div class="icon "><i class="{{category.icon}}"></i></div>
         <p class="text-center"> {{category.name}}</p>
       </a>
