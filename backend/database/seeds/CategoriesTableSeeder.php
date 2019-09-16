@@ -15,26 +15,32 @@ class CategoriesTableSeeder extends Seeder
         $categories = [
             [
                 "name" => "Smartphones",
+                'slug' => 'smartphones',
                 "icon" => "fas fa-mobile-alt",
             ],
             [
                 "name" => "Computers & Accessories",
+                'slug' => 'computers',
                 "icon" => "fas fa-laptop",
             ],
             [
                 "name" => "TV, Video & Home Audio",
+                'slug' => 'electronics',
                 "icon" => "fas fa-tv",
             ],
             [
                 "name" => "Cameras",
+                'slug' => 'cameras',
                 "icon" => "fas fa-camera",
             ],
             [
                 "name" => "Video games",
+                'slug' => 'videogames',
                 "icon" => "fas fa-gamepad",
             ],
             [
                 "name" => "Headphones",
+                'slug' => 'headphones',
                 "icon" => "fas fa-headphones-alt",
             ],
         ];

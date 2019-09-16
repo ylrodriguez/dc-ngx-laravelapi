@@ -50,7 +50,7 @@ class ProductsTableSeeder extends Seeder
                 'category_id' => 1
             ],
             [
-                'name' => 'Zf M1 (3 32) Dorado',
+                'name' => 'Zf M1 Asus Dorado',
                 'brand' => 'Asus',
                 'description' => 'Accesorios Incluidos: Cargador, Auriculares ,Cable UBS. Alto: 147.3 mm. Ancho: 70.9 mm. Batería: POLYMER 4000mAh. Cámara: Si. Cámara Frontal: Si. Capacidad: 32 GB. Conectividad: Wi fi/Bluetooth. Dual Sim o Single Sim: Dual Sim.',
                 'price' => 800000 ,
