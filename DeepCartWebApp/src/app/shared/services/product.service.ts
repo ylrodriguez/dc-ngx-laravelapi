@@ -18,9 +18,15 @@ export class ProductService {
     private http: HttpClient
   ) { }
 
+  getProduct(id): Observable<Product>{
+    let headers = this.authService.setHeaders();
+    return this.http.get<Product>(`${this.baseURL}/${id}`, {headers: headers })
+      .pipe( map (data => data['product']))
+  }
+
   getOffers(): Observable<Product[]>{
     let headers = this.authService.setHeaders();
-    return this.http.get<Product[]>(`${this.baseURL}/offers`,  { headers: headers })
+    return this.http.get<Product[]>(`${this.baseURL}/offers`, {headers: headers })
       .pipe(map( data => {
 
         data['offers'].map( d => {

@@ -4,7 +4,7 @@
         <div class="slider">
                 <div class="slide-track">
                         <div #slideItems *ngFor="let offer of offersList; let last = last" class="slide-item">
-                                <app-product-card [imgUrl]="offer.imgUrl" [price]="offer.price" [offerDiscount]="offer.offerDiscount" [name]="offer.name">
+                                <app-product-card [offer]="offer">
                                 </app-product-card>
                         </div>
                 </div>

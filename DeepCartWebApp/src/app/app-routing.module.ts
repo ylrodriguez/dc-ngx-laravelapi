@@ -11,6 +11,7 @@ import { AnonymousGuard } from './shared/guards/anonymous.guard';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CategoryComponent } from './components/category/category.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { ProductComponent } from './components/product/product.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     'path': 'c/:slug',
     component: CategoryComponent
+  },
+  {
+    'path': 'p/:id/:slug',
+    component: ProductComponent
   },
   {
     'path': 'accounts',

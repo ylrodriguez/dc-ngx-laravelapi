@@ -1,12 +1,12 @@
 <div style="position: relative">
-        <a href="#" class="product-card">
+        <a routerLink="p/{{offer.id}}/{{offer.slug}}" class="product-card">
                 <div class="pc-img-container">
-                    <img draggable="false" src="{{imgUrl}}" alt="">
+                    <img draggable="false" src="{{offer.imgUrl}}" alt="">
                 </div>
                 <div class="pc-description">
-                    <p class="price-real">${{price | number }}</p>
-                    <p class="price-offer" > ${{ getDiscountPrice(price, offerDiscount) | number }} <span class="float-right text-success">{{offerDiscount}}% OFF</span></p>
-                    <p> {{(name.length>30)? (name | slice:0:30)+'..':(name)}} </p>
+                    <p class="price-real">${{offer.price | number }}</p>
+                    <p class="price-offer" > ${{ getDiscountPrice() | number }} <span class="float-right text-success">{{offer.offerDiscount}}% OFF</span></p>
+                    <p> {{(offer.name.length>30)? (offer.name | slice:0:30)+'..':(offer.name)}} </p>
                 </div>
             </a>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Product } from 'src/app/shared/models/product.model';
 
 @Component({
   selector: 'app-product-card',
@@ -7,19 +8,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProductCardComponent implements OnInit {
   
-  @Input() imgUrl: string;
-  @Input() price: string;
-  @Input() name: string;
-  @Input() offerDiscount: string;
+  @Input() offer: Product;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  getDiscountPrice(price, offerDiscount){
-    let discount = price * (offerDiscount/100);
-    return price - discount;
+  getDiscountPrice(){
+    let discount = this.offer.price * (this.offer.offerDiscount/100);
+    return  this.offer.price - discount;
   }
 
 }

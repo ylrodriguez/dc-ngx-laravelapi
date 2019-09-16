@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['getOffers']]);
+        $this->middleware('auth:api', ['except' => ['getOffers','show']]);
     }
 
     /**
@@ -85,7 +85,22 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        try{
+            $product = Product::where('id', $id)->first();
+        }
+        catch(Exception  $e){
+            return response()->json([
+                'success'=> false, 
+                'message'=> 'Error MySQL',
+                'error'=> $e
+            ], 400);
+        }
+
+        return response()->json([
+            'success'=> true,
+            'message'=> 'Product retrieved.', 
+            'product'=> $product
+        ], 200);
     }
 
     /**
@@ -96,7 +111,6 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
     }
 
     /**

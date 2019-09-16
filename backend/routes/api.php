@@ -29,6 +29,7 @@ Route::group([
     'middleware' => 'api',
     'prefix' => 'product'
 ], function ($router) {
+    Route::get('{id}', 'ProductController@show'); //No auth needed
     Route::get('offers', 'ProductController@getOffers'); //No auth needed
 });
 
