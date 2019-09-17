@@ -8,15 +8,19 @@
         <div class="pd-container">
             <div class="pd-images">
                     <div class="pd-squares-wrapper">
-                            <div *ngFor="let image of product.images; let index = index" class="pd-square" [attr.data-index]="index"
+                            <!-- <div *ngFor="let image of product.images; let index = index" class="pd-square" [attr.data-index]="index"
                             (click) ="onClickSquareImage(index)">
+                                 <img  class="w-100" src="{{image.url}}">
+                            </div> -->
+                            <div *ngFor="let image of product.images; let index = index" class="pd-square" 
+                            data-target="#product-carousel"  [attr.data-slide-to]="index">
                                  <img  class="w-100" src="{{image.url}}">
                             </div>
                         </div>
                 <div id="product-carousel" class="carousel slide" data-interval="false">
                     <div class="carousel-inner"  #productCarouselInner >
                         <div *ngFor="let image of product.images; let index = index" class="carousel-item"
-                            [class.active]= "activeIndex === index" [attr.data-index]="index">
+                            [class.active]= " index === 0">
                             <img class="d-block w-100" src="{{image.url}}">
                         </div>
                     </div>
