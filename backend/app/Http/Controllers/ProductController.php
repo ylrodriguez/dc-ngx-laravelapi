@@ -87,6 +87,7 @@ class ProductController extends Controller
     {
         try{
             $product = Product::where('id', $id)->first();
+            $product->images;
         }
         catch(Exception  $e){
             return response()->json([

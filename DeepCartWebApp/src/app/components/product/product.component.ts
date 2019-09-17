@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChildren, QueryList } from '@angular/core';
 import {Location} from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/shared/services/product.service';
 import { Product } from 'src/app/shared/models/product.model';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-product',
@@ -13,6 +14,8 @@ export class ProductComponent implements OnInit, OnDestroy {
 
   private routeSub;
   private product: Product;
+  private activeIndex = 0;
+  @ViewChildren('productCarouselInner') carouselItemsProduct: QueryList<any>;
 
 
   constructor(
@@ -44,8 +47,20 @@ export class ProductComponent implements OnInit, OnDestroy {
     })
   }
 
+  onClickSquareImage(index){
+    if(this.activeIndex != index){this.removeActiveClass();}
+    this.activeIndex = index;
+  }
+
+  removeActiveClass(){
+    let items = this.carouselItemsProduct.first.nativeElement.children;
+    for(let item of items){
+      item.classList.remove("active");
+    }
+  }
+
   ngOnDestroy(){
     this.routeSub.unsubscribe();
-  }
+  } 
 
 }
