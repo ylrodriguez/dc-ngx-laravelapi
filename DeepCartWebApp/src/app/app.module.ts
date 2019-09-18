@@ -13,10 +13,11 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductCardComponent } from './components/product/product-card/product-card.component';
 import { CarouselComponent } from './components/home/carousel/carousel.component';
 import { OffersComponent } from './components/home/offers/offers.component';
-import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CategoryComponent } from './components/category/category.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CartItemComponent } from './components/cart/cart-item/cart-item.component';
 
 // Externals
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material';
@@ -45,13 +46,14 @@ export const MY_FORMATS = {
     SignupComponent,
     HomeComponent,
     ProfileComponent,
-    ShoppingCartComponent,
     CarouselComponent,
     OffersComponent,
     ProductComponent,
     ProductCardComponent,
     CategoryComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    CartComponent,
+    CartItemComponent
   ],
   imports: [
     BrowserModule,

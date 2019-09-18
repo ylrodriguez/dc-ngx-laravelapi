@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { environment } from '../../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 export class TokenService {
 
   private tokenKey: string = "access_token";
-  private iss: string = "http://deepcartnglaravel:8080/api/"; //JWT Issuer
+  private iss: string = environment.apiUrl; //JWT Issuer
   private _isLoggedIn = new BehaviorSubject<boolean>(this.tokenIsValid()); 
 
   constructor(private router: Router) {

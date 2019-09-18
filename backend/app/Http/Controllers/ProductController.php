@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['getOffers','show']]);
+        $this->middleware('jwt.auth', ['except' => ['getOffers','show']]);
     }
 
     /**

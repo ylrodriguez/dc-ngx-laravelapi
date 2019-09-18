@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/shared/services/product.service';
 import { Product } from 'src/app/shared/models/product.model';
@@ -9,6 +9,7 @@ import { Product } from 'src/app/shared/models/product.model';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
+
 export class ProductComponent implements OnInit, OnDestroy {
 
   private routeSub;

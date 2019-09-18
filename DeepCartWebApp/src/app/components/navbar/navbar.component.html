@@ -18,8 +18,8 @@
             <li *ngIf="!_isLoggedIn" class="nav-item">
                 <a class="nav-link" routerLink="/accounts/login">Login & Signup</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/">Cart <i class="fas fa-shopping-cart"></i></a>
+            <li *ngIf="_isLoggedIn" class="nav-item">
+                <a class="nav-link" routerLink="/cart">Cart <i class="fas fa-shopping-cart"></i></a>
             </li>
             <li *ngIf="_isLoggedIn" class="nav-item">
                     <a class="nav-link" routerLink="/profile" >Profile</a>

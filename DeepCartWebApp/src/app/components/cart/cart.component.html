@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="cart mt-2">
+        <table class="table table-cart">
+            <thead class="table-head">
+                <tr>
+                    <td>Producto</td>
+                    <td> </td>
+                    <td>Precio</td>
+                    <td>Cantidad</td>
+                    <td>Total</td>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                <tr *ngFor="let item of cartItems">
+                    <td>
+                        <div class="item-img">
+                            <img class="w-100" src="{{item.imgUrl}}">
+                        </div>
+                    </td>
+                    <td class="product-name"><p class="font-weight-bold">{{item.name}}</p></td>
+                    <!-- OfferDiscount conditional render -->
+                    <td *ngIf = "item.offerDiscount">
+                        <p class="price-real ">${{item.price | number }}</p>
+                        <p class="price-offer text-danger" > ${{ getDiscountPrice(item) | number }}</p>
+                    </td>
+
+                    <td *ngIf = "!item.offerDiscount">
+                            <p class="price-offer text-danger">${{item.price | number }}</p>
+                    </td>
+
+                    <td class="product-quantity">
+                        <a href="#" (click) = "addQuantity($event, item)">+</a>
+                        <p>{{item.quantity}}</p>
+                        <a href="#" (click) = "substractQuantity($event, item)">-</a>
+                    </td>
+                    <td class="product-total">Hola</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<code *ngFor="let item of cartItems">
+    {{item | json}}
+</code>

@@ -3,18 +3,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/accounts/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/accounts/signup/signup.component';
-import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
-
-//Guards
-import { AuthGuard } from './shared/guards/auth.guard';
-import { AnonymousGuard } from './shared/guards/anonymous.guard';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CategoryComponent } from './components/category/category.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ProductComponent } from './components/product/product.component';
+import { CartComponent } from './components/cart/cart.component';
+
+//Guards
+import { AuthGuard } from './shared/guards/auth.guard';
+import { AnonymousGuard } from './shared/guards/anonymous.guard';
 
 
 const routes: Routes = [
+  // Visible for both Auth and not Auth
   {
     'path': '', 
     component: HomeComponent
@@ -27,6 +28,8 @@ const routes: Routes = [
     'path': 'p/:id/:slug',
     component: ProductComponent
   },
+  
+  //Anonymous Guards, only for people not auth.
   {
     'path': 'accounts',
     canActivateChild: [AnonymousGuard],
@@ -41,6 +44,8 @@ const routes: Routes = [
       }
     ]
   },
+
+  //Auth Guards, only for users auth.
   {
     path: 'profile', 
     component: ProfileComponent,
@@ -48,9 +53,11 @@ const routes: Routes = [
   },
   {
     path: 'cart', 
-    component: ShoppingCartComponent,
+    component: CartComponent,
     canActivate: [AuthGuard]
   },
+
+  //Not found pages and redirection
   {path: '404', component: NotfoundComponent},
   {path: '**', redirectTo: '/404'}
 ];

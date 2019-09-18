@@ -18,7 +18,6 @@ use App\Product;
 
 // ----------- api/auth/
 Route::group([
-    'middleware' => 'api',
     'prefix' => 'auth'
 ], function ($router) {
     Route::post('login', 'AuthController@login'); //No auth needed
@@ -29,7 +28,6 @@ Route::group([
 });
 
 Route::group([
-    'middleware' => 'api',
     'prefix' => 'product'
 ], function ($router) {
     Route::get('{id}', 'ProductController@show'); //No auth needed
@@ -37,14 +35,12 @@ Route::group([
 });
 
 Route::group([
-    'middleware' => 'api',
     'prefix' => 'categories'
 ], function ($router) {
     Route::get('/', 'CategoryController@index'); //No auth needed
 });
 
 Route::group([
-    // 'middleware' => 'api',
     'prefix' => 'cart'
 ], function ($router) {
     Route::get('{user_id}/products', 'CartController@productsInCart');
