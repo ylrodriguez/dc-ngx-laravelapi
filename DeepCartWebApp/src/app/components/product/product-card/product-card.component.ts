@@ -8,7 +8,7 @@ import { Product } from 'src/app/shared/models/product.model';
 })
 export class ProductCardComponent implements OnInit {
   
-  @Input() offer: Product;
+  @Input() product: Product;
 
   constructor() { }
 
@@ -16,8 +16,8 @@ export class ProductCardComponent implements OnInit {
   }
 
   getDiscountPrice(){
-    let discount = this.offer.price * (this.offer.offerDiscount/100);
-    return  this.offer.price - discount;
+    let discount = this.product.price * (this.product.offerDiscount/100);
+    return  this.product.price - discount;
   }
 
 }

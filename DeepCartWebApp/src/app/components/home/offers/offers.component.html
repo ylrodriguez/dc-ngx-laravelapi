@@ -1,10 +1,9 @@
 <div *ngIf="offersList" class="container-fluid mt-4">
-        <h2 class="text-center">Offers</h2>
-        <div class="underline"></div>
+        <h2 class="text-center mb-3">Offers</h2>
         <div class="slider">
                 <div class="slide-track">
                         <div #slideItems *ngFor="let offer of offersList; let last = last" class="slide-item">
-                                <app-product-card [offer]="offer">
+                                <app-product-card [product]="offer">
                                 </app-product-card>
                         </div>
                 </div>

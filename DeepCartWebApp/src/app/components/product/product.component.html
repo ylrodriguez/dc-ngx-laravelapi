@@ -8,10 +8,6 @@
         <div class="pd-container">
             <div class="pd-images">
                     <div class="pd-squares-wrapper">
-                            <!-- <div *ngFor="let image of product.images; let index = index" class="pd-square" [attr.data-index]="index"
-                            (click) ="onClickSquareImage(index)">
-                                 <img  class="w-100" src="{{image.url}}">
-                            </div> -->
                             <div *ngFor="let image of product.images; let index = index" class="pd-square" 
                             data-target="#product-carousel"  [attr.data-slide-to]="index">
                                  <img  class="w-100" src="{{image.url}}">
@@ -37,10 +33,14 @@
             </div>
 
             <div class="pd-price">
-
+                <p class="price-real text-danger">${{product.price | number }}</p>
+                <p class="price-offer" > ${{ getDiscountPrice() | number }} <span class="badge badge-success">{{product.offerDiscount}}% OFF</span></p>
+                <div class="btn btn-warning">Add to cart <i class="fas fa-shopping-cart"></i></div>
             </div>
         </div>
 
+        <div class="pd-description mt-4">
+            <p>{{product.description}}</p>
+
     </div>
 </div>
-{{product | json}}

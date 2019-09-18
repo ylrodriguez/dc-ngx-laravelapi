@@ -44,6 +44,11 @@ export class ProductComponent implements OnInit, OnDestroy {
   }
 
 
+  getDiscountPrice(){
+    let discount = this.product.price * (this.product.offerDiscount/100);
+    return  this.product.price - discount;
+  }
+
   ngOnDestroy(){
     this.routeSub.unsubscribe();
   } 
