@@ -16,32 +16,32 @@ class CategoriesTableSeeder extends Seeder
             [
                 "name" => "Smartphones",
                 'slug' => 'smartphones',
-                "icon" => "fas fa-mobile-alt",
+                "icon" => "smartphone-1",
             ],
             [
                 "name" => "Computers & Accessories",
                 'slug' => 'computers',
-                "icon" => "fas fa-laptop",
+                "icon" => "macbook",
             ],
             [
                 "name" => "TV, Video & Home Audio",
                 'slug' => 'electronics',
-                "icon" => "fas fa-tv",
+                "icon" => "television-1",
             ],
             [
                 "name" => "Cameras",
                 'slug' => 'cameras',
-                "icon" => "fas fa-camera",
+                "icon" => "photo-camera",
             ],
             [
                 "name" => "Video games",
                 'slug' => 'videogames',
-                "icon" => "fas fa-gamepad",
+                "icon" => "game-controller-1",
             ],
             [
                 "name" => "Headphones",
                 'slug' => 'headphones',
-                "icon" => "fas fa-headphones-alt",
+                "icon" => "headphones",
             ],
         ];
 

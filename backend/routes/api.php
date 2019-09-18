@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Cart;
+use App\User;
+use App\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,5 +41,12 @@ Route::group([
     'prefix' => 'categories'
 ], function ($router) {
     Route::get('/', 'CategoryController@index'); //No auth needed
+});
+
+Route::group([
+    // 'middleware' => 'api',
+    'prefix' => 'cart'
+], function ($router) {
+    Route::get('{user_id}/products', 'CartController@productsInCart');
 });
 

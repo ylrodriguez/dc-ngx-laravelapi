@@ -32,5 +32,14 @@ class Product extends Model
     }
 
 
+    /**
+     * The users that have the product in cart-items pivot.
+     */
+    public function users()
+    {
+        return $this->belongsToMany('App\User','dc-cart-items')->withPivot('quantity');;
+    }
+
+
     protected $table = 'dc-products';
 }

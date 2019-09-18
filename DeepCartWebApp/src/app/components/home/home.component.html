@@ -6,13 +6,16 @@
 <section id="categories">
   <div *ngIf="categoriesList" class="container-fluid mt-4">
     <h2 class="text-center mb-3">Categories</h2>
-    
 
     <div class="category-wrapper">
-      <a  routerLink="c/{{category.slug}}" class="category-item" *ngFor="let category of categoriesList">
-        <div class="icon "><i class="{{category.icon}}"></i></div>
+      <a routerLink="c/{{category.slug}}" class="category-item" *ngFor="let category of categoriesList">
+        <div class="icon ">
+          <img src="assets/icons/{{category.icon}}.svg" alt="Kiwi standing on oval">
+        </div>
         <p class="text-center"> {{category.name}}</p>
       </a>
     </div>
+
+
   </div>
 </section>

@@ -48,5 +48,13 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
+    /**
+     * The products that have the user in cart-items pivot.
+     */
+    public function products()
+    {
+        return $this->belongsToMany('App\Product','dc-cart-items')->withPivot('quantity');;
+    }
+
     protected $table = 'dc-users';
 }
