@@ -25,7 +25,7 @@ export class CartComponent implements OnInit {
       (res) => {
         res.forEach(item => {
           this.setTotalPurchase(item);
-        }); 
+        });
 
         this.cartItems = res;
         this.updateCheckoutPrices();
@@ -36,23 +36,23 @@ export class CartComponent implements OnInit {
     );
   }
 
-  setTotalPurchase(item){
-    if(item.offerDiscount){
-      item.totalPurchase =item.quantityPurchase * this.getDiscountPrice(item);
+  setTotalPurchase(item) {
+    if (item.offerDiscount) {
+      item.totalPurchase = item.quantityPurchase * this.getDiscountPrice(item);
     }
-    else{
+    else {
       item.totalPurchase = item.quantityPurchase * item.price;
     }
   }
 
-  getDiscountPrice(product){
-    let discount = product.price * (product.offerDiscount/100);
-    return  product.price - discount;
+  getDiscountPrice(product) {
+    let discount = product.price * (product.offerDiscount / 100);
+    return product.price - discount;
   }
 
-  setRealPriceAndDiscounts(){
+  setRealPriceAndDiscounts() {
 
-    for( let item of this.cartItems){
+    for (let item of this.cartItems) {
       this.realTotalPrice = this.realTotalPrice + (item.quantityPurchase * item.price);
     }
 
@@ -61,14 +61,14 @@ export class CartComponent implements OnInit {
 
   }
 
-  setFinalPrice(){
-    for( let item of this.cartItems){
+  setFinalPrice() {
+    for (let item of this.cartItems) {
       this.finalTotalPrice = this.finalTotalPrice + item.totalPurchase;
     }
 
   }
 
-  updateCheckoutPrices(){
+  updateCheckoutPrices() {
     this.finalTotalPrice = 0;
     this.realTotalPrice = 0;
     this.totalDiscounts = 0;
@@ -76,35 +76,37 @@ export class CartComponent implements OnInit {
     this.setRealPriceAndDiscounts();
   }
 
-  addQuantityPurchase(e, item){
+  addQuantityPurchase(e, item) {
     e.preventDefault();
-    item.quantityPurchase++;
-    this.setTotalPurchase(item);
-    this.updateCheckoutPrices();
+    if (item.quantity > item.quantityPurchase) {
+      item.quantityPurchase++;
+      this.setTotalPurchase(item);
+      this.updateCheckoutPrices();
+    }
   }
 
-  substractQuantityPurchase(e, item){
+  substractQuantityPurchase(e, item) {
     e.preventDefault();
-    if(!(item.quantityPurchase == 1)){
+    if (!(item.quantityPurchase == 1)) {
       item.quantityPurchase--;
       this.setTotalPurchase(item);
       this.updateCheckoutPrices();
-    } 
+    }
   }
 
-  removeItemFromCart(e,itemId){
+  removeItemFromCart(e, itemId) {
     e.preventDefault();
     this.isRemovingItem = true;
     this.cartService.removeCartItem(itemId).subscribe(
       (res) => {
         console.log(res)
-        this.cartItems = this.cartItems.filter( element => element.id != itemId)
+        this.cartItems = this.cartItems.filter(element => element.id != itemId)
         this.isRemovingItem = false;
         this.updateCheckoutPrices();
       }
     )
-    
+
   }
-  
+
 
 }

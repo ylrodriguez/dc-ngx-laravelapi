@@ -42,9 +42,12 @@
                         <td class="product-total">
                             <p>${{item.totalPurchase | number }}</p>
                         </td>
+
                         <td class="product-remove">
-                            <p *ngIf="!isRemovingItem" class="remove-item" (click)="removeItemFromCart($event, item.id)">x</p>
-                            <object *ngIf="isRemovingItem" width="20" height="20" type="image/svg+xml" data="assets/img/loading-circle.svg"> </object>
+                            <p *ngIf="!isRemovingItem" class="remove-item"
+                                (click)="removeItemFromCart($event, item.id)">x</p>
+                            <object *ngIf="isRemovingItem" width="20" height="20" type="image/svg+xml"
+                                data="assets/img/loading-circle.svg"> </object>
                         </td>
                     </tr>
                 </tbody>
@@ -52,8 +55,9 @@
         </div>
         <div class="cart-checkout">
             <p class="font-weight-bold">Subtotal: <span class="float-right"> ${{ realTotalPrice | number}}</span></p>
-            <p>Products discount:  <span class="float-right"> -${{ totalDiscounts | number}}</span></p>
-            <p class="total-checkout font-weight-bold">Total  <span class="float-right text-danger">${{ finalTotalPrice | number}}</span></p>
+            <p *ngIf="totalDiscounts">Products discount: <span class="float-right"> -${{ totalDiscounts | number}}</span></p>
+            <p class="total-checkout font-weight-bold">Total <span
+                    class="float-right text-danger">${{ finalTotalPrice | number}}</span></p>
         </div>
     </div>
 </div>
