@@ -1,42 +1,59 @@
 <div class="container-fluid">
-    <div class="cart mt-2">
-        <table class="table table-cart">
-            <thead class="table-head">
-                <tr>
-                    <td>Producto</td>
-                    <td> </td>
-                    <td>Precio</td>
-                    <td>Cantidad</td>
-                    <td>Total</td>
-                </tr>
-            </thead>
-            <tbody class="table-body">
-                <tr *ngFor="let item of cartItems">
-                    <td>
-                        <div class="item-img">
-                            <img class="w-100" src="{{item.imgUrl}}">
-                        </div>
-                    </td>
-                    <td class="product-name"><p class="font-weight-bold">{{item.name}}</p></td>
-                    <!-- OfferDiscount conditional render -->
-                    <td *ngIf = "item.offerDiscount">
-                        <p class="price-real ">${{item.price | number }}</p>
-                        <p class="price-offer text-danger" > ${{ getDiscountPrice(item) | number }}</p>
-                    </td>
+    <div class="cart-wrapper">
+        <div class="cart">
+            <table class="table table-cart">
+                <thead class="table-head">
+                    <tr>
+                        <td>Product</td>
+                        <td> </td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Total</td>
+                        <td> </td>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <tr *ngFor="let item of cartItems">
+                        <td>
+                            <div class="item-img">
+                                <img src="{{item.imgUrl}}">
+                            </div>
+                        </td>
+                        <td class="product-name">
+                            <p class="">{{item.name}}</p>
+                        </td>
+                        <!-- OfferDiscount conditional render -->
+                        <td *ngIf="item.offerDiscount">
+                            <p class="price-real ">${{item.price | number }}</p>
+                            <p class="price-offer text-danger"> ${{ getDiscountPrice(item) | number }}</p>
+                        </td>
 
-                    <td *ngIf = "!item.offerDiscount">
+                        <td *ngIf="!item.offerDiscount">
                             <p class="price-offer text-danger">${{item.price | number }}</p>
-                    </td>
-
-                    <td class="product-quantity">
-                        <a href="#" (click) = "addQuantity($event, item)">+</a>
-                        <p>{{item.quantity}}</p>
-                        <a href="#" (click) = "substractQuantity($event, item)">-</a>
-                    </td>
-                    <td class="product-total">Hola</td>
-                </tr>
-            </tbody>
-        </table>
+                        </td>
+                        <!-- End OfferDiscount conditional render -->
+                        <td class="product-quantity">
+                            <div class="product-quantity-button">
+                                <a href="#" (click)="addQuantityPurchase($event, item)">+</a>
+                                <p>{{item.quantityPurchase}}</p>
+                                <a href="#" (click)="substractQuantityPurchase($event, item)">-</a>
+                            </div>
+                        </td>
+                        <td class="product-total">
+                            <p>${{item.totalPurchase | number }}</p>
+                        </td>
+                        <td class="product-remove">
+                                <a href="#" (click)="removeItemFromCart($event, item)">X</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="cart-checkout">
+            <p class="font-weight-bold">Subtotal: <span class="float-right"> ${{ realTotalPrice | number}}</span></p>
+            <p>Products discount:  <span class="float-right"> -${{ totalDiscounts | number}}</span></p>
+            <p class="total-checkout font-weight-bold">Total  <span class="float-right text-danger">${{ finalTotalPrice | number}}</span></p>
+        </div>
     </div>
 </div>
 

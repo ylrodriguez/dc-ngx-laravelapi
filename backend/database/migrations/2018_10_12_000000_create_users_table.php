@@ -25,6 +25,8 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        DB::statement("ALTER TABLE `dc-users` AUTO_INCREMENT = 9001;");
     }
 
     /**

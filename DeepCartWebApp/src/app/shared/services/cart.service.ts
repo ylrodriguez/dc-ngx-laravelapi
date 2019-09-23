@@ -21,7 +21,7 @@ export class CartService {
 
   getCartItems(): Observable<Product[]>{
     let headers = this.authService.setHeaders();
-    return this.http.get<Product[]>(`${this.baseURL}/1/products`, {headers: headers })
+    return this.http.get<Product[]>(`${this.baseURL}/9001/products`, {headers: headers })
       .pipe(map( data => {
 
         data['items'].map( d => {

@@ -30,7 +30,7 @@ class CartController extends Controller
             $user->products;
 
             foreach ($user['products'] as $product){
-                $product["quantity"] = $product->pivot->quantity;
+                $product["quantityPurchase"] = $product->pivot->quantity;
                 unset($product->pivot);
                 $url = $product->images[0]->url;
                 unset($product->images);
