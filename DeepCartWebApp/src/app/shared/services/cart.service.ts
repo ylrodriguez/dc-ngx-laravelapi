@@ -21,7 +21,7 @@ export class CartService {
 
   getCartItems(): Observable<Product[]>{
     let headers = this.authService.setHeaders();
-    return this.http.get<Product[]>(`${this.baseURL}/9001/products`, {headers: headers })
+    return this.http.get<Product[]>(`${this.baseURL}/products`, {headers: headers })
       .pipe(map( data => {
 
         data['items'].map( d => {
@@ -34,6 +34,11 @@ export class CartService {
         
         return data['items'];
       }));
+  }
+
+  removeCartItem(idProduct){
+    let headers = this.authService.setHeaders();
+    return this.http.delete(`${this.baseURL}/remove/${idProduct}`, {headers: headers })
   }
 
 }

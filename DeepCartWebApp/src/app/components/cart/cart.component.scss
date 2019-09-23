@@ -103,7 +103,7 @@
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.48);
 }
 
-.product-quantity-button a{
+.table-cart a{
     text-decoration: none;
 }
 
@@ -114,6 +114,12 @@
 
 .table td, .table th{
     border: none;
+}
+
+.remove-item{
+    cursor: pointer;
+    color: grey;
+    font-size: bold;
 }
 
 @media (min-width: 576px){

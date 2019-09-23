@@ -43,7 +43,7 @@
                             <p>${{item.totalPurchase | number }}</p>
                         </td>
                         <td class="product-remove">
-                                <a href="#" (click)="removeItemFromCart($event, item)">X</a>
+                                <p class="remove-item" (click)="removeItemFromCart($event, item.id)">x</p>
                         </td>
                     </tr>
                 </tbody>

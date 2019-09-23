@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { TokenService } from './token.service';
 import { environment } from '../../../environments/environment';
 import { User } from '../models/user.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,9 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private tokenService: TokenService) { }
+    private tokenService: TokenService) { 
+
+  }
 
   login(credentials) {
     return this.http.post(`${this.baseURL}/login`, credentials)
@@ -28,6 +31,11 @@ export class AuthService {
   logout() {
     let headers = this.setHeaders();
     return this.http.post(`${this.baseURL}/logout`, null, { headers: headers })
+  }
+
+  getAuthUser(): Observable<User>{
+    let headers = this.setHeaders();
+    return this.http.post<User>(`${this.baseURL}/me`, null, { headers: headers })
   }
 
   public setHeaders(): HttpHeaders {
@@ -46,6 +54,7 @@ export class AuthService {
   get redirectUrl(): string {
     return this._redirectUrl;
   }
+
   set redirectUrl(url: string) {
     this._redirectUrl = url;
   }

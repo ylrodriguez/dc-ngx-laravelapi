@@ -91,9 +91,15 @@ export class CartComponent implements OnInit {
     } 
   }
 
-  removeItemFromCart(e,item){
+  removeItemFromCart(e,itemId){
     e.preventDefault();
-    this.cartItems = this.cartItems.filter( element => element.id != item.id)
+    this.cartService.removeCartItem(itemId).subscribe(
+      (res) => {
+        console.log(res)
+        this.cartItems = this.cartItems.filter( element => element.id != itemId)
+      }
+    )
+    
   }
   
 

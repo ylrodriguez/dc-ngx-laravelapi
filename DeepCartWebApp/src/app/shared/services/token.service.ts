@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { environment } from '../../../environments/environment'
+import { environment } from '../../../environments/environment';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +12,9 @@ export class TokenService {
 
   private tokenKey: string = "access_token";
   private iss: string = environment.apiUrl; //JWT Issuer
-  private _isLoggedIn = new BehaviorSubject<boolean>(this.tokenIsValid()); 
+  private _isLoggedIn = new BehaviorSubject<boolean>(this.tokenIsValid());
 
-  constructor(private router: Router) {
+  constructor() {
   }
 
   setToken(token: string) {

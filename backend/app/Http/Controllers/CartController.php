@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Tymon\JWTAuth\Facades\JWTAuth;
 use App\User;
 
 class CartController extends Controller
@@ -24,9 +26,9 @@ class CartController extends Controller
      * @param  int  $user_id
      * @return \Illuminate\Http\Response
      */
-    public function productsInCart($user_id){
+    public function productsInCart(Request $request){
         try{
-            $user = User::find($user_id);
+            $user = JWTAuth::toUser($request->bearerToken());
             $user->products;
 
             foreach ($user['products'] as $product){
@@ -51,4 +53,32 @@ class CartController extends Controller
             'items'=> $user['products']
         ], 200);
     }
+
+    /**
+     * 
+     * Remove specific item in the user's cart
+     * 
+     */
+
+     public function removeProductInCart( Request $request, $product_id){
+        try{
+            $user = JWTAuth::toUser($request->bearerToken());
+            $user->products()->detach($product_id);
+        }
+        catch(Exception  $e){
+            return response()->json([
+                'success'=> false, 
+                'message'=> 'Error Eliminando producto del carrito',
+                'error'=> $e
+            ], 400);
+        }
+            
+        return response()->json([
+            'success'=> true,
+            'message'=> 'Product removed from cart.',
+            'product_id' => $product_id
+        ], 200);
+     }
+
+
 }
