@@ -13,6 +13,7 @@ export class CartComponent implements OnInit {
   finalTotalPrice: number = 0;
   realTotalPrice: number = 0;
   totalDiscounts: number = 0;
+  isRemovingItem: boolean = false;
 
 
   constructor(
@@ -93,10 +94,13 @@ export class CartComponent implements OnInit {
 
   removeItemFromCart(e,itemId){
     e.preventDefault();
+    this.isRemovingItem = true;
     this.cartService.removeCartItem(itemId).subscribe(
       (res) => {
         console.log(res)
         this.cartItems = this.cartItems.filter( element => element.id != itemId)
+        this.isRemovingItem = false;
+        this.updateCheckoutPrices();
       }
     )
     

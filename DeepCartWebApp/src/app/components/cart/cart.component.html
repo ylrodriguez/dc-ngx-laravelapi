@@ -43,7 +43,8 @@
                             <p>${{item.totalPurchase | number }}</p>
                         </td>
                         <td class="product-remove">
-                                <p class="remove-item" (click)="removeItemFromCart($event, item.id)">x</p>
+                            <p *ngIf="!isRemovingItem" class="remove-item" (click)="removeItemFromCart($event, item.id)">x</p>
+                            <object *ngIf="isRemovingItem" width="20" height="20" type="image/svg+xml" data="assets/img/loading-circle.svg"> </object>
                         </td>
                     </tr>
                 </tbody>
