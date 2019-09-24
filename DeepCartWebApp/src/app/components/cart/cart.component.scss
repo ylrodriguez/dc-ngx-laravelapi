@@ -52,6 +52,10 @@
     position: relative;
 }
 
+.cart table tbody tr:last-child{
+    border: none;
+}
+
 
 .table-cart .table-body tr td{
     display: inline-block;

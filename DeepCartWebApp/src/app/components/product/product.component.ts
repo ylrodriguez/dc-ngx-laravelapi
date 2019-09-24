@@ -52,6 +52,10 @@ export class ProductComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(){
     this.routeSub.unsubscribe();
-  } 
+  }
+  
+  addToCart(){
+    
+  }
 
 }

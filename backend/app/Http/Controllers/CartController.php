@@ -56,6 +56,48 @@ class CartController extends Controller
 
     /**
      * 
+     * Add product to the user's cart
+     * 
+     */
+
+     public function addProductToCart(Request $request, $product_id){
+         
+        try{
+            $user = JWTAuth::toUser($request->bearerToken());
+           
+            foreach( $user->products as $item ){
+                if($item->id == $product_id){
+                    return response()->json([
+                        'success'=> false, 
+                        'message'=> 'Ya existe en el carrito, no deberia añadir.',
+                        'product_id'=> $product_id
+                    ], 400);
+                }
+            }
+            
+            $quantity = $request->quantity;
+            $user->products()->attach($product_id, ['quantity' => $quantity]);
+
+
+            return response()->json([
+                'success'=> false, 
+                'message'=> 'Product added to cart!',
+                'product_id'=> $product_id
+            ], 200);
+            
+        }
+        catch(Exception  $e){
+            return response()->json([
+                'success'=> false, 
+                'message'=> 'Error añadiendo producto al carrito',
+                'error'=> $e
+            ], 400);
+        }
+
+     }
+
+    /**
+     * 
      * Remove specific item in the user's cart
      * 
      */
