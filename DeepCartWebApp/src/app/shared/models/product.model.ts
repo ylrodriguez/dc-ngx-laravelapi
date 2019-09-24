@@ -10,6 +10,7 @@ export interface Product{
     totalPurchase?:number,
     category_id?: number,
     offerDiscount?: number,
-    images?: string[]
+    images?: string[],
+    isLoading?: object
 
 }

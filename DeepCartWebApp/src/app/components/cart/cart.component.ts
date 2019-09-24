@@ -13,7 +13,6 @@ export class CartComponent implements OnInit {
   finalTotalPrice: number = 0;
   realTotalPrice: number = 0;
   totalDiscounts: number = 0;
-  isRemovingItem: boolean = false;
 
 
   constructor(
@@ -25,6 +24,10 @@ export class CartComponent implements OnInit {
       (res) => {
         res.forEach(item => {
           this.setTotalPurchase(item);
+          item.isLoading = {
+            'quantity': false,
+            'removing': false
+          }
         });
 
         this.cartItems = res;
@@ -79,7 +82,9 @@ export class CartComponent implements OnInit {
   addQuantityPurchase(e, item) {
     e.preventDefault();
     if (item.quantity > item.quantityPurchase) {
+      item.isLoading.quantity = true;
       item.quantityPurchase++;
+      this.modifyQuantityPurchaseOfItem(item);
       this.setTotalPurchase(item);
       this.updateCheckoutPrices();
     }
@@ -88,24 +93,38 @@ export class CartComponent implements OnInit {
   substractQuantityPurchase(e, item) {
     e.preventDefault();
     if (!(item.quantityPurchase == 1)) {
+      item.isLoading.quantity = true;
       item.quantityPurchase--;
+      this.modifyQuantityPurchaseOfItem(item);
       this.setTotalPurchase(item);
       this.updateCheckoutPrices();
     }
   }
 
-  removeItemFromCart(e, itemId) {
+  removeItemFromCart(e, item) {
     e.preventDefault();
-    this.isRemovingItem = true;
-    this.cartService.removeCartItem(itemId).subscribe(
+    item.isLoading.removing = true;
+    this.cartService.removeCartItem(item.id).subscribe(
       (res) => {
         console.log(res)
-        this.cartItems = this.cartItems.filter(element => element.id != itemId)
-        this.isRemovingItem = false;
+        this.cartItems = this.cartItems.filter(element => element.id != item.id)
+        item.isLoading.removing = false;
         this.updateCheckoutPrices();
       }
     )
+  }
 
+  modifyQuantityPurchaseOfItem(item){
+    this.cartService.modifyQuantityPurchaseItem(item.id, item.quantityPurchase).subscribe(
+      (res) => {
+        console.log(res)
+        item.isLoading.quantity = false;
+      },
+      (err) => {
+        console.log(err)
+        item.isLoading.quantity = false;
+      }
+    );
   }
 
 

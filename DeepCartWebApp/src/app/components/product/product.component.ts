@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/shared/services/product.service';
 import { Product } from 'src/app/shared/models/product.model';
+import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -14,11 +15,14 @@ export class ProductComponent implements OnInit, OnDestroy {
 
   private routeSub;
   private product: Product;
+  isClicked: boolean = false;
+  isLoading: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private productService: ProductService,
+    private cartService: CartService,
     private location: Location
   ) { }
 
@@ -55,7 +59,70 @@ export class ProductComponent implements OnInit, OnDestroy {
   }
   
   addToCart(){
-    
+    this.isClicked = true;
+    this.isLoading = true;
+    console.log("add")
+    this.product.quantityPurchase = 1;
+    this.cartService.addItemToCart(this.product.id , this.product.quantityPurchase).subscribe(
+      (res) => {
+        console.log(res);
+        this.product.quantityPurchase = 1;
+        this.isClicked = false;
+        this.isLoading = false;
+      },
+      (err) => {
+        console.log(err);
+        this.isClicked = false;
+        this.isLoading = false;
+        this.product.quantityPurchase = 1;
+      }
+    )
+  }
+
+  removeItemFromCart(){
+    this.isLoading = true;
+    this.cartService.removeCartItem(this.product.id).subscribe(
+      (res) => {
+        console.log(res)
+        this.isClicked = false;
+        this.product.quantityPurchase = 0;
+        this.isLoading = false;
+      }
+    )
+  }
+
+  addQuantityPurchase(e) {
+    e.preventDefault();
+    this.isLoading = true;
+    if (this.product.quantity > this.product.quantityPurchase) {
+      this.product.quantityPurchase++;
+      this.modifyQuantityPurchaseOfItem();
+    }
+  }
+
+  substractQuantityPurchase(e) {
+    e.preventDefault();
+    this.isLoading = true;
+    if (!(this.product.quantityPurchase == 1)) {
+      this.product.quantityPurchase--;
+      this.modifyQuantityPurchaseOfItem();
+    }
+    else{
+      this.removeItemFromCart();
+    }
+  }
+
+  modifyQuantityPurchaseOfItem(){
+    this.cartService.modifyQuantityPurchaseItem(this.product.id, this.product.quantityPurchase).subscribe(
+      (res) => {
+        console.log(res)
+        this.isLoading = false;
+      },
+      (err) => {
+        console.log(err)
+        this.isLoading = false;
+      }
+    );
   }
 
 }

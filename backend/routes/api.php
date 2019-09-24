@@ -46,5 +46,6 @@ Route::group([
     Route::get('products', 'CartController@productsInCart');
     Route::post('add/{product_id}', 'CartController@addProductToCart');
     Route::delete('remove/{product_id}', 'CartController@removeProductInCart');
+    Route::put('quantity/{product_id}', 'CartController@setQuantityPurchase');
 });
 

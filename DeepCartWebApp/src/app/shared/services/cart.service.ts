@@ -41,4 +41,14 @@ export class CartService {
     return this.http.delete(`${this.baseURL}/remove/${idProduct}`, {headers: headers })
   }
 
+  addItemToCart(idProduct, quantityPurchase){
+    let headers = this.authService.setHeaders();
+    return this.http.post(`${this.baseURL}/add/${idProduct}`, {"quantityPurchase": quantityPurchase}, {headers: headers })
+  }
+
+  modifyQuantityPurchaseItem(idProduct, quantityPurchase){
+    let headers = this.authService.setHeaders();
+    return this.http.put(`${this.baseURL}/quantity/${idProduct}`, {"quantityPurchase": quantityPurchase}, {headers: headers })
+  }
+
 }

@@ -55,11 +55,9 @@ class CartController extends Controller
     }
 
     /**
-     * 
      * Add product to the user's cart
      * 
      */
-
      public function addProductToCart(Request $request, $product_id){
          
         try{
@@ -75,12 +73,12 @@ class CartController extends Controller
                 }
             }
             
-            $quantity = $request->quantity;
-            $user->products()->attach($product_id, ['quantity' => $quantity]);
+            $quantityPurchase = $request->quantityPurchase;
+            $user->products()->attach($product_id, ['quantity' => $quantityPurchase]);
 
 
             return response()->json([
-                'success'=> false, 
+                'success'=> true, 
                 'message'=> 'Product added to cart!',
                 'product_id'=> $product_id
             ], 200);
@@ -97,11 +95,9 @@ class CartController extends Controller
      }
 
     /**
-     * 
      * Remove specific item in the user's cart
      * 
      */
-
      public function removeProductInCart( Request $request, $product_id){
         try{
             $user = JWTAuth::toUser($request->bearerToken());
@@ -121,6 +117,34 @@ class CartController extends Controller
             'product_id' => $product_id
         ], 200);
      }
+
+     /**
+     * Modify specific item's quantity in the user's cart
+     * 
+     */
+    public function setQuantityPurchase(Request $request, $product_id){
+        try{
+            $user = JWTAuth::toUser($request->bearerToken());
+            $quantityPurchase = $request->quantityPurchase;
+
+            $user->products()->syncWithoutDetaching([$product_id => ['quantity' => $quantityPurchase]]);
+
+            return response()->json([
+                'success'=> true, 
+                'message'=> "Cart item's quantity modified!",
+                'product_id'=> $product_id,
+                'quantityPurchase' => $quantityPurchase
+            ], 200);
+
+        }
+        catch(Exception  $e){
+            return response()->json([
+                'success'=> false, 
+                'message'=> 'Error modificando cantidad del producto del carrito',
+                'error'=> $e
+            ], 400);
+        }
+    }
 
 
 }
