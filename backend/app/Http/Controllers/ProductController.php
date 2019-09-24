@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use Illuminate\Support\Facades\Auth;
+use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -83,11 +85,22 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
         try{
             $product = Product::where('id', $id)->first();
             $product->images;
+            
+            if($request->bearerToken()){
+                $user = auth()->user();
+
+                foreach( $user->products as $p){
+                    if($p->id == $id){
+                        $product["quantityPurchase"] = $p->pivot->quantity;
+                        break;
+                    }
+                }
+            } 
         }
         catch(Exception  $e){
             return response()->json([

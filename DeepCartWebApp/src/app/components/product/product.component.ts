@@ -40,7 +40,6 @@ export class ProductComponent implements OnInit, OnDestroy {
 
           //Changes slug in url because it is different from slug given.
           if (slug != this.product.slug){
-            console.log("cambiare")
             this.location.go( '/p/'+id+'/'+this.product.slug );
           }
         }
@@ -61,11 +60,9 @@ export class ProductComponent implements OnInit, OnDestroy {
   addToCart(){
     this.isClicked = true;
     this.isLoading = true;
-    console.log("add")
     this.product.quantityPurchase = 1;
     this.cartService.addItemToCart(this.product.id , this.product.quantityPurchase).subscribe(
       (res) => {
-        console.log(res);
         this.product.quantityPurchase = 1;
         this.isClicked = false;
         this.isLoading = false;
@@ -83,7 +80,6 @@ export class ProductComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     this.cartService.removeCartItem(this.product.id).subscribe(
       (res) => {
-        console.log(res)
         this.isClicked = false;
         this.product.quantityPurchase = 0;
         this.isLoading = false;
@@ -115,7 +111,6 @@ export class ProductComponent implements OnInit, OnDestroy {
   modifyQuantityPurchaseOfItem(){
     this.cartService.modifyQuantityPurchaseItem(this.product.id, this.product.quantityPurchase).subscribe(
       (res) => {
-        console.log(res)
         this.isLoading = false;
       },
       (err) => {
