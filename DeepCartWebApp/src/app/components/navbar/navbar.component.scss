@@ -11,7 +11,27 @@
     width: 100%;
 }
 
+.cart-badge{
+    position: absolute;
+    background: #fa9600;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 11px;
+    right: -10px;
+    top: 0;
+}
+
+
+// Media query to phone
 @media(max-width: 760px){
+    .cart-badge{
+        left: 50px;
+    }
     .search-bar{
         width: fit-content;
     }

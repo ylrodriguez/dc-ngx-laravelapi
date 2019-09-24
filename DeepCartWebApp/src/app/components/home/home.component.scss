@@ -1,3 +1,4 @@
+
 .category-wrapper{
     display: flex;
     flex-direction: row;
@@ -46,6 +47,9 @@
     }
 
     .category-item:hover .icon{
-        color: #FFF;
+        position: relative;
+        animation-name: slideToBottomSquare;
+        animation-duration: 0.8s;
+        animation-fill-mode: forwards;
     }
 }

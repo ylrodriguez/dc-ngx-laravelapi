@@ -18,8 +18,12 @@
             <li *ngIf="!_isLoggedIn" class="nav-item">
                 <a class="nav-link" routerLink="/accounts/login">Login & Signup</a>
             </li>
-            <li *ngIf="_isLoggedIn" class="nav-item">
-                <a class="nav-link" routerLink="/cart">Cart <i class="fas fa-shopping-cart"></i></a>
+            <li *ngIf="_isLoggedIn" class="nav-item" style="position:relative">
+                <a class="nav-link" routerLink="/cart">
+                    Cart 
+                    <span *ngIf="_numberItemsCart" class="cart-badge badge-cart-pulse">{{_numberItemsCart}}</span>
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
             </li>
             <li *ngIf="_isLoggedIn" class="nav-item">
                     <a class="nav-link" routerLink="/profile" >Profile</a>

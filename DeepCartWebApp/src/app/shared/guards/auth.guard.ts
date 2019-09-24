@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
     private authService: AuthService, 
     private router: Router){}
 
-  canActivate( next: ActivatedRouteSnapshot,state: RouterStateSnapshot) {
+  canActivate( next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     let url: string = state.url;
     
     if(this.tokenService.isLoggedIn.value){

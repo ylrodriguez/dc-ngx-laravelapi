@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TokenService } from 'src/app/shared/services/token.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,16 +11,22 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  private _isLoggedIn: boolean;
+   _isLoggedIn: boolean;
+   _numberItemsCart: number;
 
   constructor(
     private tokenService: TokenService,
     private authService: AuthService,
+    private cartService: CartService,
     private router: Router) { }
 
   ngOnInit() {
     this.tokenService.isLoggedIn.subscribe(
       next => {this._isLoggedIn = next}
+    )
+
+    this.cartService.numberItemsCart.subscribe(
+      next => this._numberItemsCart = next
     )
   }
 

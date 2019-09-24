@@ -90,14 +90,15 @@ class ProductController extends Controller
         try{
             $product = Product::where('id', $id)->first();
             $product->images;
-            
+
             if($request->bearerToken()){
                 $user = auth()->user();
-
-                foreach( $user->products as $p){
-                    if($p->id == $id){
-                        $product["quantityPurchase"] = $p->pivot->quantity;
-                        break;
+                if($user) {
+                    foreach( $user->products as $p){
+                        if($p->id == $id){
+                            $product["quantityPurchase"] = $p->pivot->quantity;
+                            break;
+                        }
                     }
                 }
             } 

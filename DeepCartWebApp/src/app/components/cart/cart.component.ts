@@ -109,6 +109,7 @@ export class CartComponent implements OnInit {
         console.log(res)
         this.cartItems = this.cartItems.filter(element => element.id != item.id)
         item.isLoading.removing = false;
+        this.cartService.updateNumberItemsCart();
         this.updateCheckoutPrices();
       }
     )
@@ -118,6 +119,7 @@ export class CartComponent implements OnInit {
     this.cartService.modifyQuantityPurchaseItem(item.id, item.quantityPurchase).subscribe(
       (res) => {
         console.log(res)
+        this.cartService.updateNumberItemsCart();
         item.isLoading.quantity = false;
       },
       (err) => {

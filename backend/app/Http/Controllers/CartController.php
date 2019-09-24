@@ -146,5 +146,33 @@ class CartController extends Controller
         }
     }
 
+    
+     /**
+     * Get total of items and their quantities in the user's cart
+     * 
+     */
+     public function getTotalNumberItemsCart(Request $request){
+        try{
+            $user = JWTAuth::toUser($request->bearerToken());
+            $user->products;
+            $numberItemsCart = 0;
 
+            foreach ($user['products'] as $product){
+                $numberItemsCart = $numberItemsCart + $product->pivot->quantity;
+            }
+
+            return response()->json([
+                'success'=> true, 
+                'message'=> "TotalNumberItemsCart sent!",
+                'numberItemsCart' => $numberItemsCart
+            ], 200);
+        }
+        catch(Exception  $e){
+            return response()->json([
+                'success'=> false, 
+                'message'=> 'Error obteniendo el total de productos',
+                'error'=> $e
+            ], 400);
+        }
+     }
 }

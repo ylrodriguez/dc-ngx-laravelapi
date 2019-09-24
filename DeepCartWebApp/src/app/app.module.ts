@@ -25,6 +25,7 @@ import { MomentDateModule, MomentDateAdapter } from '@angular/material-moment-ad
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { ToastrModule } from 'ngx-toastr';
 
 export const MY_FORMATS = {
   parse: {
@@ -64,7 +65,8 @@ export const MY_FORMATS = {
     // Externals
     BrowserAnimationsModule,
     MatNativeDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     MatDatepickerModule,
