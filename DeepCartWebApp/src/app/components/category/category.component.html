@@ -1,4 +1,34 @@
-<div *ngIf="categoryExists" class="container-fluid">
-    <p>category works!</p>
-    <p>{{slug}}</p>
+<div *ngIf="currentCategory" class="container-fluid">
+    <h1 class="mt-4">{{currentCategory.name}}</h1>
+    <div class="cat-wrapper">
+        <div class="cat-brands">
+            <p class="font-weight-bold">Brand</p>
+            <div class="rb-brands">
+                <div class="form-check" >
+                        <input class="form-check-input" name="brandradios" type="radio" value="allbrands" checked>
+                        <label class="form-check-label">All</label>
+                </div>
+                <div class="form-check" *ngFor="let brand of brandList">
+                    <input class="form-check-input" name="brandradios" type="radio" value="{{brand.toLowerCase()
+                    }}">
+                    <label class="form-check-label">{{brand}}</label>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="categoryProducts" class="catprod-wrapper">
+            <div class="catprod-header">
+                <p>Results: {{categoryProducts.length}}</p>
+                <div><span>Sort </span> <a class="ctrl-sort" href="">Newly listed <i class="fas fa-sort"></i></a></div>
+                <!-- <div class="catprod-controls">
+                <span>View </span> <i class="ctrl-view" href=""><i class="fas fa-border-all"></i></i> 
+                </div> -->
+            </div>
+            <div class="catprod-body">
+                <div class="slide-item" *ngFor="let product of categoryProducts; let last = last">
+                    <app-product-card [product]="product">
+                    </app-product-card>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

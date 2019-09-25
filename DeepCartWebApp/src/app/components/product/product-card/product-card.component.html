@@ -1,11 +1,11 @@
 <div style="position: relative">
-        <a routerLink="p/{{product.id}}/{{product.slug}}" class="product-card">
+        <a routerLink="/p/{{product.id}}/{{product.slug}}" class="product-card">
                 <div class="pc-img-container">
                     <img draggable="false" src="{{product.imgUrl}}" alt="">
                 </div>
                 <div class="pc-description">
-                    <p class="price-real">${{product.price | number }}</p>
-                    <p class="price-offer" > ${{ getDiscountPrice() | number }} <span class="float-right text-success">{{product.offerDiscount}}% OFF</span></p>
+                    <p *ngIf="product.offerDiscount" class="price-real">${{product.price | number }}</p>
+                    <p class="price-offer" > ${{ getDiscountPrice() | number }} <span *ngIf="product.offerDiscount" class="float-right text-success">{{product.offerDiscount}}% OFF</span></p>
                     <p> {{(product.name.length>30)? (product.name | slice:0:30)+'..':(product.name)}} </p>
                 </div>
             </a>

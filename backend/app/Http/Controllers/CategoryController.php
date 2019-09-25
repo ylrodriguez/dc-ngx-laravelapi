@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Category;
 
+use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
 
-    
     /**
      * Create a new CategoryController instance.
      *
@@ -16,9 +16,8 @@ class CategoryController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('jwt.auth', ['except' => ['index']]);
+        $this->middleware('jwt.auth', ['except' => ['index', 'show']]);
     }
-
 
     /**
      * Display a listing of the resource.
@@ -28,34 +27,13 @@ class CategoryController extends Controller
     public function index()
     {
 
-        $categories = Category::all('name', 'icon','slug');
+        $categories = Category::all('id', 'name', 'icon', 'slug');
 
         return response()->json([
-            'success'=> true,
-            'message'=> 'Categories retrieved.', 
-            'categories'=> $categories
+            'success' => true,
+            'message' => 'Categories retrieved.',
+            'categories' => $categories,
         ], 200);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -64,42 +42,52 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $category_id)
     {
-        //
+        try {
+            $category = Category::find($category_id);
+
+            foreach ($category->products as $product) {
+                // $product["quantityPurchase"] = $product->pivot->quantity;
+                unset($product->pivot);
+                $url = $product->images[0]->url;
+                unset($product->images);
+                unset($product->updated_at);
+                unset($product->created_at);
+                unset($product->category_id);
+                $product["images"] = ["url" => $url];
+            }
+
+            //Only if user is auth
+            if ($request->bearerToken()) {
+                $user = auth()->user();
+                if ($user) {
+                    //for each
+                    foreach ($category->products as $product) {
+                        foreach ($user->products as $p) {
+                            if ($p->id == $product->id) {
+                                $product["quantityPurchase"] = $p->pivot->quantity;
+                                break;
+                            }
+                        }
+                    } //End for each
+                }
+            }
+
+        } catch (Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error MySQL',
+                'error' => $e,
+            ], 400);
+        }
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Categories retrieved.',
+            'category_id' => $category_id,
+            'categoryProducts' => $category->products,
+        ], 200);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

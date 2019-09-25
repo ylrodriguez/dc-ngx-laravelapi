@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CategoryService } from 'src/app/shared/services/category.service';
 import { Category } from 'src/app/shared/models/category.model';
 import { Router } from '@angular/router';
+import { Product } from 'src/app/shared/models/product.model';
 
 @Component({
   selector: 'app-category',
@@ -10,16 +11,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit, OnDestroy {
+
   private routeSub: any;
   private currentCategory: Category;
-  private categoryExists: boolean = false;
+  private categoryProducts: Product[];
+  brandList: string[] = [];
   slug:string;
 
   constructor(
     private route: ActivatedRoute,
     private categoryService: CategoryService,
     private router: Router
-
   ) { }
 
   ngOnInit() {
@@ -29,7 +31,7 @@ export class CategoryComponent implements OnInit, OnDestroy {
         (res) => {
           this.currentCategory = res.find( category => category['slug'] === this.slug)
           if(this.currentCategory){
-            this.categoryExists = true;
+            this.getCategoryProducts(this.currentCategory.id);
           }
           else{
             this.router.navigate(['404'])
@@ -37,6 +39,23 @@ export class CategoryComponent implements OnInit, OnDestroy {
         }
       )
     })
+  }
+
+
+  getCategoryProducts(idCategory){
+    this.categoryService.getCategoryProducts(idCategory).subscribe(
+      (res) => {
+        this.categoryProducts = res
+
+        for( let p of this.categoryProducts){
+          this.brandList.indexOf(p.brand) === -1 ? this.brandList.push(p.brand) : console.log("")
+        }
+
+      },
+      (err) => {
+        console.log(err)
+      }
+    )
   }
 
 

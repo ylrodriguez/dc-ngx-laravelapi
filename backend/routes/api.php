@@ -38,6 +38,7 @@ Route::group([
     'prefix' => 'categories'
 ], function ($router) {
     Route::get('/', 'CategoryController@index'); //No auth needed
+    Route::get('{category_id}', 'CategoryController@show'); //No auth needed
 });
 
 Route::group([
