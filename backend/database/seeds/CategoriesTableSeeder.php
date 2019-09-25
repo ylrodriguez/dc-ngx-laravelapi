@@ -24,7 +24,7 @@ class CategoriesTableSeeder extends Seeder
                 "icon" => "macbook",
             ],
             [
-                "name" => "TV, Video & Home Audio",
+                "name" => "TV & Home Audio",
                 'slug' => 'electronics',
                 "icon" => "television-1",
             ],

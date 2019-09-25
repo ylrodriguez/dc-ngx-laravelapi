@@ -13,7 +13,7 @@ class ImagesTableSeeder extends Seeder
     public function run()
     {
         $images = [
-            [
+            [ // Phones
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/270234',
                 'product_id' => 1001
             ],
@@ -164,7 +164,7 @@ class ImagesTableSeeder extends Seeder
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/581770',
                 'product_id' => 1015
-            ],
+            ], //End Phones
         ];
 
         foreach ($images as $image) {

@@ -14,7 +14,7 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         $products = [
-            [
+            [// >>>>>>>>>>>>>> Start Phones
                 'name' => 'Iphone 6 - 32 GB Gold',
                 'brand' => 'Apple',
                 'slug' => Str::slug('Iphone 7 - 64 GB Gold','-'),
@@ -155,7 +155,7 @@ class ProductsTableSeeder extends Seeder
                 'offerDiscount' => 20 ,
                 'category_id' => 1001
             ],
-            [//15
+            [//End Phones 15
                 'name' => 'Nokia 2 Android 7.1 8gb Dual Sim 4G NEGRO',
                 'brand' => 'Nokia',
                 'slug' => Str::slug('Nokia 2 Android 7.1 8gb Dual Sim 4G NEGRO','-'),
@@ -164,7 +164,7 @@ class ProductsTableSeeder extends Seeder
                 'quantity' => 40,
                 'offerDiscount' => 30 ,
                 'category_id' => 1001
-            ]
+            ],
         ];
 
         foreach($products as $product){
