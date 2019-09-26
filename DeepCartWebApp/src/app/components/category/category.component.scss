@@ -5,7 +5,7 @@
 .cat-brands{
     padding: 15px 5px;
     min-width: 205px; 
-    flex-grow: 1;
+    width: 205px; 
     display: none;
 }
 
@@ -26,20 +26,18 @@
     margin: 0;
 }
 
-// .catprod-header .catprod-controls{
-//     min-width: 250px;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-// }
+.loading{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+}
 
-// .catprod-controls .ctrl-sort,
-// .catprod-controls .ctrl-view
-// {
-//     padding: 6px 8px;
-//     background-color: #f4f4f4;
-//     text-decoration: none;
-// }
+.dropdown-menu.sorter{
+    transform: translate3d(-85px, 38px, 0px);
+}
 
 .ctrl-sort{
     padding: 6px 8px;
