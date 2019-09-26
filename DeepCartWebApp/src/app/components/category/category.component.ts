@@ -16,10 +16,11 @@ export class CategoryComponent implements OnInit, OnDestroy {
   private currentCategory: Category;
   private categoryProducts: Product[];
   private sortedProducts: Product[];
+  radioBrandSelected: string = 'allbrands';
   brandList: string[] = [];
   slug:string;
   isSorting: boolean = true;
-  sortAction: string = "default";
+  sortAction: string = "offersfirst";
 
   constructor(
     private route: ActivatedRoute,
@@ -56,6 +57,7 @@ export class CategoryComponent implements OnInit, OnDestroy {
 
         this.sortedProducts = JSON.parse(JSON.stringify(this.categoryProducts))
         this.isSorting = false;
+        this.sortBy('offersfirst');
 
       },
       (err) => {
@@ -64,8 +66,14 @@ export class CategoryComponent implements OnInit, OnDestroy {
     )
   }
 
-  sortBy(e, action){
-    e.preventDefault();
+  sortBy(action, e?){
+
+    if(e){e.preventDefault();}
+
+    if(action == 'offersfirst'){
+      this.sortedProducts.sort( this.dynamicSort("-offerDiscount"))
+      this.sortAction = action;
+    }
 
     if(action == 'pricelowest'){
       this.sortedProducts.sort( this.dynamicSort("price"))
@@ -99,6 +107,24 @@ export class CategoryComponent implements OnInit, OnDestroy {
         return result * sortOrder;
     }
 }
+
+  onItemChange(){
+    this.isSorting = true;
+
+    this.sortedProducts = JSON.parse(JSON.stringify(this.categoryProducts))
+    
+    if(this.radioBrandSelected != 'allbrands'){
+      this.sortedProducts = this.sortedProducts.filter( p => {
+        return p.brand.toLowerCase() == this.radioBrandSelected
+      })
+    }
+
+    this.sortBy(this.sortAction);
+
+    setTimeout(()=>{ 
+      this.isSorting = false;
+    }, 500)
+  }
 
 
   ngOnDestroy(){
