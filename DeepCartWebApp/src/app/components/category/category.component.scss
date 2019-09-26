@@ -11,7 +11,7 @@
 
 .catprod-wrapper{
     background-color: white;
-    padding: 15px;
+    padding: 3px;
     flex-grow: 2;
 }
 
@@ -52,13 +52,23 @@
     justify-content: space-between;
 }
 
-.catprod-body::after{
-    content: "";
-    flex: auto;
+.catprod-body i{
+    width: 225px;
 }
 
+
 @media (min-width: 768px){
+    .catprod-wrapper{
+        padding: 15px;
+    }
+
     .cat-brands{
         display: block;
+    }
+}
+
+@media (max-width: 370px){
+    .catprod-body{
+        justify-content: center;
     }
 }

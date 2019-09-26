@@ -35,6 +35,14 @@
             <div *ngIf="!isSorting" class="catprod-body">
                 <app-product-card class="mb-5" *ngFor="let product of sortedProducts; let last = last" [product]="product" [buttonCart]="true" [completeName] ="true" [completePrice]="true">
                 </app-product-card>
+                <i aria-hidden="true"></i>
+                <i aria-hidden="true"></i>
+                <i aria-hidden="true"></i>
+                <i aria-hidden="true"></i>
+                <i aria-hidden="true"></i>
+                <i aria-hidden="true"></i>
+                <i aria-hidden="true"></i>
+                <i aria-hidden="true"></i>
             </div>
 
             <div class="loading" *ngIf="isSorting">

@@ -1,16 +1,18 @@
 <div class="card-item" [class.h-100]="completePrice">
-    <a routerLink="/p/{{product.id}}/{{product.slug}}" class="product-card" [class.h-100]="completePrice" [class.hovercat]="completePrice">
-        <div class="pc-img-container">
-            <img draggable="false" src="{{product.imgUrl}}" alt="">
-        </div>
-        <div class="pc-description">
-            <p *ngIf="product.offerDiscount" class="price-real" [class.show]="completePrice">
-                ${{product.price | number }}</p>
-            <p class="price-offer"> ${{ getDiscountPrice() | number }} <span *ngIf="product.offerDiscount"
-                    class="float-right text-success">{{product.offerDiscount}}% OFF</span></p>
-            <p *ngIf="!completeName"> {{(product.name.length>30)? (product.name | slice:0:30)+'..':(product.name)}} </p>
-            <p *ngIf="completeName"> {{product.name}} </p>
-        </div>
-        <button class="btn btn-warning" *ngIf="buttonCart">Add to cart <i class="fas fa-shopping-cart"></i></button>
-    </a>
+    <div class="product-card" [class.h-100]="completePrice" [class.hovercat]="completePrice">
+            <a routerLink="/p/{{product.id}}/{{product.slug}}">
+                <div class="pc-img-container">
+                    <img draggable="false" src="{{product.imgUrl}}" alt="">
+                </div>
+                <div class="pc-description">
+                    <p *ngIf="product.offerDiscount" class="price-real" [class.show]="completePrice">
+                        ${{product.price | number }}</p>
+                    <p class="price-offer"> ${{ getDiscountPrice() | number }} <span *ngIf="product.offerDiscount"
+                            class="float-right text-success">{{product.offerDiscount}}% OFF</span></p>
+                    <p *ngIf="!completeName"> {{(product.name.length>30)? (product.name | slice:0:30)+'..':(product.name)}} </p>
+                    <p *ngIf="completeName"> {{product.name}} </p>
+                </div>
+            </a>
+            <button class="btn btn-warning" *ngIf="buttonCart">Add to cart <i class="fas fa-shopping-cart"></i></button>
+    </div>
 </div>
