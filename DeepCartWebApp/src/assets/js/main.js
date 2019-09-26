@@ -8,9 +8,6 @@ var containerHeight;
 var containerWidth;
 var limitWidth;
 var itemWidth;
-//Only available for mobile devices or touchable devices
-var originTime, endTime;
-var start, end;
 
 function loadSlideItems() {
     container = document.querySelector(".slide-track");
@@ -58,38 +55,7 @@ function dragStart(e) {
 }
 
 function dragEnd(e) {
-
     active = false;
-
-    // if (e.type === "touchend") {
-    //     end = e.changedTouches[0].clientX;
-    //     endTime = new Date().getTime();
-    //     let dist = Math.abs(start - end)
-    //     var time = endTime - originTime;
-    //     speed = dist / (time / 1000) //pixels per second
-    //     console.log("Evento: ")
-    //     console.log(e)
-    //     console.log("distancia: "+dist)
-    //     console.log("Offset: " + xOffset)
-    //     console.log("Start: " + start)
-    //     console.log("End: " + end)
-    //     console.log("Endtime: " + endTime)
-    //     console.log("Time: " + time)
-    //     console.log("Speed: " + speed)
-    //     console.log("-----------------------")
-
-    //     // if(time < 400 && speed > 500){
-    //     //     extraScroll()
-    //     // }
-    // }
-
-
-    // extraScroll(speed)
-
-
-    // if(speed > 300){
-    //     extraScroll()
-    // }
 }
 
 function drag(e) {
@@ -142,52 +108,3 @@ function nextSlide(){
 
     setTranslate(xOffset);
 }
-
-
-// function extraScroll(){
-//     let step = 25; //miliseconds unit
-//     let moveEachStep = speed/step;
-//     let stop = 0; 
-//     //Direction right >>>>>
-//     if(start > end && (currentX * -1) < limitWidth){
-
-//         let tempX = currentX - speed;
-//         if((tempX * -1) < limitWidth){
-//             stop = tempX;
-//         }
-//         else{
-//             stop = limitWidth;
-//         }
-
-//         let slideToRight = setInterval( () => {
-//             currentX = currentX - moveEachStep;
-//             setTranslate(currentX)
-//             if(stop >= currentX){
-//                 xOffset = currentX;
-//                 clearInterval(slideToRight)
-//             }
-//         }, step)
-
-//     }
-//     else if(start < end && currentX <= 0 ){
-//         let tempX = currentX + speed;
-//         if(tempX <= 0){
-//             stop = tempX;
-//         }
-//         else{
-//             stop = 0;
-//         }
-
-//         let slideToLeft = setInterval( () => {
-//             currentX = currentX + moveEachStep;
-//             setTranslate(currentX) 
-//             if(stop <= currentX){
-//                 xOffset = currentX;
-//                 clearInterval(slideToLeft)
-//             }
-//         }, step)
-//     }
-
-
-
-// }

@@ -74,7 +74,9 @@ export class ProductComponent implements OnInit, OnDestroy {
           this.product.quantityPurchase = 1;
           this.isClicked = false;
           this.isLoading = false;
-          this.toastr.success('Product added to cart!');
+          this.toastr.success('Product added to cart!', '', {
+            timeOut: 1500
+          });
           this.cartService.updateNumberItemsCart();
         },
         (err) => {
@@ -101,7 +103,9 @@ export class ProductComponent implements OnInit, OnDestroy {
         this.product.quantityPurchase = 0;
         this.isLoading = false;
         this.cartService.updateNumberItemsCart();
-        this.toastr.info('Product removed.');
+        this.toastr.info('Product removed.','', {
+          timeOut: 1500
+        });
       }
     )
   }

@@ -141,6 +141,20 @@
 .hide{
     display: none !important;
 }
+.empty-cart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+    width: 100%;
+}
+
+.empty-cart .empty-cart-title::before{
+    content: url('/assets/img/empty-cart.png');
+    text-align: center;
+    display: block;
+}
 
 
 @media (min-width: 576px){

@@ -9,10 +9,11 @@ import { Product } from 'src/app/shared/models/product.model';
 })
 export class CartComponent implements OnInit {
 
-  cartItems: Product[];
+  cartItems: Product[] = null;
   finalTotalPrice: number = 0;
   realTotalPrice: number = 0;
   totalDiscounts: number = 0;
+  cartIsLoading: boolean = true;
 
 
   constructor(
@@ -32,9 +33,11 @@ export class CartComponent implements OnInit {
 
         this.cartItems = res;
         this.updateCheckoutPrices();
+        this.cartIsLoading = false;
       },
       (err) => {
         console.log(err)
+        this.cartIsLoading = false;
       }
     );
   }
@@ -111,7 +114,8 @@ export class CartComponent implements OnInit {
         item.isLoading.removing = false;
         this.cartService.updateNumberItemsCart();
         this.updateCheckoutPrices();
-      }
+      },
+      err => item.isLoading.removing = false
     )
   }
 

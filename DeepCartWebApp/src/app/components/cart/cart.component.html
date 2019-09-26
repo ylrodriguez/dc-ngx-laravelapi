@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="cart-wrapper">
-        <div class="cart">
+        <div class="cart" *ngIf="cartItems && cartItems.length">
             <table class="table table-cart">
                 <thead class="table-head">
                     <tr>
@@ -63,13 +63,19 @@
                     </tr>
                 </tbody>
             </table>
+            
         </div>
-        <div class="cart-checkout">
+        <div class="cart-checkout" *ngIf="cartItems && cartItems.length">
             <p class="font-weight-bold">Subtotal: <span class="float-right"> ${{ realTotalPrice | number}}</span></p>
             <p *ngIf="totalDiscounts">Products discount: <span class="float-right">
                     -${{ totalDiscounts | number}}</span></p>
             <p class="total-checkout font-weight-bold">Total <span
                     class="float-right text-danger">${{ finalTotalPrice | number}}</span></p>
+        </div>
+        <div class="empty-cart" *ngIf="(!cartItems || !cartItems.length) && !cartIsLoading">
+            <h1 class="empty-cart-title">Your cart is empty</h1>
+            <p>Here in DeepCart we have plenty of products to choose from.</p>
+            <a routerLink="/" class="btn btn-warning">Explore</a>
         </div>
     </div>
 </div>

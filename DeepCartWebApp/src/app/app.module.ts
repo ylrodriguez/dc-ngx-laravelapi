@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 export const MY_FORMATS = {
   parse: {
@@ -66,7 +67,8 @@ export const MY_FORMATS = {
     BrowserAnimationsModule,
     MatNativeDateModule,
     MatDatepickerModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgxSpinnerModule
   ],
   providers: [
     MatDatepickerModule,

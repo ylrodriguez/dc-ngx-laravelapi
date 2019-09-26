@@ -4,6 +4,7 @@ import { CategoryService } from 'src/app/shared/services/category.service';
 import { Category } from 'src/app/shared/models/category.model';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/shared/models/product.model';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-category',
@@ -25,10 +26,12 @@ export class CategoryComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private categoryService: CategoryService,
-    private router: Router
+    private router: Router,
+    private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit() {
+    this.spinner.show();
     this.routeSub =  this.route.params.subscribe( params => {
       this.slug = params['slug'];
       this.categoryService.getCategories().subscribe(
@@ -38,7 +41,8 @@ export class CategoryComponent implements OnInit, OnDestroy {
             this.getCategoryProducts(this.currentCategory.id);
           }
           else{
-            this.router.navigate(['404'])
+            this.spinner.hide();
+            this.router.navigate(['/'])
           }
         }
       )
@@ -54,6 +58,8 @@ export class CategoryComponent implements OnInit, OnDestroy {
         for( let p of this.categoryProducts){
           this.brandList.indexOf(p.brand) === -1 ? this.brandList.push(p.brand) : console.log("")
         }
+
+        this.spinner.hide();
 
         this.sortedProducts = JSON.parse(JSON.stringify(this.categoryProducts))
         this.isSorting = false;

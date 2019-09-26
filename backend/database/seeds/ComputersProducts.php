@@ -38,7 +38,7 @@ class ComputersProducts extends Seeder
             ],
             [
                 'name' => 'Portatil Asus X505ba Amd A9 9425 4gb 1tera Endless 15.6',
-                'brand' => 'Portatil Asus X505ba Amd A9 9425 4gb 1tera Endless 15.6',
+                'brand' => 'Asus',
                 'slug' => Str::slug('Portatil Asus X505ba Amd A9 9425 4gb 1tera Endless 15.6', '-'),
                 'description' => 'Tamaño de Pantalla 15.6 pulgadas Modelo X505ba Br293 Tipo de Procesador AMD A9 9425 Conexión WLAN 802.11AC(2*2)_WW + BLUETOOTH Unidad Óptica NO',
                 'price' => 1500000,

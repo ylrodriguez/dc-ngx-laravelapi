@@ -23,6 +23,7 @@ export class OffersComponent implements OnInit {
     this.productService.getOffers().subscribe(
       (res) => {
         this.offersList = res;
+        this.shuffleOffers();
       },
       (err) => {
         console.log(err)
@@ -37,6 +38,15 @@ export class OffersComponent implements OnInit {
         this.slideIsLoaded = true;
       }
     })
+  }
+
+  shuffleOffers(){
+    for (var i =  this.offersList.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp =  this.offersList[i];
+      this.offersList[i] =  this.offersList[j];
+      this.offersList[j] = temp;
+    }
   }
 
 
