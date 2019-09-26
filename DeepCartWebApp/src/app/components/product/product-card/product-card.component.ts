@@ -9,6 +9,10 @@ import { Product } from 'src/app/shared/models/product.model';
 export class ProductCardComponent implements OnInit {
   
   @Input() product: Product;
+  @Input() buttonCart?: boolean;
+  @Input() completeName?: boolean;
+  @Input() completePrice?: boolean;
+
 
   constructor() { }
 

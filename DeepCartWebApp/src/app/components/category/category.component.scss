@@ -47,12 +47,12 @@
 
 .catprod-body{
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
-.catprod-body:after{
+.catprod-body::after{
     content: "";
     flex: auto;
 }

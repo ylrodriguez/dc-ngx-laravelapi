@@ -1,3 +1,7 @@
+.card-item{
+    position: relative;
+}
+
 .product-card{
     display: flex;
     flex-direction: column;
@@ -12,10 +16,15 @@
     text-decoration: none;
 }
 
-.pc-description{
-    padding: 0 5px 10px;
+.product-card .pc-description{
+    margin-bottom: auto; /* Push following elements to the bottom */
 }
 
+.pc-description{
+    padding: 0 5px 10px;
+    display: flex;
+    flex-direction: column;
+}
 
 .product-card p{
     margin-bottom: 5px;
@@ -41,7 +50,6 @@
     font-size: 0.8rem;
 }
 
-
 @media (min-width: 768px) { 
     .product-card{
         width: 225px;
@@ -54,6 +62,10 @@
 
     .price-real{
         display: none;
+    }
+
+    .price-real.show{
+        display: initial;
     }
 
     .price-offer .text-success{
@@ -79,6 +91,13 @@
         -o-transition: opacity .18s ease-out;
         transition: opacity .18s ease-out;
         will-change: opacity;
+    }
+
+    .product-card.hovercat::after{
+        z-index: 0;
+        width: 104%;
+        height: 105%;
+        left: 0;
     }
     
     .product-card:hover::after{
