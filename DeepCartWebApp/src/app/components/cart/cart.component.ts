@@ -14,6 +14,7 @@ export class CartComponent implements OnInit {
   realTotalPrice: number = 0;
   totalDiscounts: number = 0;
   cartIsLoading: boolean = true;
+  isUpdatingTotal: boolean = true;
 
 
   constructor(
@@ -80,11 +81,15 @@ export class CartComponent implements OnInit {
   }
 
   updateCheckoutPrices() {
+    this.isUpdatingTotal = true;
     this.finalTotalPrice = 0;
     this.realTotalPrice = 0;
     this.totalDiscounts = 0
     this.setFinalPrice();
     this.setRealPriceAndDiscounts();
+    setTimeout(() => {
+      this.isUpdatingTotal = false;
+    }, 1000)
   }
 
   removeItemFromCart(e, item) {

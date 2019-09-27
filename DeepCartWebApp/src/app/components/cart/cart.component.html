@@ -36,9 +36,8 @@
                         <!-- Product Quantity -->
                         <td class="product-quantity">
                             <div style="margin: 0 auto; width: fit-content;">
-                                <app-cart-quantity-button
-                                (setTotalPurchase)="setTotalPurchase($event)"
-                                [product]="item"></app-cart-quantity-button>
+                                <app-cart-quantity-button (setTotalPurchase)="setTotalPurchase($event)"
+                                    [product]="item"></app-cart-quantity-button>
                             </div>
                         </td>
                         <!-- End Product Quantity -->
@@ -60,15 +59,20 @@
                     </tr>
                 </tbody>
             </table>
-            
+
         </div>
         <div class="cart-checkout" *ngIf="cartItems && cartItems.length">
             <p class="font-weight-bold">Subtotal: <span class="float-right"> ${{ realTotalPrice | number}}</span></p>
             <p *ngIf="totalDiscounts">Products discount: <span class="float-right">
                     -${{ totalDiscounts | number}}</span></p>
-            <p class="total-checkout font-weight-bold">Total <span
+            <p class="total-checkout font-weight-bold" *ngIf="!isUpdatingTotal">Total <span
                     class="float-right text-danger">${{ finalTotalPrice | number}}</span></p>
+
+            <object *ngIf="isUpdatingTotal" style="margin: 0 auto;" width="20" height="20" type="image/svg+xml"
+                data="assets/img/loading-circle.svg"> </object>
         </div>
+
+        <!-- Show when cart is empty -->
         <div class="empty-cart" *ngIf="(!cartItems || !cartItems.length) && !cartIsLoading">
             <h1 class="empty-cart-title">Your cart is empty</h1>
             <p>Here in DeepCart we have plenty of products to choose from.</p>
