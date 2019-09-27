@@ -27,6 +27,7 @@ import { MatNativeDateModule } from '@angular/material';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { CartQuantityButtonComponent } from './components/cart/cart-quantity-button/cart-quantity-button.component';
 
 export const MY_FORMATS = {
   parse: {
@@ -55,7 +56,8 @@ export const MY_FORMATS = {
     CategoryComponent,
     NotfoundComponent,
     CartComponent,
-    CartItemComponent
+    CartItemComponent,
+    CartQuantityButtonComponent
   ],
   imports: [
     BrowserModule,

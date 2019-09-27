@@ -1,5 +1,8 @@
 <div class="card-item" [class.h-100]="completePrice">
-    <div class="product-card" [class.h-100]="completePrice" [class.hovercat]="completePrice">
+    <div class="product-card" [ngClass]="{
+        'h-100': completePrice,
+        'zcero': completePrice
+      }">
             <a routerLink="/p/{{product.id}}/{{product.slug}}">
                 <div class="pc-img-container">
                     <img draggable="false" src="{{product.imgUrl}}" alt="">
@@ -13,6 +16,12 @@
                     <p *ngIf="completeName"> {{product.name}} </p>
                 </div>
             </a>
-            <button class="btn btn-warning" *ngIf="buttonCart">Add to cart <i class="fas fa-shopping-cart"></i></button>
+            <div class="button-quantity">
+                <app-cart-quantity-button  *ngIf="buttonCart"
+                            [product]= "product"
+                            [canNotify] = "true"
+                            [canRemoveFromCart] = "true">
+                </app-cart-quantity-button>
+            </div>
     </div>
 </div>

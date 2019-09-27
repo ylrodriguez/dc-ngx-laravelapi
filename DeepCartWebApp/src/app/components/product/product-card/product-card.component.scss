@@ -21,8 +21,8 @@
     margin-bottom: auto; /* Push following elements to the bottom */
 }
 
-.product-card .btn{
-    width: 90%;
+.product-card .button-quantity{
+    width: fit-content;
     margin: 10px auto;
 }
 
@@ -99,7 +99,7 @@
         will-change: opacity;
     }
 
-    .product-card.hovercat::after{
+    .product-card.zcero::after{
         z-index: 0;
     }
     

@@ -7,16 +7,16 @@
         <p>{{product.brand}}</p>
         <div class="pd-container">
             <div class="pd-images">
-                    <div class="pd-squares-wrapper">
-                            <div *ngFor="let image of product.images; let index = index" class="pd-square" 
-                            data-target="#product-carousel"  [attr.data-slide-to]="index">
-                                 <img  class="w-100" src="{{image.url}}">
-                            </div>
-                        </div>
+                <div class="pd-squares-wrapper">
+                    <div *ngFor="let image of product.images; let index = index" class="pd-square"
+                        data-target="#product-carousel" [attr.data-slide-to]="index">
+                        <img class="w-100" src="{{image.url}}">
+                    </div>
+                </div>
                 <div id="product-carousel" class="carousel slide" data-interval="false">
-                    <div class="carousel-inner"  #productCarouselInner >
+                    <div class="carousel-inner" #productCarouselInner>
                         <div *ngFor="let image of product.images; let index = index" class="carousel-item"
-                            [class.active]= " index === 0">
+                            [class.active]=" index === 0">
                             <img class="d-block w-100" src="{{image.url}}">
                         </div>
                     </div>
@@ -29,32 +29,24 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-                
+
             </div>
 
             <div class="pd-price">
                 <p class="price-real text-danger">${{product.price | number }}</p>
-                <p class="price-offer" > ${{ getDiscountPrice() | number }} <span class="badge badge-success">{{product.offerDiscount}}% OFF</span></p>
-
-                <button *ngIf="!product.quantityPurchase && !isLoading" class="btn btn-warning" [disabled]="isClicked" (click) = "addToCart()">Add to cart <i class="fas fa-shopping-cart"></i></button>
-                
-                <div *ngIf="product.quantityPurchase && !isLoading">
-                        <div  class="product-quantity-button">
-                                <a href="#" (click)="substractQuantityPurchase($event)"><i class="far fa-trash-alt" *ngIf="product.quantityPurchase == 1"></i>{{product.quantityPurchase == 1 ? '' : '-'}}</a>
-                                <p>{{product.quantityPurchase}}</p>
-                                <a href="#" (click)="addQuantityPurchase($event)">+</a>
-                        </div>
-                        <p class="added text-success">Added to cart <i class="fas fa-shopping-cart"></i></p>
-                </div>
-                
-                <div *ngIf="isLoading" style="max-width: 200px; text-align: center;"> <object  width="20" height="20" type="image/svg+xml"
-                    data="assets/img/loading-circle.svg"> </object></div>
-
+                <p class="price-offer"> ${{ getDiscountPrice() | number }} <span
+                        class="badge badge-success">{{product.offerDiscount}}% OFF</span></p>
+                    <app-cart-quantity-button 
+                        [product]= "product"
+                        [canNotify] = "true"
+                        [canRemoveFromCart] = "true">
+                    </app-cart-quantity-button>
+                    <p *ngIf="product.quantityPurchase" class="added text-success">Added to cart <i class="fas fa-shopping-cart"></i></p>
             </div>
         </div>
 
         <div class="pd-description mt-4">
             <p>{{product.description}}</p>
 
+        </div>
     </div>
-</div>

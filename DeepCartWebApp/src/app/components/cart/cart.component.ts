@@ -24,9 +24,8 @@ export class CartComponent implements OnInit {
     this.cartService.getCartItems().subscribe(
       (res) => {
         res.forEach(item => {
-          this.setTotalPurchase(item);
+          this.setTotalPurchase(item, true);
           item.isLoading = {
-            'quantity': false,
             'removing': false
           }
         });
@@ -42,66 +41,50 @@ export class CartComponent implements OnInit {
     );
   }
 
-  setTotalPurchase(item) {
+  
+  getDiscountPrice(product) {
+    let discount = product.price * (product.offerDiscount / 100);
+    return product.price - discount;
+  }
+  
+  setRealPriceAndDiscounts() {
+
+    for (let item of this.cartItems) {
+      this.realTotalPrice = this.realTotalPrice + (item.quantityPurchase * item.price);
+    }
+    
+    //FinalPrice must've been set before.
+    this.totalDiscounts = this.realTotalPrice - this.finalTotalPrice;
+    
+  }
+  
+  setFinalPrice() {
+    for (let item of this.cartItems) {
+      this.finalTotalPrice = this.finalTotalPrice + item.totalPurchase;
+    }
+    
+  }
+  
+  setTotalPurchase(item, first?) {
+    //first: Boolean value used only in the foreach on ngInit. This method is later only called from
+    // child component app-cart-quantity-button
     if (item.offerDiscount) {
       item.totalPurchase = item.quantityPurchase * this.getDiscountPrice(item);
     }
     else {
       item.totalPurchase = item.quantityPurchase * item.price;
     }
-  }
-
-  getDiscountPrice(product) {
-    let discount = product.price * (product.offerDiscount / 100);
-    return product.price - discount;
-  }
-
-  setRealPriceAndDiscounts() {
-
-    for (let item of this.cartItems) {
-      this.realTotalPrice = this.realTotalPrice + (item.quantityPurchase * item.price);
+    if(!first){
+      this.updateCheckoutPrices();
     }
-
-    //FinalPrice must've been set before.
-    this.totalDiscounts = this.realTotalPrice - this.finalTotalPrice;
-
-  }
-
-  setFinalPrice() {
-    for (let item of this.cartItems) {
-      this.finalTotalPrice = this.finalTotalPrice + item.totalPurchase;
-    }
-
   }
 
   updateCheckoutPrices() {
     this.finalTotalPrice = 0;
     this.realTotalPrice = 0;
-    this.totalDiscounts = 0;
+    this.totalDiscounts = 0
     this.setFinalPrice();
     this.setRealPriceAndDiscounts();
-  }
-
-  addQuantityPurchase(e, item) {
-    e.preventDefault();
-    if (item.quantity > item.quantityPurchase) {
-      item.isLoading.quantity = true;
-      item.quantityPurchase++;
-      this.modifyQuantityPurchaseOfItem(item);
-      this.setTotalPurchase(item);
-      this.updateCheckoutPrices();
-    }
-  }
-
-  substractQuantityPurchase(e, item) {
-    e.preventDefault();
-    if (!(item.quantityPurchase == 1)) {
-      item.isLoading.quantity = true;
-      item.quantityPurchase--;
-      this.modifyQuantityPurchaseOfItem(item);
-      this.setTotalPurchase(item);
-      this.updateCheckoutPrices();
-    }
   }
 
   removeItemFromCart(e, item) {
@@ -118,20 +101,5 @@ export class CartComponent implements OnInit {
       err => item.isLoading.removing = false
     )
   }
-
-  modifyQuantityPurchaseOfItem(item){
-    this.cartService.modifyQuantityPurchaseItem(item.id, item.quantityPurchase).subscribe(
-      (res) => {
-        console.log(res)
-        this.cartService.updateNumberItemsCart();
-        item.isLoading.quantity = false;
-      },
-      (err) => {
-        console.log(err)
-        item.isLoading.quantity = false;
-      }
-    );
-  }
-
 
 }

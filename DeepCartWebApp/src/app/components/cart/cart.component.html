@@ -35,14 +35,11 @@
 
                         <!-- Product Quantity -->
                         <td class="product-quantity">
-                            <div class="product-quantity-button" [class.hide]="item.isLoading.quantity">
-                                <a href="#" (click)="substractQuantityPurchase($event, item)">-</a>
-                                <p>{{item.quantityPurchase}}</p>
-                                <a href="#" (click)="addQuantityPurchase($event, item)">+</a>
+                            <div style="margin: 0 auto; width: fit-content;">
+                                <app-cart-quantity-button
+                                (setTotalPurchase)="setTotalPurchase($event)"
+                                [product]="item"></app-cart-quantity-button>
                             </div>
-
-                            <object [class.hide]="!item.isLoading.quantity" style="margin: 0 auto; display: block;" width="20" height="20" type="image/svg+xml"
-                                data="assets/img/loading-circle.svg"> </object>
                         </td>
                         <!-- End Product Quantity -->
 

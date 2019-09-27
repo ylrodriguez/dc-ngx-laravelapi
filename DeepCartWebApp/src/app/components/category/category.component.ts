@@ -56,7 +56,9 @@ export class CategoryComponent implements OnInit, OnDestroy {
         this.categoryProducts = res
 
         for( let p of this.categoryProducts){
-          this.brandList.indexOf(p.brand) === -1 ? this.brandList.push(p.brand) : console.log("")
+          if(this.brandList.indexOf(p.brand) === -1){
+            this.brandList.push(p.brand)
+          }
         }
 
         this.spinner.hide();
