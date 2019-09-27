@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Product;
-use Illuminate\Support\Facades\Auth;
-use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -17,7 +17,7 @@ class ProductController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('jwt.auth', ['except' => ['getOffers','show']]);
+        $this->middleware('jwt.auth', ['except' => ['getOffers', 'show', 'search']]);
     }
 
     /**
@@ -25,9 +25,39 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function search(Request $request)
     {
-        //
+        $foundProducts = [];
+
+        try {
+            $q = $request->query('query');
+            if($q && strlen($q) >= 3){
+                $foundProducts = Product::select(DB::raw("`dc-products`.id, `dc-products`.name, `dc-products`.brand, `dc-products`.slug, `dc-categories`.name as category"))
+                ->join('dc-categories', 'dc-products.category_id', '=', 'dc-categories.id')
+                ->where('dc-products.name', 'like', $q.'%')
+                ->orWhere('dc-products.brand', 'like', $q.'%')
+                ->orWhere('dc-categories.name', 'like', $q.'%')
+                ->skip(0)
+                ->take(15)
+                ->get();
+
+                foreach ($foundProducts as $product){
+                    $product->images;
+                }
+            }
+            return response()->json([
+                'success' => true,
+                'message' => 'Products found',
+                'foundProducts' => $foundProducts,
+            ], 200);
+
+        } catch (Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error MySQL',
+                'error' => $e,
+            ], 400);
+        }
     }
 
     /**
@@ -37,24 +67,23 @@ class ProductController extends Controller
      */
     public function getOffers()
     {
-        try{
-            $offers = Product::where('offerDiscount','>',0)->get();
-            foreach ($offers as $offer){
+        try {
+            $offers = Product::where('offerDiscount', '>', 0)->get();
+            foreach ($offers as $offer) {
                 $offer->images;
             }
-        }
-        catch(Exception  $e){
+        } catch (Exception $e) {
             return response()->json([
-                'success'=> false, 
-                'message'=> 'Error MySQL',
-                'error'=> $e
+                'success' => false,
+                'message' => 'Error MySQL',
+                'error' => $e,
             ], 400);
         }
 
         return response()->json([
-            'success'=> true,
-            'message'=> 'Offers retrieved.', 
-            'offers'=> $offers
+            'success' => true,
+            'message' => 'Offers retrieved.',
+            'offers' => $offers,
         ], 200);
     }
 
@@ -87,34 +116,33 @@ class ProductController extends Controller
      */
     public function show(Request $request, $id)
     {
-        try{
+        try {
             $product = Product::where('id', $id)->first();
             $product->images;
 
-            if($request->bearerToken()){
+            if ($request->bearerToken()) {
                 $user = auth()->user();
-                if($user) {
-                    foreach( $user->products as $p){
-                        if($p->id == $id){
+                if ($user) {
+                    foreach ($user->products as $p) {
+                        if ($p->id == $id) {
                             $product["quantityPurchase"] = $p->pivot->quantity;
                             break;
                         }
                     }
                 }
-            } 
-        }
-        catch(Exception  $e){
+            }
+        } catch (Exception $e) {
             return response()->json([
-                'success'=> false, 
-                'message'=> 'Error MySQL',
-                'error'=> $e
+                'success' => false,
+                'message' => 'Error MySQL',
+                'error' => $e,
             ], 400);
         }
 
         return response()->json([
-            'success'=> true,
-            'message'=> 'Product retrieved.', 
-            'product'=> $product
+            'success' => true,
+            'message' => 'Product retrieved.',
+            'product' => $product,
         ], 200);
     }
 

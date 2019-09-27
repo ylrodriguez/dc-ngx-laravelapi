@@ -30,6 +30,7 @@ Route::group([
 Route::group([
     'prefix' => 'product'
 ], function ($router) {
+    Route::get('search', 'ProductController@search'); //No auth needed
     Route::get('{id}', 'ProductController@show'); //No auth needed
     Route::get('offers/all', 'ProductController@getOffers'); //No auth needed
 });

@@ -38,5 +38,19 @@ export class ProductService {
       }));
   }
 
+  searchProducts(query): Observable<Product[]>{
+    let headers = this.authService.setHeaders();
+    return this.http.get<Product[]>(`${this.baseURL}/search?query=${query}`, {headers: headers })
+      .pipe(map( data => {
+        data['foundProducts'].map( d => {
+          d.imgUrl = d.images[0].url+"-500-auto?width=500&height=auto&aspect=true";
+          delete d.images;
+        })
+
+        return data['foundProducts'];
+      }));
+
+  }
+
   
 }
