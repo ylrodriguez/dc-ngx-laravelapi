@@ -26,7 +26,10 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   _numberItemsCart: number;
   isSearching:boolean = false;
   hideSearchPanel:boolean = true;
+  showMessageSearch:boolean = false;
+  messageSearch: string = "";
   query: string;
+  canRepeatSearchRequest: boolean = false;
 
   constructor(
     private tokenService: TokenService,
@@ -37,9 +40,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   @HostListener('document:click', ['$event'])
   handleOutsideClick(event) {
-    this.hideSearchPanel = true;
-    this.query = "";
-    this.foundProducts = null;
+    this.closePanel();
   }
 
   ngOnInit() {
@@ -59,11 +60,30 @@ export class NavbarComponent implements OnInit, AfterViewInit {
         return event.target.value;
       }),
       //Minimum 3 for query
-      filter(res => res.length >= 2),
+      filter(res =>{
+        if(res.length <= 2){
+          this.messageSearch = "Search must be at least 3 characters long."
+          this.showMessageSearch = true;
+          this.hideSearchPanel = false;
+        }
+        if(res.length <= 0){
+          this.closePanel();
+        }
+
+        return res.length >= 3
+      }),
       // Time in milliseconds between events
-      debounceTime(400),
+      debounceTime(600),
       // Value must be different from previous
-      distinctUntilChanged(),
+      distinctUntilChanged((valueOne: any, valueTwo: any) => {
+        if (valueOne === valueTwo && !this.canRepeatSearchRequest) {
+            return true;// This means values are equal, it will not emit the current value
+            // Also it can't repeat the search
+        }
+        else{
+            return false;// This means the values are different or it can repeat, so it will emit
+        }
+    }),
       // subscription for response
     ).subscribe(query => this.searchProducts(query));
   }
@@ -86,18 +106,33 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     );
   }
 
+  closePanel(){
+    this.hideSearchPanel = true;
+    this.query = "";
+    this.foundProducts = null;
+    this.canRepeatSearchRequest = true;
+  }
+
   searchProducts(query) {
     this.isSearching = true;
     this.hideSearchPanel = false;
     this.foundProducts = null;
+    this.canRepeatSearchRequest = false;
+    this.showMessageSearch = false;
     this.productService.searchProducts(query).subscribe(
       (res) => {
         this.foundProducts = res;
         this.isSearching = false;
+        if(this.foundProducts.length <= 0){
+          this.messageSearch = "No results."
+          this.showMessageSearch = true;
+        }
       },
       (err) => {
         console.log(err)
         this.isSearching = false;
+        this.messageSearch = "No results."
+        this.showMessageSearch = true;
       }
     )
   }

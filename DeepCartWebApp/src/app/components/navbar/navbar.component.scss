@@ -13,6 +13,7 @@
 
 .search-bar .search-panel{
     min-height: 50px;
+    max-height: 75vh;
     width: 105%;
     padding: 1px 12px;
     border: 1px solid #ced4da;
@@ -22,6 +23,7 @@
     left: 0;
     z-index: 2;
     background-color: white;
+    overflow-y: scroll;
 }
 
 .search-panel .search-item{

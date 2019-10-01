@@ -10,13 +10,14 @@
             <input class="form-control mr-sm-2 search-bar" type="text" placeholder="Search for product, brand and more"
                 #queryInpunt [(ngModel)]="query" name="query">
             <div class = "search-panel" [class.hide]="hideSearchPanel" >
-                <a routerLink="/p/{{item.id}}/{{item.slug}}" class="search-item" *ngFor="let item of foundProducts">
+                <a routerLink="/p/{{item.id}}/{{item.slug}}" class="search-item" (click) = "closePanel()" *ngFor="let item of foundProducts">
                 <img src="{{item.imgUrl}}">
                     {{item.name}}
                 </a>
                 <object [class.hide]="!isSearching" width="30" height="30" 
                 class="loading-circle" type="image/svg+xml"
                 data="assets/img/loading-circle.svg"> </object>
+                <p *ngIf="showMessageSearch" style="margin-top: 0.5rem;">{{messageSearch}}</p>
             </div>
         </div>
 
