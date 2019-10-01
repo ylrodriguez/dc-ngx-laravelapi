@@ -32,13 +32,17 @@ class ProductController extends Controller
         try {
             $q = $request->query('query');
             if($q && strlen($q) >= 3){
-                $foundProducts = Product::select(DB::raw("`dc-products`.id, `dc-products`.name, `dc-products`.brand, `dc-products`.slug, `dc-categories`.name as category"))
+                $foundProducts = Product::select(
+                DB::raw("`dc-products`.id, `dc-products`.name, `dc-products`.brand, `dc-products`.slug, `dc-categories`.name as category,
+                MATCH (`dc-products`.`name`, `dc-products`.`brand`) AGAINST ( '".$q."*' in BOOLEAN MODE) AS name_relevance, 
+                MATCH (`dc-categories`.`name`, `dc-categories`.`slug`) AGAINST ( '".$q."*' in BOOLEAN MODE) AS category_relevance"))
                 ->join('dc-categories', 'dc-products.category_id', '=', 'dc-categories.id')
-                ->where('dc-products.name', 'like', $q.'%')
-                ->orWhere('dc-products.brand', 'like', $q.'%')
-                ->orWhere('dc-categories.name', 'like', $q.'%')
+                ->whereRaw("MATCH (`dc-products`.`name`, `dc-products`.`brand`) AGAINST ( ? in BOOLEAN MODE) OR
+                MATCH (`dc-categories`.`name`, `dc-categories`.`slug`) AGAINST ( ? in BOOLEAN MODE)", [ $q.'*', $q.'*'])
+                ->orderBy('name_relevance', 'desc')
+                ->orderBy('category_relevance', 'desc')
                 ->skip(0)
-                ->take(15)
+                ->take(10)
                 ->get();
 
                 foreach ($foundProducts as $product){

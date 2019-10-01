@@ -5,6 +5,7 @@ import { environment } from '../../../environments/environment';
 import { Product } from '../models/product.model';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { TokenService } from './token.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +17,15 @@ export class CartService {
 
   constructor(
     private authService: AuthService,
-    private http: HttpClient
-  ) { 
-    this.updateNumberItemsCart();
+    private http: HttpClient,
+    private tokenService: TokenService
+  ) {
+    
+    this.tokenService.isLoggedIn.subscribe(
+      next => {if(next){this.updateNumberItemsCart();}}
+    )
+     
+    
   }
 
 

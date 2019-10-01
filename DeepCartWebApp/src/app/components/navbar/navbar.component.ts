@@ -5,8 +5,6 @@ import { Router } from '@angular/router';
 import { CartService } from 'src/app/shared/services/cart.service';
 import { ProductService } from 'src/app/shared/services/product.service';
 import { Product } from '../../shared/models/product.model';
-
-import { of } from "rxjs";
 import {
   debounceTime,
   map,

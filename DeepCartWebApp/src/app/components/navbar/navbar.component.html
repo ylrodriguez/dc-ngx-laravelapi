@@ -10,7 +10,7 @@
             <input class="form-control mr-sm-2 search-bar" type="text" placeholder="Search for product, brand and more"
                 #queryInpunt [(ngModel)]="query" name="query">
             <div class = "search-panel" [class.hide]="hideSearchPanel" >
-                <a routerLink="item.slug" class="search-item" *ngFor="let item of foundProducts">
+                <a routerLink="/p/{{item.id}}/{{item.slug}}" class="search-item" *ngFor="let item of foundProducts">
                 <img src="{{item.imgUrl}}">
                     {{item.name}}
                 </a>

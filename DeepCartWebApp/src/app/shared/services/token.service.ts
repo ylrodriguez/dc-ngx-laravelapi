@@ -18,8 +18,8 @@ export class TokenService {
   }
 
   setToken(token: string) {
-    this._isLoggedIn.next(true);
     localStorage.setItem(this.tokenKey, token);
+    this._isLoggedIn.next(true);
   }
 
   getToken() {
