@@ -97,7 +97,6 @@ export class CartComponent implements OnInit {
     item.isLoading.removing = true;
     this.cartService.removeCartItem(item.id).subscribe(
       (res) => {
-        console.log(res)
         this.cartItems = this.cartItems.filter(element => element.id != item.id)
         item.isLoading.removing = false;
         this.cartService.updateNumberItemsCart();

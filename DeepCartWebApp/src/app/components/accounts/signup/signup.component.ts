@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  private user: User = {
+   user: User = {
     name: "",
     lastname: "",
     email: "",

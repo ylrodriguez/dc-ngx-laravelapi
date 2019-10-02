@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "http://deepcartnglaravel:8080/api/"
-};
+  apiUrl: "http://deepcartapi-env.hwyrniktm4.us-east-1.elasticbeanstalk.com/api/"
+}

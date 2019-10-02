@@ -11,6 +11,7 @@ export interface Product{
     category_id?: number,
     offerDiscount?: number,
     images?: string[],
+    imgUrl? : string,
     isLoading?: object
 
 }

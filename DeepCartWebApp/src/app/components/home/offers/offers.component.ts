@@ -10,8 +10,8 @@ declare const loadSlideItems: any;
 })
 export class OffersComponent implements OnInit {
 
-  private offersList: Product[];
   private slideIsLoaded: boolean = false;
+  offersList: Product[];
   @ViewChildren('slideItems') slideItemsElements: QueryList<any>;
   
   constructor(

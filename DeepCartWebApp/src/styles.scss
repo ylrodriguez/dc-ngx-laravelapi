@@ -1,4 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files 
+#da494c
+*/
 @import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
 
 body{
@@ -8,6 +10,10 @@ body{
 
 code{
     display: block;
+}
+
+.muted{
+    color: #727273;
 }
 
 
@@ -28,7 +34,7 @@ code{
     -webkit-animation: badgeCartPulse 1s ease infinite;
     animation: badgeCartPulse 1s ease infinite;
     border-radius: 50%;
-    border: 4px double #fa9600;
+    border: 4px double #da494c;
 }
 
 @keyframes slideToBottomSquare{

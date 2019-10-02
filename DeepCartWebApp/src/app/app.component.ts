@@ -9,5 +9,5 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'DeepCartWebApp';
 
-  constructor(private router: Router){}
+  constructor(public router: Router){}
 }

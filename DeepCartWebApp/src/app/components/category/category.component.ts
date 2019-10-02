@@ -14,9 +14,9 @@ import { NgxSpinnerService } from "ngx-spinner";
 export class CategoryComponent implements OnInit, OnDestroy {
 
   private routeSub: any;
-  private currentCategory: Category;
+  currentCategory: Category;
   private categoryProducts: Product[];
-  private sortedProducts: Product[];
+  sortedProducts: Product[];
   radioBrandSelected: string = 'allbrands';
   brandList: string[] = [];
   slug:string;

@@ -1,11 +1,8 @@
 <app-carousel></app-carousel>
-<section id="offers">
-  <app-offers></app-offers>
-</section>
 
 <section id="categories">
   <div *ngIf="categoriesList" class="container-fluid mt-4">
-    <h2 class="mb-3">Explore our categories</h2>
+    <h2 class="mb-3 muted">Explore our categories</h2>
 
     <div class="category-wrapper">
       <a routerLink="c/{{category.slug}}" class="category-item" *ngFor="let category of categoriesList">
@@ -15,11 +12,13 @@
         <p class="text-center"> {{category.name}}</p>
       </a>
     </div>
-
-
   </div>
 </section>
 
-<ngx-spinner bdOpacity=0.9 bdColor="#f5f5f5" size="medium" color="#ba2140" type="ball-clip-rotate-pulse"
+<section id="offers">
+    <app-offers></app-offers>
+  </section>
+
+<ngx-spinner bdOpacity=0.9 bdColor="#f5f5f5" size="medium" color="#da494c" type="ball-clip-rotate-pulse"
   [fullScreen]="true">
 </ngx-spinner>

@@ -13,7 +13,7 @@ import { Product } from 'src/app/shared/models/product.model';
 export class ProductComponent implements OnInit, OnDestroy {
 
   private routeSub;
-  private product: Product;
+  product: Product;
 
   constructor(
     private route: ActivatedRoute,

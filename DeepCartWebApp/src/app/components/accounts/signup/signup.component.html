@@ -1,5 +1,6 @@
 <div class="container-fluid">
     <div class="signup">
+        <img src="/assets/img/icon.png" width="80" height="80" alt="">
         <p>Join DeepCart</p>
         <h1 class="text-center">Create your account</h1>
 
@@ -12,28 +13,28 @@
             <!-- Name -->
             <div class=" form-group">
                 <label for="">Name</label>
-                <input class="form-control" type="text" name="name" required maxlength="30" 
-                    [(ngModel)]="user.name" #name="ngModel"
-                    [ngClass]="{'is-invalid': name.invalid && (name.dirty || name.touched)}">
+                <input class="form-control" type="text" name="name" required maxlength="30" [(ngModel)]="user.name"
+                    #name="ngModel" [ngClass]="{'is-invalid': name.invalid && (name.dirty || name.touched)}">
                 <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
                     <div *ngIf="name.errors.required">Enter your name</div>
                 </div>
             </div>
             <!-- Last Name -->
             <div class=" form-group">
-                    <label for="">Last name</label>
-                    <input class="form-control" type="text" name="lastname" required maxlength="30" 
-                        [(ngModel)]="user.lastname" #lastname="ngModel"
-                        [ngClass]="{'is-invalid': lastname.invalid && (lastname.dirty || lastname.touched)}">
-                    <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="invalid-feedback">
-                        <div *ngIf="lastname.errors.required">Enter your last name</div>
-                    </div>
+                <label for="">Last name</label>
+                <input class="form-control" type="text" name="lastname" required maxlength="30"
+                    [(ngModel)]="user.lastname" #lastname="ngModel"
+                    [ngClass]="{'is-invalid': lastname.invalid && (lastname.dirty || lastname.touched)}">
+                <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)" class="invalid-feedback">
+                    <div *ngIf="lastname.errors.required">Enter your last name</div>
                 </div>
+            </div>
             <!-- Email -->
             <div class=" form-group">
                 <label for="">Email</label>
-                <input class="form-control" type="email" name="email" maxlength="40" required email [(ngModel)]="user.email"
-                    #email="ngModel" [ngClass]="{'is-invalid': email.invalid && (email.dirty || email.touched)}">
+                <input class="form-control" type="email" name="email" maxlength="40" required email
+                    [(ngModel)]="user.email" #email="ngModel"
+                    [ngClass]="{'is-invalid': email.invalid && (email.dirty || email.touched)}">
                 <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
                     <div *ngIf="email.errors.required">Enter your email</div>
                     <div *ngIf="email.errors.email">Enter a valid email</div>
@@ -55,7 +56,7 @@
             <div class=" form-group">
                 <label for="">Confirm password</label>
                 <input class="form-control" type="password" name="confirmPassword" required minlength="6" maxlength="20"
-                    [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel"  [pattern]="verifypassword"
+                    [(ngModel)]="user.confirmPassword" #confirmPassword="ngModel" [pattern]="verifypassword"
                     [ngClass]="{'is-invalid': confirmPassword.invalid && (confirmPassword.dirty || confirmPassword.touched)}">
                 <div *ngIf="confirmPassword.invalid && (confirmPassword.touched || confirmPassword.dirty)"
                     class="invalid-feedback">
@@ -95,7 +96,7 @@
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
                     <div *ngIf="dob.invalid && (dob.dirty || dob.touched)" class="in-feedback">
-                        <div *ngIf="dob.errors.required|| dob.errors.matDatepickerMin || dob.erros.matDatepickerMax">
+                        <div *ngIf="dob.errors.required|| dob.errors.matDatepickerMin || dob.errors.matDatepickerMax">
                             Enter a valid date of birth</div>
                     </div>
                 </div>

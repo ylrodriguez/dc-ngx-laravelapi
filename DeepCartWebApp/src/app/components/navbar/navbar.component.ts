@@ -90,15 +90,12 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   onLogOut(event: MouseEvent) {
     event.preventDefault();
-    console.log("Try to log out...")
     this.authService.logout().subscribe(
       () => {
-        console.log("Cerro sesión");
         this.tokenService.removeToken();
         this.router.navigate(['/']);
       },
       (err) => {
-        console.log("Error cerrando sesión")
         console.log(err)
         this.tokenService.removeToken();
         this.router.navigate(['/']);

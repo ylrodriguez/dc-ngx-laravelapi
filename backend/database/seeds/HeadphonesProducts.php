@@ -127,115 +127,115 @@ class HeadphonesProducts extends Seeder
         $images = [ //Start Headphones
 
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/395300-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/395300',
                 'product_id' => 1056,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/395296-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/395296',
                 'product_id' => 1056,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/395297-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/395297',
                 'product_id' => 1056,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/259227-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/259227',
                 'product_id' => 1057,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/259228-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/259228',
                 'product_id' => 1057,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/259229-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/259229',
                 'product_id' => 1057,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/322330-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/322330',
                 'product_id' => 1058,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/322328-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/322328',
                 'product_id' => 1058,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/322329-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/322329',
                 'product_id' => 1058,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/668777-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/668777',
                 'product_id' => 1059,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/668778-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/668778',
                 'product_id' => 1059,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/668779-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/668779',
                 'product_id' => 1059,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/318823-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/318823',
                 'product_id' => 1060,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/318822-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/318822',
                 'product_id' => 1060,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/254805-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/254805',
                 'product_id' => 1061,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/254806-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/254806',
                 'product_id' => 1061,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678106-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678106',
                 'product_id' => 1062,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678107-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678107',
                 'product_id' => 1062,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678108-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678108',
                 'product_id' => 1062,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678275-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678275',
                 'product_id' => 1063,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678276-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678276',
                 'product_id' => 1063,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678277-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678277',
                 'product_id' => 1063,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678167-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678167',
                 'product_id' => 1064,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678168-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678168',
                 'product_id' => 1064,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678169-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678169',
                 'product_id' => 1064,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/193464-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/193464',
                 'product_id' => 1065,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/193465-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/193465',
                 'product_id' => 1065,
             ],
             [
-                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/193464-1920-auto?width=1920&height=auto&aspect=true',
+                'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/193464',
                 'product_id' => 1065,
             ]
             //End Headphones
