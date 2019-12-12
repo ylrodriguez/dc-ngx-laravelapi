@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   // apiUrl: "http://192.168.0.9:8081/api/",
-  apiUrl: "http://deepcartapi-env.hwyrniktm4.us-east-1.elasticbeanstalk.com/api/"
+  apiUrl: "https://deepcartapi-env.herokuapp.com/api/"
 };
 
 /*
