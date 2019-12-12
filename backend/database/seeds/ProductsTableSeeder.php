@@ -22,7 +22,7 @@ class ProductsTableSeeder extends Seeder
                 'price' => 999000,
                 'quantity' => 10,
                 'offerDiscount' => 0,
-                'category_id' => 1001
+                'category_id' => 1011
             ],
             [
                 'name' => 'Samsung Galaxy A7 2018 64GB Negro',
@@ -32,7 +32,7 @@ class ProductsTableSeeder extends Seeder
                 'price' => 714900,
                 'quantity' => 18,
                 'offerDiscount' => 10,
-                'category_id' => 1001
+                'category_id' => 1011
             ],
             [
                 'name' => 'Moto G6 Azul Indigo',
@@ -42,7 +42,7 @@ class ProductsTableSeeder extends Seeder
                 'price' => 729000,
                 'quantity' => 15 ,
                 'offerDiscount' => 50,
-                'category_id' => 1001
+                'category_id' => 1011
             ],
             [
                 'name' => 'Moto G6 Plus Azul Nimbus',
@@ -52,7 +52,7 @@ class ProductsTableSeeder extends Seeder
                 'price' => 1199900,
                 'quantity' => 25,
                 'offerDiscount' => 50 ,
-                'category_id' => 1001
+                'category_id' => 1011
             ],
             [
                 'name' => 'Zf M1 Asus Dorado',
@@ -62,7 +62,7 @@ class ProductsTableSeeder extends Seeder
                 'price' => 800000 ,
                 'quantity' => 12 ,
                 'offerDiscount' => 60,
-                'category_id' => 1001
+                'category_id' => 1011
             ],
             [
                 'name' => 'Huawei Y9 Prime 2019 128GB Negro Midnight',
@@ -72,7 +72,7 @@ class ProductsTableSeeder extends Seeder
                 'price' => 1100000,
                 'quantity' => 30,
                 'offerDiscount' => 30 ,
-                'category_id' => 1001
+                'category_id' => 1011
             ],
             [
                 'name' => 'Redmi Note 7 Dual 128GB Negro',
@@ -82,7 +82,7 @@ class ProductsTableSeeder extends Seeder
                 'price' => 1640000,
                 'quantity' => 12,
                 'offerDiscount' => 30 ,
-                'category_id' => 1001
+                'category_id' => 1011
             ],
             [
                 'name' => 'Samsung Galaxy A50 Triple Cámara 64GB 4GB Azul',
@@ -92,7 +92,7 @@ class ProductsTableSeeder extends Seeder
                 'price' => 829900,
                 'quantity' => 45,
                 'offerDiscount' => 10 ,
-                'category_id' => 1001
+                'category_id' => 1011
             ],
             [
                 'name' => 'Celular iPhone 7 Negro 256GB',
@@ -102,7 +102,7 @@ class ProductsTableSeeder extends Seeder
                 'price' => 2149000,
                 'quantity' => 20,
                 'offerDiscount' => 10,
-                'category_id' => 1001
+                'category_id' => 1011
             ],
             [   //10
                 'name' => 'Iphone 8 Plus 64 GB Silver',
@@ -112,7 +112,7 @@ class ProductsTableSeeder extends Seeder
                 'price' => 2898896,
                 'quantity' => 12,
                 'offerDiscount' => 0,
-                'category_id' => 1001
+                'category_id' => 1011
             ],
             [
                 'name' => 'Iphone Xs - 64 Gb Gris Space',
@@ -122,7 +122,7 @@ class ProductsTableSeeder extends Seeder
                 'price' => 4309000,
                 'quantity' => 10,
                 'offerDiscount' => 0 ,
-                'category_id' => 1001
+                'category_id' => 1011
             ],
             [
                 'name' => 'Celular iPhone XR 64GB Rojo',
@@ -132,7 +132,7 @@ class ProductsTableSeeder extends Seeder
                 'price' => 3199900,
                 'quantity' => 12,
                 'offerDiscount' => 15 ,
-                'category_id' => 1001
+                'category_id' => 1011
             ],
             [
                 'name' => 'Nokia 5 Octa Core 16Gb Ram 2Gb Cooper',
@@ -142,7 +142,7 @@ class ProductsTableSeeder extends Seeder
                 'price' => 399000,
                 'quantity' => 10,
                 'offerDiscount' => 0 ,
-                'category_id' => 1001
+                'category_id' => 1011
             ],
             [
                 'name' => 'Nokia 5 Oct 16 GB Ram 2 GB Dual Sim 4G Azul',
@@ -153,7 +153,7 @@ class ProductsTableSeeder extends Seeder
                 'price' => 500000,
                 'quantity' => 14,
                 'offerDiscount' => 20 ,
-                'category_id' => 1001
+                'category_id' => 1011
             ],
             [//End Phones 15
                 'name' => 'Nokia 2 Android 7.1 8gb Dual Sim 4G NEGRO',
@@ -163,7 +163,7 @@ class ProductsTableSeeder extends Seeder
                 'price' => 300000,
                 'quantity' => 40,
                 'offerDiscount' => 30 ,
-                'category_id' => 1001
+                'category_id' => 1011
             ],
         ];
 

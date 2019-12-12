@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
-        DB::statement("ALTER TABLE `dc-users` AUTO_INCREMENT = 9001;");
+        DB::statement("ALTER TABLE `dc-users` AUTO_INCREMENT = 9010;");
     }
 
     /**

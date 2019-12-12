@@ -22,7 +22,7 @@ class CreateImagesTable extends Migration
             $table->timestamps();
         });
 
-        DB::statement("ALTER TABLE `dc-images` AUTO_INCREMENT = 1001;");
+        DB::statement("ALTER TABLE `dc-images` AUTO_INCREMENT = 1010;");
     }
 
     /**

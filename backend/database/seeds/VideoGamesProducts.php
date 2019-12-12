@@ -23,7 +23,7 @@ class VideoGamesProducts extends Seeder
                 'price' => 250000,
                 'quantity' => 40,
                 'offerDiscount' => 30,
-                'category_id' => 1005                                                                                                                                  ,
+                'category_id' => 1051,
             ],
             [
                 'name' => 'Videojuego Uncharted The Nathan Drake Collection PS4',
@@ -33,7 +33,7 @@ class VideoGamesProducts extends Seeder
                 'price' => 140000,
                 'quantity' => 40,
                 'offerDiscount' => 50,
-                'category_id' => 1005,
+                'category_id' => 1051,
             ],
             [
                 'name' => 'Videojuego FIFA 20 - PlayStation 4',
@@ -43,7 +43,7 @@ class VideoGamesProducts extends Seeder
                 'price' => 250000,
                 'quantity' => 40,
                 'offerDiscount' => 25,
-                'category_id' => 1005,
+                'category_id' => 1051,
             ],
             [
                 'name' => 'Pro Evolution 2020 PES 20 PS4',
@@ -53,7 +53,7 @@ class VideoGamesProducts extends Seeder
                 'price' => 230000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1005,
+                'category_id' => 1051,
             ],
             [
                 'name' => 'Juego Gta Five Grand Theft Auto 5 Ps4',
@@ -63,7 +63,7 @@ class VideoGamesProducts extends Seeder
                 'price' => 120000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1005,
+                'category_id' => 1051,
             ],
             [
                 'name' => 'Mortal Kombat 11 Ps4 Playstation Fisico Juego',
@@ -73,7 +73,7 @@ class VideoGamesProducts extends Seeder
                 'price' => 240000,
                 'quantity' => 40,
                 'offerDiscount' => 40,
-                'category_id' => 1005,
+                'category_id' => 1051,
             ],
             [
                 'name' => 'Juego Tony Hawk Pro Skater 5ps',
@@ -83,7 +83,7 @@ class VideoGamesProducts extends Seeder
                 'price' => 160000,
                 'quantity' => 40,
                 'offerDiscount' => 0,
-                'category_id' => 1005,
+                'category_id' => 1051,
             ],
             [
                 'name' => 'Videojuego Resident Evil 7 En Español PS4',
@@ -93,7 +93,7 @@ class VideoGamesProducts extends Seeder
                 'price' => 150000,
                 'quantity' => 40,
                 'offerDiscount' => 10,
-                'category_id' => 1005,
+                'category_id' => 1051,
             ],
             [
                 'name' => 'Crash Team Racing Nitro Fueled CTR PS4 - PlayStation 4',
@@ -103,7 +103,7 @@ class VideoGamesProducts extends Seeder
                 'price' => 180000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1005,
+                'category_id' => 1051,
             ],
             [
                 'name' => 'Videojuego God of War PS4',
@@ -113,7 +113,7 @@ class VideoGamesProducts extends Seeder
                 'price' => 200000,
                 'quantity' => 30,
                 'offerDiscount' => 20,
-                'category_id' => 1005,
+                'category_id' => 1051,
             ],
             //End Video Games 10
         ];
@@ -126,59 +126,59 @@ class VideoGamesProducts extends Seeder
 
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/641222',
-                'product_id' => 1046,
+                'product_id' => 1461,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/642118',
-                'product_id' => 1047,
+                'product_id' => 1471,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/683346',
-                'product_id' => 1048,
+                'product_id' => 1481,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/666394',
-                'product_id' => 1049,
+                'product_id' => 1491,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/666395',
-                'product_id' => 1049,
+                'product_id' => 1491,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/666396',
-                'product_id' => 1049,
+                'product_id' => 1491,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/255243',
-                'product_id' => 1050,
+                'product_id' => 1501,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/640352',
-                'product_id' => 1051,
+                'product_id' => 1511,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/640350',
-                'product_id' => 1051,
+                'product_id' => 1511,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/640351',
-                'product_id' => 1051,
+                'product_id' => 1511,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/208086',
-                'product_id' => 1052,
+                'product_id' => 1521,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/642100',
-                'product_id' => 1053,
+                'product_id' => 1531,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/685911',
-                'product_id' => 1054,
+                'product_id' => 1541,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/627226',
-                'product_id' => 1055,
+                'product_id' => 1551,
             ]
             //End Video Games
         ];

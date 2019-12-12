@@ -14,43 +14,43 @@ class CartsTableSeeder extends Seeder
     {
         $carts = [
             [
-                'user_id' => 9001,
-                'product_id' => 1001,
+                'user_id' => 9011,
+                'product_id' => 1011,
                 'quantity' => 2            
             ],
             [
-                'user_id' => 9001,
-                'product_id' => 1002,
+                'user_id' => 9011,
+                'product_id' => 1021,
                 'quantity' => 2            
             ],
             [
-                'user_id' => 9001,
-                'product_id' => 1003,
+                'user_id' => 9011,
+                'product_id' => 1031,
                 'quantity' => 2            
             ],
             [
-                'user_id' => 9001,
-                'product_id' => 1004,
+                'user_id' => 9011,
+                'product_id' => 1041,
                 'quantity' => 1            
             ],
             [
-                'user_id' => 9002,
-                'product_id' => 1002,
+                'user_id' => 9021,
+                'product_id' => 1021,
                 'quantity' => 2  
             ],
             [
-                'user_id' => 9002,
-                'product_id' => 1010,
+                'user_id' => 9021,
+                'product_id' => 1101,
                 'quantity' => 2  
             ],
             [
-                'user_id' => 9003,
-                'product_id' => 1006,
+                'user_id' => 9031,
+                'product_id' => 1061,
                 'quantity' => 1
             ],
             [
-                'user_id' => 9004,
-                'product_id' => 1005,
+                'user_id' => 9041,
+                'product_id' => 1051,
                 'quantity' => 2  
             ]
         ];

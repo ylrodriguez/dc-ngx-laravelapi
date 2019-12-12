@@ -23,7 +23,7 @@ class HeadphonesProducts extends Seeder
                 'price' => 150000,
                 'quantity' => 40,
                 'offerDiscount' => 30,
-                'category_id' => 1006,
+                'category_id' => 1061,
             ],
             [
                 'name' => 'Audifonos Samsung Galaxy Buds Negro',
@@ -33,7 +33,7 @@ class HeadphonesProducts extends Seeder
                 'price' => 700000,
                 'quantity' => 40,
                 'offerDiscount' => 35,
-                'category_id' => 1006,
+                'category_id' => 1061,
             ],
             [
                 'name' => 'Audifonos Earpods MD827M-B Manos Libres',
@@ -43,7 +43,7 @@ class HeadphonesProducts extends Seeder
                 'price' => 95000,
                 'quantity' => 40,
                 'offerDiscount' => 50,
-                'category_id' => 1006,
+                'category_id' => 1061,
             ],
             [
                 'name' => 'Audífonos Bluetooth i11 TWS Táctiles-Blancos',
@@ -53,7 +53,7 @@ class HeadphonesProducts extends Seeder
                 'price' => 95000,
                 'quantity' => 40,
                 'offerDiscount' => 25,
-                'category_id' => 1006,
+                'category_id' => 1061,
             ],
             [
                 'name' => 'i7s audifonos manos libres inalambricos para smartphone',
@@ -63,7 +63,7 @@ class HeadphonesProducts extends Seeder
                 'price' => 120000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1006,
+                'category_id' => 1061,
             ],
             [
                 'name' => 'Audifonos Apple AirPods Wireless Bluetooth',
@@ -73,7 +73,7 @@ class HeadphonesProducts extends Seeder
                 'price' => 900000,
                 'quantity' => 40,
                 'offerDiscount' => 10,
-                'category_id' => 1006,
+                'category_id' => 1061,
             ],
             [
                 'name' => 'Audifonos Manos Libres Bluetooth Tipo Earpods In Ear Negro',
@@ -84,7 +84,7 @@ class HeadphonesProducts extends Seeder
                 'price' => 50000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1006,
+                'category_id' => 1061,
             ],
             [
                 'name' => 'Audifonos Originales Samsung AKG S8 Y S8 Plus Color Negro',
@@ -94,7 +94,7 @@ class HeadphonesProducts extends Seeder
                 'price' => 80000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1006,
+                'category_id' => 1061,
             ],
             [
                 'name' => 'Audifonos Originales Samsung Galaxy J1 J3 J5 J7 Prime Ace',
@@ -105,7 +105,7 @@ class HeadphonesProducts extends Seeder
                 'price' => 41000,
                 'quantity' => 10,
                 'offerDiscount' => 20,
-                'category_id' => 1006,
+                'category_id' => 1061,
             ],
             [
                 'name' => 'Aud Fono Sony Tipo Diadema MdR-Zx110',
@@ -115,7 +115,7 @@ class HeadphonesProducts extends Seeder
                 'price' => 40000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1006,
+                'category_id' => 1061,
             ],
             //End Headphones 10
         ];
@@ -128,115 +128,115 @@ class HeadphonesProducts extends Seeder
 
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/395300',
-                'product_id' => 1056,
+                'product_id' => 1561,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/395296',
-                'product_id' => 1056,
+                'product_id' => 1561,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/395297',
-                'product_id' => 1056,
+                'product_id' => 1561,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/259227',
-                'product_id' => 1057,
+                'product_id' => 1571,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/259228',
-                'product_id' => 1057,
+                'product_id' => 1571,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/259229',
-                'product_id' => 1057,
+                'product_id' => 1571,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/322330',
-                'product_id' => 1058,
+                'product_id' => 1581,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/322328',
-                'product_id' => 1058,
+                'product_id' => 1581,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/322329',
-                'product_id' => 1058,
+                'product_id' => 1581,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/668777',
-                'product_id' => 1059,
+                'product_id' => 1591,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/668778',
-                'product_id' => 1059,
+                'product_id' => 1591,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/668779',
-                'product_id' => 1059,
+                'product_id' => 1591,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/318823',
-                'product_id' => 1060,
+                'product_id' => 1601,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/318822',
-                'product_id' => 1060,
+                'product_id' => 1601,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/254805',
-                'product_id' => 1061,
+                'product_id' => 1611,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/254806',
-                'product_id' => 1061,
+                'product_id' => 1611,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678106',
-                'product_id' => 1062,
+                'product_id' => 1621,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678107',
-                'product_id' => 1062,
+                'product_id' => 1621,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678108',
-                'product_id' => 1062,
+                'product_id' => 1621,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678275',
-                'product_id' => 1063,
+                'product_id' => 1631,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678276',
-                'product_id' => 1063,
+                'product_id' => 1631,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678277',
-                'product_id' => 1063,
+                'product_id' => 1631,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678167',
-                'product_id' => 1064,
+                'product_id' => 1641,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678168',
-                'product_id' => 1064,
+                'product_id' => 1641,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/678169',
-                'product_id' => 1064,
+                'product_id' => 1641,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/193464',
-                'product_id' => 1065,
+                'product_id' => 1651,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/193465',
-                'product_id' => 1065,
+                'product_id' => 1651,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/193464',
-                'product_id' => 1065,
+                'product_id' => 1651,
             ]
             //End Headphones
         ];

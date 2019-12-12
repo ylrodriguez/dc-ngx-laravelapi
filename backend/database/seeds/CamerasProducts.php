@@ -23,7 +23,7 @@ class CamerasProducts extends Seeder
                 'price' => 2200000,
                 'quantity' => 40,
                 'offerDiscount' => 60,
-                'category_id' => 1004,
+                'category_id' => 1041,
             ],
             [
                 'name' => 'Cámara GOPRO Hero 7 Black',
@@ -33,7 +33,7 @@ class CamerasProducts extends Seeder
                 'price' => 1800000,
                 'quantity' => 40,
                 'offerDiscount' => 30,
-                'category_id' => 1004,
+                'category_id' => 1041,
             ],
             [
                 'name' => 'Camara Canon T6-1300D lente 18 55mm',
@@ -43,7 +43,7 @@ class CamerasProducts extends Seeder
                 'price' => 1590000,
                 'quantity' => 40,
                 'offerDiscount' => 0,
-                'category_id' => 1004,
+                'category_id' => 1041,
             ],
             [
                 'name' => 'Cámara Nikon D7500 Lente 18-140Mm + Memoria 16Gb + Maletín',
@@ -53,7 +53,7 @@ class CamerasProducts extends Seeder
                 'price' => 6000000,
                 'quantity' => 40,
                 'offerDiscount' => 30,
-                'category_id' => 1004,
+                'category_id' => 1041,
             ],
             [
                 'name' => 'Cámara Nikon D3500 Kit 18 - 55mm',
@@ -63,7 +63,7 @@ class CamerasProducts extends Seeder
                 'price' => 1790000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1004,
+                'category_id' => 1041,
             ],
             [
                 'name' => 'Cámara Sony A7 Iii Cuerpo',
@@ -73,7 +73,7 @@ class CamerasProducts extends Seeder
                 'price' => 7800000,
                 'quantity' => 40,
                 'offerDiscount' => 10,
-                'category_id' => 1004,
+                'category_id' => 1041,
             ],
             [
                 'name' => 'Cámara compacta Sony W800 zoom 5x 20.1MP Negro',
@@ -83,7 +83,7 @@ class CamerasProducts extends Seeder
                 'price' => 500000,
                 'quantity' => 40,
                 'offerDiscount' => 0,
-                'category_id' => 1004,
+                'category_id' => 1041,
             ],
             [
                 'name' => 'Combo Camara Canon T7I + Super Combo',
@@ -93,7 +93,7 @@ class CamerasProducts extends Seeder
                 'price' => 3690000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1004,
+                'category_id' => 1041,
             ],
             [
                 'name' => 'Canon EOS Rebel T7 - 2000D DSLR 18-55mm + Super Combo',
@@ -103,7 +103,7 @@ class CamerasProducts extends Seeder
                 'price' => 2490000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1004,
+                'category_id' => 1041,
             ],
             [
                 'name' => 'Camara Canon Eos 80D 18-135 Stm + Combo Plus',
@@ -113,7 +113,7 @@ class CamerasProducts extends Seeder
                 'price' => 4390000,
                 'quantity' => 40,
                 'offerDiscount' => 10,
-                'category_id' => 1004,
+                'category_id' => 1041,
             ],
             //End Cameras 10
         ];
@@ -126,107 +126,107 @@ class CamerasProducts extends Seeder
 
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/325826',
-                'product_id' => 1036,
+                'product_id' => 1361,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/325822',
-                'product_id' => 1036,
+                'product_id' => 1361,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/325823',
-                'product_id' => 1036,
+                'product_id' => 1361,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/260017',
-                'product_id' => 1037,
+                'product_id' => 1371,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/260013',
-                'product_id' => 1037,
+                'product_id' => 1371,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/260014',
-                'product_id' => 1037,
+                'product_id' => 1371,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/643155',
-                'product_id' => 1038,
+                'product_id' => 1381,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/643153',
-                'product_id' => 1038,
+                'product_id' => 1381,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/643154',
-                'product_id' => 1038,
+                'product_id' => 1381,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/356907',
-                'product_id' => 1039,
+                'product_id' => 1391,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/356903',
-                'product_id' => 1039,
+                'product_id' => 1391,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/356904',
-                'product_id' => 1039,
+                'product_id' => 1391,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/308012',
-                'product_id' => 1040,
+                'product_id' => 1401,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/308011',
-                'product_id' => 1040,
+                'product_id' => 1401,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/309554',
-                'product_id' => 1041,
+                'product_id' => 1411,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/309552',
-                'product_id' => 1041,
+                'product_id' => 1411,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/309553',
-                'product_id' => 1041,
+                'product_id' => 1411,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/352471',
-                'product_id' => 1042,
+                'product_id' => 1421,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/352472',
-                'product_id' => 1042,
+                'product_id' => 1421,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/643146',
-                'product_id' => 1043,
+                'product_id' => 1431,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/309567',
-                'product_id' => 1044,
+                'product_id' => 1441,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/309565',
-                'product_id' => 1044,
+                'product_id' => 1441,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/309566',
-                'product_id' => 1044,
+                'product_id' => 1441,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/259719',
-                'product_id' => 1045,
+                'product_id' => 1451,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/259720',
-                'product_id' => 1045,
+                'product_id' => 1451,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/259721',
-                'product_id' => 1045,
+                'product_id' => 1451,
             ]
             //End Cameras
         ];

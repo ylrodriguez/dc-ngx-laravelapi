@@ -21,7 +21,7 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
         });
 
-        DB::statement("ALTER TABLE `dc-categories` AUTO_INCREMENT = 1001;");
+        DB::statement("ALTER TABLE `dc-categories` AUTO_INCREMENT = 1010;");
     }
 
     /**

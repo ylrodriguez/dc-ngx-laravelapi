@@ -24,7 +24,7 @@ class ComputersProducts extends Seeder
                 'price' => 2000000,
                 'quantity' => 40,
                 'offerDiscount' => 15,
-                'category_id' => 1002,
+                'category_id' => 1021,
             ],
             [
                 'name' => 'Portatil Asus Vivobook X411 Intel Core I3 4gb+16gb Opt 1tb',
@@ -34,7 +34,7 @@ class ComputersProducts extends Seeder
                 'price' => 1900000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1002,
+                'category_id' => 1021,
             ],
             [
                 'name' => 'Portatil Asus X505ba Amd A9 9425 4gb 1tera Endless 15.6',
@@ -44,7 +44,7 @@ class ComputersProducts extends Seeder
                 'price' => 1500000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1002,
+                'category_id' => 1021,
             ],
             [
                 'name' => 'Portátil Hp 14-Ck0010la Core I3-7020u 4gb 1tb 14 Pulgadas',
@@ -54,7 +54,7 @@ class ComputersProducts extends Seeder
                 'price' => 1700000,
                 'quantity' => 40,
                 'offerDiscount' => 0,
-                'category_id' => 1002,
+                'category_id' => 1021,
             ],
             [
                 'name' => 'Asus TUF FX504GE-EN756T Core i5 8300H-GTX1050Ti-15,6',
@@ -64,7 +64,7 @@ class ComputersProducts extends Seeder
                 'price' => 3000000,
                 'quantity' => 40,
                 'offerDiscount' => 10,
-                'category_id' => 1002,
+                'category_id' => 1021,
             ],
             [
                 'name' => 'Portatil HP 14-BS015LA Core i5 8GB 1TB 14 pulgadas',
@@ -74,7 +74,7 @@ class ComputersProducts extends Seeder
                 'price' => 1600000,
                 'quantity' => 40,
                 'offerDiscount' => 0,
-                'category_id' => 1002,
+                'category_id' => 1021,
             ],
             [
                 'name' => 'Portátil Asus E406sa Atom 4core Ram 4gb Disco 64gb 14 pulg',
@@ -84,7 +84,7 @@ class ComputersProducts extends Seeder
                 'price' => 1000000,
                 'quantity' => 40,
                 'offerDiscount' => 10,
-                'category_id' => 1002,
+                'category_id' => 1021,
             ],
             [
                 'name' => 'Portatil HP 245 G6 Amd E2-9001 14 pulgadas',
@@ -94,7 +94,7 @@ class ComputersProducts extends Seeder
                 'price' => 1100000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1002,
+                'category_id' => 1021,
             ],
             [
                 'name' => 'Portatil Hp 14 Bs006La Celeron Linux 4Gb 14 Pulgadas',
@@ -105,7 +105,7 @@ class ComputersProducts extends Seeder
                 'price' => 900000,
                 'quantity' => 40,
                 'offerDiscount' => 0,
-                'category_id' => 1002,
+                'category_id' => 1021,
             ],
             [
                 'name' => 'MacBook Air MRE82E-A Core i5 8GB 128 SSD 13 Pulgadas',
@@ -115,7 +115,7 @@ class ComputersProducts extends Seeder
                 'price' => 5000000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1002,
+                'category_id' => 1021,
             ], //End computers 10
         ];
 
@@ -126,115 +126,115 @@ class ComputersProducts extends Seeder
         $images = [
             [ //Start Computers
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/689476',
-                'product_id' => 1016,
+                'product_id' => 1161,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/689477',
-                'product_id' => 1016,
+                'product_id' => 1161,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/689478',
-                'product_id' => 1016,
+                'product_id' => 1161,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/688595',
-                'product_id' => 1017,
+                'product_id' => 1171,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/688596',
-                'product_id' => 1017,
+                'product_id' => 1171,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/688597',
-                'product_id' => 1017,
+                'product_id' => 1171,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/257995',
-                'product_id' => 1018,
+                'product_id' => 1181,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/257996',
-                'product_id' => 1018,
+                'product_id' => 1181,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/257997',
-                'product_id' => 1018,
+                'product_id' => 1181,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/300544',
-                'product_id' => 1019,
+                'product_id' => 1191,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/300545',
-                'product_id' => 1019,
+                'product_id' => 1191,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/300546',
-                'product_id' => 1019,
+                'product_id' => 1191,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/603643',
-                'product_id' => 1020,
+                'product_id' => 1201,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/603645',
-                'product_id' => 1020,
+                'product_id' => 1201,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/603646',
-                'product_id' => 1020,
+                'product_id' => 1201,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/260602',
-                'product_id' => 1021,
+                'product_id' => 1211,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/260603',
-                'product_id' => 1021,
+                'product_id' => 1211,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/729912',
-                'product_id' => 1022,
+                'product_id' => 1221,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/729913',
-                'product_id' => 1022,
+                'product_id' => 1221,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/729914',
-                'product_id' => 1022,
+                'product_id' => 1221,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/321936',
-                'product_id' => 1023,
+                'product_id' => 1231,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/321935',
-                'product_id' => 1023,
+                'product_id' => 1231,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/256791',
-                'product_id' => 1024,
+                'product_id' => 1241,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/256792',
-                'product_id' => 1024,
+                'product_id' => 1241,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/256793',
-                'product_id' => 1024,
+                'product_id' => 1241,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/383234',
-                'product_id' => 1025,
+                'product_id' => 1251,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/383235',
-                'product_id' => 1025,
+                'product_id' => 1251,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/383236',
-                'product_id' => 1025,
+                'product_id' => 1251,
             ], //End Computers
         ];
 
@@ -253,11 +253,11 @@ class ComputersProducts extends Seeder
 //     'price' => 0,
 //     'quantity' => 40,
 //     'offerDiscount' => 20 ,
-//     'category_id' => 1002
+//     'category_id' => 0012
 // ],
 
 
 // [ 
 //     'url' => '',
-//     'product_id' => 1020
+//     'product_id' => 1210
 // ],

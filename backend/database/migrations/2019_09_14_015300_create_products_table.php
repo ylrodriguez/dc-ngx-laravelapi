@@ -25,7 +25,7 @@ class CreateProductsTable extends Migration
             $table->timestamps();
         });
 
-        DB::statement("ALTER TABLE `dc-products` AUTO_INCREMENT = 1001;");
+        DB::statement("ALTER TABLE `dc-products` AUTO_INCREMENT = 1010;");
     }
 
     /**

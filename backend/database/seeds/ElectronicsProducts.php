@@ -23,7 +23,7 @@ class ElectronicsProducts extends Seeder
                 'price' => 2700000,
                 'quantity' => 40,
                 'offerDiscount' => 0,
-                'category_id' => 1003,
+                'category_id' => 1031,
             ],
             [
                 'name' => 'Televisor LED Curvo Samsung 55 Pulgadas UHD 4K Smart TV',
@@ -33,7 +33,7 @@ class ElectronicsProducts extends Seeder
                 'price' => 4000000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1003,
+                'category_id' => 1031,
             ],
             [
                 'name' => 'Televisor LED Samsung 32 Pulgadas HD Smart TV Serie 4',
@@ -43,7 +43,7 @@ class ElectronicsProducts extends Seeder
                 'price' => 1230000,
                 'quantity' => 40,
                 'offerDiscount' => 10,
-                'category_id' => 1003,
+                'category_id' => 1031,
             ],
             [
                 'name' => 'Tv Led 102 (40) Fhd Smart',
@@ -53,7 +53,7 @@ class ElectronicsProducts extends Seeder
                 'price' => 1200000,
                 'quantity' => 40,
                 'offerDiscount' => 30,
-                'category_id' => 1003,
+                'category_id' => 1031,
             ],
             [
                 'name' => 'Televisor LG 50 pulgadas UM7300 UHD Smart',
@@ -63,7 +63,7 @@ class ElectronicsProducts extends Seeder
                 'price' => 2100000,
                 'quantity' => 40,
                 'offerDiscount' => 35,
-                'category_id' => 1003,
+                'category_id' => 1031,
             ],
             [
                 'name' => 'Subwoofer Parlantes Logitech Z313 2.1',
@@ -73,7 +73,7 @@ class ElectronicsProducts extends Seeder
                 'price' => 140000,
                 'quantity' => 40,
                 'offerDiscount' => 0,
-                'category_id' => 1003,
+                'category_id' => 1031,
             ],
             [
                 'name' => 'Teatro en Casa 2.1 Bluetooth USB SD J5135 JyR',
@@ -83,7 +83,7 @@ class ElectronicsProducts extends Seeder
                 'price' => 250000,
                 'quantity' => 40,
                 'offerDiscount' => 15,
-                'category_id' => 1003,
+                'category_id' => 1031,
             ],
             [
                 'name' => 'Sistema Altavoces Home Theatre BT AUX SD Amfm 90Watt',
@@ -93,7 +93,7 @@ class ElectronicsProducts extends Seeder
                 'price' => 895000,
                 'quantity' => 40,
                 'offerDiscount' => 10,
-                'category_id' => 1003,
+                'category_id' => 1031,
             ],
             [
                 'name' => 'Sistema Profesional de cine en casa RCA 1000 W Bluetooth',
@@ -103,7 +103,7 @@ class ElectronicsProducts extends Seeder
                 'price' => 1300000,
                 'quantity' => 40,
                 'offerDiscount' => 0,
-                'category_id' => 1003,
+                'category_id' => 1031,
             ],
             [
                 'name' => 'Barra Sonido 2.1CH Kalley K-ABSD120SW 120W',
@@ -113,7 +113,7 @@ class ElectronicsProducts extends Seeder
                 'price' => 490000,
                 'quantity' => 40,
                 'offerDiscount' => 20,
-                'category_id' => 1003,
+                'category_id' => 1031,
             ],
             //End Electronics 10
         ];
@@ -125,103 +125,103 @@ class ElectronicsProducts extends Seeder
         $images = [ //Start Electronics
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/597158',
-                'product_id' => 1026,
+                'product_id' => 1261,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/597159',
-                'product_id' => 1026,
+                'product_id' => 1261,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/597160',
-                'product_id' => 1026,
+                'product_id' => 1261,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/682607',
-                'product_id' => 1027,
+                'product_id' => 1271,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/682625',
-                'product_id' => 1028,
+                'product_id' => 1281,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/682626',
-                'product_id' => 1028,
+                'product_id' => 1281,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/682627',
-                'product_id' => 1028,
+                'product_id' => 1281,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/307356',
-                'product_id' => 1029,
+                'product_id' => 1291,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/307357',
-                'product_id' => 1029,
+                'product_id' => 1291,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/307358',
-                'product_id' => 1029,
+                'product_id' => 1291,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/686644',
-                'product_id' => 1030,
+                'product_id' => 1301,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/686645',
-                'product_id' => 1030,
+                'product_id' => 1301,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/686646',
-                'product_id' => 1030,
+                'product_id' => 1301,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/261901',
-                'product_id' => 1031,
+                'product_id' => 1311,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/261902',
-                'product_id' => 1031,
+                'product_id' => 1311,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/261903',
-                'product_id' => 1031,
+                'product_id' => 1311,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/732651',
-                'product_id' => 1032,
+                'product_id' => 1321,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/732652',
-                'product_id' => 1032,
+                'product_id' => 1321,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/732653',
-                'product_id' => 1032,
+                'product_id' => 1321,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/463774',
-                'product_id' => 1033,
+                'product_id' => 1331,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/463776',
-                'product_id' => 1033,
+                'product_id' => 1331,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/568906',
-                'product_id' => 1034,
+                'product_id' => 1341,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/259661',
-                'product_id' => 1035,
+                'product_id' => 1351,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/259662',
-                'product_id' => 1035,
+                'product_id' => 1351,
             ],
             [
                 'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/259663',
-                'product_id' => 1035,
+                'product_id' => 1351,
             ]
             //End Electronics
         ];

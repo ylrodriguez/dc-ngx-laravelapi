@@ -23,7 +23,7 @@ class CreateCartsUsersProductTable extends Migration
             $table->timestamps();
         });
 
-        DB::statement("ALTER TABLE `dc-cart-items` AUTO_INCREMENT = 3001;");
+        DB::statement("ALTER TABLE `dc-cart-items` AUTO_INCREMENT = 3010;");
     }
 
     /**
