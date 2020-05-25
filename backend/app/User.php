@@ -53,8 +53,21 @@ class User extends Authenticatable implements JWTSubject
      */
     public function products()
     {
-        return $this->belongsToMany('App\Product','dc-cart-items')->withPivot('quantity');;
+        return $this->belongsToMany('App\Product','dc-cart-items')->withPivot('quantity');
     }
+
+    /**
+     * =================================
+     *  WEATHER APP 
+     * =================================
+     */
+
+     /**
+      * The cities that belong to the user (User has choosen)
+      */
+     public function cities(){
+        return $this->belongsToMany('App\WeatherAppModels\City','weatherapp-users-cities');
+     }
 
     protected $table = 'dc-users';
 }
