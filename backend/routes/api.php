@@ -16,7 +16,11 @@ use App\Product;
 |
 */
 
-// ----------- api/auth/
+/**
+ * ===============
+ * API AUTH
+ * ===============
+ */
 Route::group([
     'prefix' => 'auth'
 ], function ($router) {
@@ -26,6 +30,12 @@ Route::group([
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
 });
+
+/**
+ * ====================
+ *  DEEPCART APP
+ * ====================
+ */
 
 Route::group([
     'prefix' => 'product'
@@ -50,5 +60,23 @@ Route::group([
     Route::post('add/{product_id}', 'CartController@addProductToCart');
     Route::delete('remove/{product_id}', 'CartController@removeProductInCart');
     Route::put('quantity/{product_id}', 'CartController@setQuantityPurchase');
+});
+
+/**
+ * ====================
+ *  WEATHERAPP APP
+ * ====================
+ */
+
+Route::group([
+    'prefix' => 'weatherapp'
+], function ($router) {
+
+    Route::group([
+        'prefix' => 'cities'
+    ], function ($router) {
+        Route::get('all', 'WeatherAppControllers\CityController@getCitiesFromUser'); 
+    });
+
 });
 
