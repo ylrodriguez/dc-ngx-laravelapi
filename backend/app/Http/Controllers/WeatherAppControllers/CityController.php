@@ -5,6 +5,7 @@ namespace App\Http\Controllers\WeatherAppControllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Facades\JWTAuth;
+use App\WeatherAppModels\City;
 
 class CityController extends Controller
 {
@@ -17,6 +18,28 @@ class CityController extends Controller
     public function __construct()
     {
         $this->middleware('jwt.auth');
+    }
+
+    /**
+     * Display specific city info by city's slug
+     *
+     */
+    public function getCity(Request $request){
+        try {
+            $slug = $request->input('slug');
+            $city = City::where('slug', $slug)->first();
+        } catch (Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error MySQL',
+                'error' => $e,
+            ], 400);
+        }
+        return response()->json([
+            'success' => true,
+            'message' => 'City retrieved.',
+            'city' => $city,
+        ], 200);
     }
 
     /**

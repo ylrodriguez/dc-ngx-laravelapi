@@ -75,6 +75,7 @@ Route::group([
     Route::group([
         'prefix' => 'cities'
     ], function ($router) {
+        Route::get('/', 'WeatherAppControllers\CityController@getCity'); 
         Route::get('all', 'WeatherAppControllers\CityController@getCitiesFromUser'); 
     });
 
