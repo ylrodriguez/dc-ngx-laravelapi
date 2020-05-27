@@ -25,7 +25,7 @@ class City extends Model
       * The users that have choosen a city
       */
       public function users(){
-        return $this->belongsToMany('App\User','weatherapp-users-cities');
+        return $this->belongsToMany('App\User','weatherapp-users-cities')->withTimestamps();
      }
 
      protected $table = 'weatherapp-cities';

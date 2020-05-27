@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Tymon\JWTAuth\Facades\JWTAuth;
 use App\WeatherAppModels\City;
+use Illuminate\Support\Str;
 
 class CityController extends Controller
 {
@@ -67,5 +68,58 @@ class CityController extends Controller
             'cities' => $user['cities'],
         ], 200);
 
+    }
+
+    /**
+     * Add to the users cities list
+     * if city has not been created, it creates it
+     */
+    public function addCityInUserList(Request $request){
+        try {
+            $user = JWTAuth::toUser($request->bearerToken());
+
+            $name = $request->input('name');
+            $countryCode = $request->input('countryCode');
+            $country = $request->input('country');
+            $slug = Str::slug($name." ".$countryCode,'-');
+
+            $city = City::where('slug', $slug)->first();
+
+            // Checks that city it's not already in the users list
+            foreach( $user->cities as $item ){
+                if($item->slug == $slug){
+                    return response()->json([
+                        'success'=> false, 
+                        'message'=> 'Ya existe ciudad en la lista de usuario',
+                        'slug'=> $slug
+                    ], 400);
+                }
+            }
+
+            // Check if city exist in db. If it doesn't exists creates it.
+            if(!$city) { 
+                $city = new City;
+                $city->name = $name;
+                $city->countryCode = $countryCode;
+                $city->country = $country;
+                $city->slug = $slug;
+                $city->imgUrl = "";
+                $city->save();
+            }
+
+            $user->cities()->attach($city);
+
+        } catch (Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error MySQL',
+                'error' => $e,
+            ], 400);
+        }
+        return response()->json([
+            'success' => true,
+            'message' => 'City added.',
+            'city' => $city
+        ], 200);
     }
 }

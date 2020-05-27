@@ -66,7 +66,7 @@ class User extends Authenticatable implements JWTSubject
       * The cities that belong to the user (User has choosen)
       */
      public function cities(){
-        return $this->belongsToMany('App\WeatherAppModels\City','weatherapp-users-cities');
+        return $this->belongsToMany('App\WeatherAppModels\City','weatherapp-users-cities')->withTimestamps();
      }
 
     protected $table = 'dc-users';
