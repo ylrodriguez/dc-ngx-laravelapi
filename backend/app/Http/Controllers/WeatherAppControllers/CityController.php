@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\WeatherAppControllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Tymon\JWTAuth\Facades\JWTAuth;
 use App\WeatherAppModels\City;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class CityController extends Controller
 {
@@ -25,7 +25,8 @@ class CityController extends Controller
      * Display specific city info by city's slug
      *
      */
-    public function getCity(Request $request){
+    public function getCity(Request $request)
+    {
         try {
             $slug = $request->input('slug');
             $city = City::where('slug', $slug)->first();
@@ -74,30 +75,32 @@ class CityController extends Controller
      * Add to the users cities list
      * if city has not been created, it creates it
      */
-    public function addCityInUserList(Request $request){
+    public function addCityInUserList(Request $request)
+    {
         try {
             $user = JWTAuth::toUser($request->bearerToken());
 
             $name = $request->input('name');
             $countryCode = $request->input('countryCode');
             $country = $request->input('country');
-            $slug = Str::slug($name." ".$countryCode,'-');
+            $slug = Str::slug($name . " " . $countryCode, '-');
 
             $city = City::where('slug', $slug)->first();
 
             // Checks that city it's not already in the users list
-            foreach( $user->cities as $item ){
-                if($item->slug == $slug){
+            foreach ($user->cities as $item) {
+                if ($item->slug == $slug) {
                     return response()->json([
-                        'success'=> false, 
-                        'message'=> 'Ya existe ciudad en la lista de usuario',
-                        'slug'=> $slug
-                    ], 400);
+                        'success' => false,
+                        'hasCityAlready' => true,
+                        'message' => 'City already on the list',
+                        'slug' => $slug,
+                    ], 404);
                 }
             }
 
             // Check if city exist in db. If it doesn't exists creates it.
-            if(!$city) { 
+            if (!$city) {
                 $city = new City;
                 $city->name = $name;
                 $city->countryCode = $countryCode;
@@ -119,7 +122,7 @@ class CityController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'City added.',
-            'city' => $city
+            'city' => $city,
         ], 200);
     }
 }
