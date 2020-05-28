@@ -11,6 +11,15 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 class CityController extends Controller
 {
 
+    private $apiImagesOptions = [
+        "client_id" => "rC4XQARI8t3xmzF8WHFW7_8chJt_pnmk1aTzAfc86jg",
+        "orientation" => "landscape",
+        "page" => "1",
+        "query" => "",
+    ];
+    // id Image that shows that not image was found.
+    private $defaultImgAPI = "xK4AyzC0itE";
+
     /**
      * Create a new CityController instance.
      *
@@ -106,7 +115,7 @@ class CityController extends Controller
                 $city->countryCode = $countryCode;
                 $city->country = $country;
                 $city->slug = $slug;
-                $city->imgUrl = "";
+                $city->imgUrl = $this->getImageForCity($city);
                 $city->save();
             }
 
@@ -124,5 +133,33 @@ class CityController extends Controller
             'message' => 'City added.',
             'city' => $city,
         ], 200);
+    }
+
+    /**
+     * Method that calls unsplash API to get
+     * an image of the city if it is found
+     */
+
+    private function getImageForCity(City $city)
+    {
+        try {
+            $this->apiImagesOptions["query"] = $city->name . " " . $city->country . " landscape";
+            $client = new \GuzzleHttp\Client();
+            $response = $client->request('GET', 'https://api.unsplash.com/search/photos', [
+                'query' => $this->apiImagesOptions,
+            ]);
+
+            $img = json_decode($response->getBody())->results[0];
+
+            // Esto indica que no se encontro imagen para la ciudad
+            if ($img->id === $this->defaultImgAPI) {
+                return "";
+            } else {
+                return ($img->urls->regular);
+            }
+        } catch (Exception $e) {
+            return "";
+        }
+
     }
 }
