@@ -136,6 +136,30 @@ class CityController extends Controller
     }
 
     /**
+     * Method that removes a city in the user list.
+     */
+
+    public function removeCityInUserList(Request $request, $city_id){
+        try {
+            $user = JWTAuth::toUser($request->bearerToken());
+            $user->cities()->detach($city_id);
+
+            return response()->json([
+                'success'=> true,
+                'message'=> 'City removed from list.',
+                'city_id' => $city_id
+            ], 200);
+        } 
+        catch (Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error MySQL',
+                'error' => $e,
+            ], 400);
+        }
+    }
+
+    /**
      * Method that calls unsplash API to get
      * an image of the city if it is found
      */

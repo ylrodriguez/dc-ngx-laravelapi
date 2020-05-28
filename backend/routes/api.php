@@ -77,7 +77,8 @@ Route::group([
     ], function ($router) {
         Route::get('/', 'WeatherAppControllers\CityController@getCity'); 
         Route::get('all', 'WeatherAppControllers\CityController@getCitiesFromUser'); 
-        Route::post('add', 'WeatherAppControllers\CityController@addCityInUserList'); 
+        Route::post('add', 'WeatherAppControllers\CityController@addCityInUserList');
+        Route::delete('remove/{city_id}', 'WeatherAppControllers\CityController@removeCityInUserList'); 
     });
 
 });
