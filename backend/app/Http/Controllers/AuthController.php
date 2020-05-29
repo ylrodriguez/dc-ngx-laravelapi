@@ -67,7 +67,7 @@ class AuthController extends Controller
             return response()->json([
                 'success'=> false, 
                 'message' => 'Error validating data.',
-                'error'=> $validator->messages()
+                'error'=> $validator->messages()->all()[0]
             ], 400);
         }
 
@@ -77,7 +77,8 @@ class AuthController extends Controller
         if($password != $confirmPassword){
             return response()->json([
                 'success'=> false,
-                'message' => 'Password do not match'
+                'message' => 'Password do not match',
+                'error' => ['Password do not match']
             ], 400);
         }
 
