@@ -32,7 +32,8 @@ export class TokenService {
     if (token) { //Check if token exists 
       const rawpayload = token.split('.')[1];
       let payload = JSON.parse(atob(rawpayload));
-      return payload.iss.startsWith(this.iss) ? true : false; //Check token in localstorage if matches with Issuer (JWT)
+      // Uses both validations because sometimes heroku issues token with HTTPS and others with HTTP
+      return (payload.iss == environment.tokenIss || payload.iss.startsWith(this.iss))  ? true : false; 
     }
     else {
       return false;
