@@ -51,11 +51,12 @@ class CategoryController extends Controller
                 // $product["quantityPurchase"] = $product->pivot->quantity;
                 unset($product->pivot);
                 $url = $product->images[0]->url;
+								$id = $product->images[0]->id;
                 unset($product->images);
                 unset($product->updated_at);
                 unset($product->created_at);
                 unset($product->category_id);
-                $product["images"] = ["url" => $url];
+                $product["images"] = ["url" => $url, "id" => $id];
             }
 
             //Only if user is auth

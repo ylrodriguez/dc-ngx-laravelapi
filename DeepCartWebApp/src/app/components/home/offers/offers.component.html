@@ -1,15 +1,15 @@
 <div *ngIf="offersList" class="container-fluid mt-4">
-        <h2 class="muted">A world of deals at your fingertips</h2>
+	<h2 class="muted">A world of deals at your fingertips</h2>
 
-        <div class="slider">
-                <div class="slide-track">
-                        <div #slideItems *ngFor="let offer of offersList; let last = last" class="slide-item">
-                                <app-product-card [product]="offer">
-                                </app-product-card>
-                        </div>
-                </div>
+	<div class="slider">
+		<div class="slide-track">
+			<div #slideItems *ngFor="let offer of offersList; let last = last" class="slide-item">
+				<app-product-card [product]="offer">
+				</app-product-card>
+			</div>
+		</div>
 
-                <div class="slide-prev"><img src="assets/img/left-arrow.png" alt="" style="width:50px;height:50px;"></div>
-                <div class="slide-next"><img src="assets/img/right-arrow.png" alt="" style="width:50px;height:50px;"></div>
-        </div>
+		<div class="slide-prev"><img src="assets/img/left-arrow.png" alt="" style="width:50px;height:50px;"></div>
+		<div class="slide-next"><img src="assets/img/right-arrow.png" alt="" style="width:50px;height:50px;"></div>
+	</div>
 </div>
