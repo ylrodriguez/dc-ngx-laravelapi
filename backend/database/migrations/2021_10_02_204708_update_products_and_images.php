@@ -219,9 +219,7 @@ class UpdateProductsAndImages extends Migration
 				$item = Image::find($image['id']);
 				if ($item) {
 					$item->update($image);  
-				} else {
-					Image::create($item);
-				}
+				} 
 			}
     }
 
