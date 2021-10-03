@@ -18,199 +18,199 @@ class UpdateProductsAndImages extends Migration
     {
 			$images = [
 				[
-					'id' => 1112,
+					'id' => 2121,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/2426823',
 				],
 				[
-					'id' => 1113,
+					'id' => 2131,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/2426526',
 				],
 				[
-					'id' => 1114,
+					'id' => 2141,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/2426527',
 				],
 				[
-					'id' => 1106,
+					'id' => 2061,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/643143',
 				],
 				[
-					'id' => 1107,
+					'id' => 2071,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/643144',
 				],
 				[
-					'id' => 1108,
+					'id' => 2081,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/643144',
 				],
 				[
-					'id' => 1036,
+					'id' => 2361,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/4882551',
 				],
 				[
-					'id' => 1037,
+					'id' => 2371,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/4882549',
 				],
 				[
-					'id' => 1038,
+					'id' => 2381,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/4882550',
 				],
 				[
-					'id' => 1029,
+					'id' => 2291,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/4820549',
 				],
 				[
-					'id' => 1030,
+					'id' => 2301,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/4820550',
 				],
 				[
-					'id' => 1004,
+					'id' => 2041,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/4823912',
 				],
 				[
-					'id' => 1005,
+					'id' => 2051,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/4823913',
 				],
 				[
-					'id' => 1006,
+					'id' => 2061,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/4823914',
 				],
 				[
-					'id' => 1022,
+					'id' => 2221,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/4819123',
 				],
 				[
-					'id' => 1023,
+					'id' => 2231,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/4819121',
 				],
 				[
-					'id' => 1024,
+					'id' => 2241,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/4819122',
 				],
 				[
-					'id' => 1031,
+					'id' => 2311,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/4819072',
 				],
 				[
-					'id' => 1032,
+					'id' => 2321,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/4819073',
 				],
 				[
-					'id' => 1045,
+					'id' => 2451,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5333112',
 				],
 				[
-					'id' => 1046,
+					'id' => 2461,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5333113',
 				],
 				[
-					'id' => 1047,
+					'id' => 2471,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5333114',
 				],
 				[
-					'id' => 1059,
+					'id' => 2591,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5331537',
 				],
 				[
-					'id' => 1060,
+					'id' => 2601,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5331536',
 				],
 				[
-					'id' => 1064,
+					'id' => 2641,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5331347',
 				],
 				[
-					'id' => 1065,
+					'id' => 2651,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5331348',
 				],
 				[
-					'id' => 1066,
+					'id' => 2661,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5331349',
 				],
 				[
-					'id' => 1051,
+					'id' => 2511,
 					'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/603645',
 				],
 				[
-					'id' => 1056,
+					'id' => 2561,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5332537',
 				],
 				[
-					'id' => 1057,
+					'id' => 2571,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5332840',
 				],
 				[
-					'id' => 1058,
+					'id' => 2581,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5332841',
 				],
 				[
-					'id' => 1054,
+					'id' => 2541,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5345110',
 				],
 				[
-					'id' => 1055,
+					'id' => 2551,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5345107',
 				],
 				[
-					'id' => 1061,
+					'id' => 2611,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5332792',
 				],
 				[
-					'id' => 1062,
+					'id' => 2621,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5332789',
 				],
 				[
-					'id' => 1063,
+					'id' => 2631,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5332790',
 				],
 				[
-					'id' => 1148,
+					'id' => 2481,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10208200',
 				],
 				[
-					'id' => 1149,
+					'id' => 2491,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10208201',
 				],
 				[
-					'id' => 1150,
+					'id' => 2501,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10208202',
 				],
 				[
-					'id' => 1146,
+					'id' => 2461,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10206862',
 				],
 				[
-					'id' => 1147,
+					'id' => 2471,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10206861',
 				],
 				[
-					'id' => 1132,
+					'id' => 2321,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10190931',
 				],
 				[
-					'id' => 1133,
+					'id' => 2331,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10190932',
 				],
 				[
-					'id' => 1134,
+					'id' => 2341,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10190933',
 				],
 				[
-					'id' => 1120,
+					'id' => 2201,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5384335',
 				],
 				[
-					'id' => 1151,
+					'id' => 2511,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10192687',
 				],
 				[
-					'id' => 1152,
+					'id' => 2521,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10192688',
 				],
 				[
-					'id' => 1153,
+					'id' => 2531,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10192689',
 				],
 				[
-					'id' => 1119,
+					'id' => 2191,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/641887'
 				],
 			];
