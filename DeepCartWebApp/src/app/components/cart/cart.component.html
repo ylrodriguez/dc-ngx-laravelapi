@@ -16,7 +16,7 @@
                     <tr *ngFor="let item of cartItems">
                         <td>
                             <div class="item-img">
-                                <a routerLink="/p/{{item.id}}/{{item.slug}}"><img src="{{item.imgUrl}}"></a>
+                                <a routerLink="/p/{{item.id}}/{{item.slug}}"><img imageLoader src="{{item.imgUrl}}" (load)="productService.loadImage()" ></a>
                             </div>
                         </td>
                         <td class="product-name">
@@ -50,9 +50,9 @@
 
                         <!-- Product Remove -->
                         <td class="product-remove">
-                            <p [class.hide]="item.isLoading.removing" class="remove-item"
+                            <p [class.hide]="item.isLoading?.removing" class="remove-item"
                                 (click)="removeItemFromCart($event, item)">x</p>
-                            <object [class.hide]="!item.isLoading.removing" width="20" height="20" type="image/svg+xml"
+                            <object [class.hide]="!item.isLoading?.removing" width="20" height="20" type="image/svg+xml"
                                 data="assets/img/loading-circle.svg"> </object>
                         </td>
                         <!-- End Product Remove -->

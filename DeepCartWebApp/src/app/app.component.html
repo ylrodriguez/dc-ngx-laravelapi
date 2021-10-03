@@ -1,4 +1,7 @@
 <main id="root-app">
-    <app-navbar *ngIf="!router.url.startsWith('/accounts')"></app-navbar>
-    <router-outlet></router-outlet>
+	<app-navbar *ngIf="!router.url.startsWith('/accounts')"></app-navbar>
+	<ngx-spinner bdOpacity=0.9 bdColor="#f5f5f5" size="medium" color="#da494c" type="ball-clip-rotate-pulse"
+		[fullScreen]="true">
+	</ngx-spinner>
+	<router-outlet></router-outlet>
 </main>

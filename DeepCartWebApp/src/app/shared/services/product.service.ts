@@ -7,50 +7,54 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class ProductService {
 
-  private baseURL = environment.apiUrl + 'product';
+	private baseURL = environment.apiUrl + 'product';
 
-  constructor(
-    private authService: AuthService,
-    private http: HttpClient
-  ) { }
+	constructor(
+		private authService: AuthService,
+		private http: HttpClient
+	) { }
 
-  getProduct(id): Observable<Product>{
-    let headers = this.authService.setHeaders();
-    return this.http.get<Product>(`${this.baseURL}/${id}`, {headers: headers })
-      .pipe( map (data => data['product']))
-  }
+	loadImage() {
+		// Don't delete it
+	}
 
-  getOffers(): Observable<Product[]>{
-    let headers = this.authService.setHeaders();
-    return this.http.get<Product[]>(`${this.baseURL}/offers/all`, {headers: headers })
-      .pipe(map( data => {
+	getProduct(id): Observable<Product> {
+		let headers = this.authService.setHeaders();
+		return this.http.get<Product>(`${this.baseURL}/${id}`, { headers: headers })
+			.pipe(map(data => data['product']))
+	}
 
-        data['offers'].map( d => {
-          d.imgUrl = d.images[0].url+"-500-auto?width=500&height=auto&aspect=true";
-          delete d.images;
-        })
+	getOffers(): Observable<Product[]> {
+		let headers = this.authService.setHeaders();
+		return this.http.get<Product[]>(`${this.baseURL}/offers/all`, { headers: headers })
+			.pipe(map(data => {
 
-        return data['offers'];
-      }));
-  }
+				data['offers'].map(d => {
+					d.imgUrl = d.images[0].url + "-500-auto?width=500&height=auto&aspect=true";
+					delete d.images;
+				})
 
-  searchProducts(query): Observable<Product[]>{
-    let headers = this.authService.setHeaders();
-    return this.http.get<Product[]>(`${this.baseURL}/search?query=${query}`, {headers: headers })
-      .pipe(map( data => {
-        data['foundProducts'].map( d => {
-          d.imgUrl = d.images[0].url+"-500-auto?width=500&height=auto&aspect=true";
-          delete d.images;
-        })
+				return data['offers'];
+			}));
+	}
 
-        return data['foundProducts'];
-      }));
+	searchProducts(query): Observable<Product[]> {
+		let headers = this.authService.setHeaders();
+		return this.http.get<Product[]>(`${this.baseURL}/search?query=${query}`, { headers: headers })
+			.pipe(map(data => {
+				data['foundProducts'].map(d => {
+					d.imgUrl = d.images[0].url + "-500-auto?width=500&height=auto&aspect=true";
+					delete d.images;
+				})
 
-  }
+				return data['foundProducts'];
+			}));
 
-  
+	}
+
+
 }

@@ -75,6 +75,7 @@ class ProductController extends Controller
             $offers = Product::where('offerDiscount', '>', 0)->get();
             foreach ($offers as $offer) {
                 $offer->images;
+								$offer['quantity_images'] = count($offer->images);
             }
         } catch (Exception $e) {
             return response()->json([

@@ -15,7 +15,7 @@
                 <a routerLink="/p/{{item.id}}/{{item.slug}}" class="search-item" (click)="closePanel()"
                     *ngFor="let item of foundProducts">
                     <span class="category-name"> {{item.category}}</span>
-                    <img src="{{item.imgUrl}}">
+                    <img imageLoader src="{{item.imgUrl}}" (load)="productService.loadImage()" >
                     <p> {{item.name}}</p>
                 </a>
 

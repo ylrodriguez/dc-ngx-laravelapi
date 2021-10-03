@@ -93,10 +93,126 @@ class UpdateProductsAndImages extends Migration
 					'id' => 1032,
 					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/4819073',
 				],
-				// [
-				// 	'id' => 0,
-				// 	'url' => '',
-				// ],
+				[
+					'id' => 1045,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5333112',
+				],
+				[
+					'id' => 1046,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5333113',
+				],
+				[
+					'id' => 1047,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5333114',
+				],
+				[
+					'id' => 1059,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5331537',
+				],
+				[
+					'id' => 1060,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5331536',
+				],
+				[
+					'id' => 1064,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5331347',
+				],
+				[
+					'id' => 1065,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5331348',
+				],
+				[
+					'id' => 1066,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5331349',
+				],
+				[
+					'id' => 1051,
+					'url' => 'https://exitocol.vteximg.com.br/arquivos/ids/603645',
+				],
+				[
+					'id' => 1056,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5332537',
+				],
+				[
+					'id' => 1057,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5332840',
+				],
+				[
+					'id' => 1058,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5332841',
+				],
+				[
+					'id' => 1054,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5345110',
+				],
+				[
+					'id' => 1055,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5345107',
+				],
+				[
+					'id' => 1061,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5332792',
+				],
+				[
+					'id' => 1062,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5332789',
+				],
+				[
+					'id' => 1063,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5332790',
+				],
+				[
+					'id' => 1148,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10208200',
+				],
+				[
+					'id' => 1149,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10208201',
+				],
+				[
+					'id' => 1150,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10208202',
+				],
+				[
+					'id' => 1146,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10206862',
+				],
+				[
+					'id' => 1147,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10206861',
+				],
+				[
+					'id' => 1132,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10190931',
+				],
+				[
+					'id' => 1133,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10190932',
+				],
+				[
+					'id' => 1134,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10190933',
+				],
+				[
+					'id' => 1120,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/5384335',
+				],
+				[
+					'id' => 1151,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10192687',
+				],
+				[
+					'id' => 1152,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10192688',
+				],
+				[
+					'id' => 1153,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/10192689',
+				],
+				[
+					'id' => 1119,
+					'url' => 'https://exitocol.vtexassets.com/arquivos/ids/641887'
+				],
 			];
 
 			foreach ($images as $image) {

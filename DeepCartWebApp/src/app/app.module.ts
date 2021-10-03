@@ -29,57 +29,61 @@ import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { CartQuantityButtonComponent } from './components/cart/cart-quantity-button/cart-quantity-button.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ImageLoaderDirective } from './shared/directives/image-loader.directive';
+import { DatePipe } from '@angular/common';
 
 export const MY_FORMATS = {
-  parse: {
-    dateInput: 'DD/MM/YYYY',
-  },
-  display: {
-    dateInput: 'DD/MM/YYYY',
-    monthYearLabel: 'MM YYYY',
-    dateA11yLabel: 'DD/MM/YYYY',
-    monthYearA11yLabel: 'MM YYYY',
-  },
+	parse: {
+		dateInput: 'DD/MM/YYYY',
+	},
+	display: {
+		dateInput: 'DD/MM/YYYY',
+		monthYearLabel: 'MM YYYY',
+		dateA11yLabel: 'DD/MM/YYYY',
+		monthYearA11yLabel: 'MM YYYY',
+	},
 };
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    LoginComponent,
-    SignupComponent,
-    HomeComponent,
-    ProfileComponent,
-    CarouselComponent,
-    OffersComponent,
-    ProductComponent,
-    ProductCardComponent,
-    CategoryComponent,
-    NotfoundComponent,
-    CartComponent,
-    CartItemComponent,
-    CartQuantityButtonComponent,
-    FooterComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    AppRoutingModule,
-    HttpClientModule, 
-    // Externals
-    BrowserAnimationsModule,
-    MatNativeDateModule,
-    MatDatepickerModule,
-    ToastrModule.forRoot(),
-    NgxSpinnerModule
-  ],
-  providers: [
-    MatDatepickerModule,
-    { provide: MAT_DATE_LOCALE, useValue: 'es_CO' }, //you can change useValue
-    { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
-    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS }
-  ],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		NavbarComponent,
+		LoginComponent,
+		SignupComponent,
+		HomeComponent,
+		ProfileComponent,
+		CarouselComponent,
+		OffersComponent,
+		ProductComponent,
+		ProductCardComponent,
+		CategoryComponent,
+		NotfoundComponent,
+		CartComponent,
+		CartItemComponent,
+		CartQuantityButtonComponent,
+		FooterComponent,
+		ImageLoaderDirective
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		FormsModule,
+		AppRoutingModule,
+		HttpClientModule,
+		// Externals
+		BrowserAnimationsModule,
+		MatNativeDateModule,
+		MatDatepickerModule,
+		ToastrModule.forRoot(),
+		NgxSpinnerModule
+	],
+	providers: [
+		MatDatepickerModule,
+		DatePipe,
+		{ provide: MAT_DATE_LOCALE, useValue: 'es_CO' }, //you can change useValue
+		{ provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+		{ provide: MAT_DATE_FORMATS, useValue: MY_FORMATS }
+	],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
