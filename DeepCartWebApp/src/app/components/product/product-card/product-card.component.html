@@ -12,8 +12,8 @@
 							${{product.price | number }}</p>
 					<p class="price-offer"> ${{ getDiscountPrice() | number }} <span *ngIf="product.offerDiscount"
 									class="float-right text-success">{{product.offerDiscount}}% OFF</span></p>
-					<p *ngIf="!completeName"> {{(product.name.length>30)? (product.name | slice:0:30)+'..':(product.name)}} </p>
-					<p *ngIf="completeName"> {{product.name}} </p>
+					<p *ngIf="!completeName" class="title"> {{(product.name.length>30)? (product.name | slice:0:30)+'..':(product.name)}} </p>
+					<p *ngIf="completeName" class="title"> {{product.name}} </p>
 				</div>
 			</a>
 			<div class="button-quantity">

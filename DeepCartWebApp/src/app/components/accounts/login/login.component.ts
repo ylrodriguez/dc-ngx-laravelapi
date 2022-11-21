@@ -4,51 +4,51 @@ import { TokenService } from 'src/app/shared/services/token.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+	selector: 'app-login',
+	templateUrl: './login.component.html',
+	styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  
-  form = {
-    email: '',
-    password: ''
-  }
 
-  isSubmitted: boolean = false;
-  hasError: boolean = false;
-  errorMessage: string = "Something's wrong";
+	form = {
+		email: 'test@gmail.com',
+		password: '123456'
+	}
 
-  constructor(
-    private tokenService: TokenService,
-    private authService: AuthService,
-    private router: Router) { }
+	isSubmitted: boolean = false;
+	hasError: boolean = false;
+	errorMessage: string = "Something's wrong";
 
-  ngOnInit() {
-  }
+	constructor(
+		private tokenService: TokenService,
+		private authService: AuthService,
+		private router: Router) { }
 
-  onSubmit(){
-    this.isSubmitted = true;
-    this.authService.login(this.form).subscribe(
-      res => this.handleResponse(res),
-      err => this.handleError(err.error)
-    )
-  }
+	ngOnInit() {
+	}
 
-  handleResponse(res){
-    this.hasError = false;
-    this.tokenService.setToken(res.access_token);
-    this.router.navigate([this.authService.redirectUrl])
-  }
+	onSubmit() {
+		this.isSubmitted = true;
+		this.authService.login(this.form).subscribe(
+			res => this.handleResponse(res),
+			err => this.handleError(err.error)
+		)
+	}
 
-  handleError(err){
-    this.isSubmitted = false;
-    this.errorMessage = err ? err.message : 'Something\'s wrong. Try later.';
-    this.hasError = true;
-  }
+	handleResponse(res) {
+		this.hasError = false;
+		this.tokenService.setToken(res.access_token);
+		this.router.navigate([this.authService.redirectUrl])
+	}
 
-  closeAlert(){
-    this.hasError = false;
-  }
+	handleError(err) {
+		this.isSubmitted = false;
+		this.errorMessage = err ? err.message : 'Something\'s wrong. Try later.';
+		this.hasError = true;
+	}
+
+	closeAlert() {
+		this.hasError = false;
+	}
 
 }
